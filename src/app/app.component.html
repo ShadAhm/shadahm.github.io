@@ -1,10 +1,29 @@
-<div class="container-fluid pt-2">
-  <div class="row">
-    <div class="col-md-3 order-md-first order-sm-last">
-      <about-me></about-me>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="./assets/images/logo.png" class="d-inline-block align-top" />
+      ShadAhm
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" href="#">Blog</a>
+        <a class="nav-item nav-link" routerLink="/resume">Resume</a>
+      </div>
     </div>
-    <div class="col-md-9">
+  </nav>
+</header>
+
+<div class="container-fluid pt-2 bg-light">
+  <div class="row">
+    <div class="col-md-9  ">
       <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-3">
+      <about-me></about-me>
     </div>
   </div>
 </div>

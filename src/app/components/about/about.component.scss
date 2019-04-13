@@ -1,8 +1,26 @@
 div.about-me-panel {
-  border:1px solid #f2f3f2;
+  box-shadow: 23ex; 
+  font-size: 0.8rem;
 }
     
 div.about-me-panel div.about-me-content  {
   padding: 1rem; 
-  margin-top:1rem; 
+}
+
+div.about-me-panel div.about-me-imagebox {
+  overflow: hidden; 
+}
+
+ul.about-me-actionslist {
+  list-style-type: none; 
+  padding-left:0; 
+
+  li {
+      padding:0; 
+      margin-left:0; 
+  }
+
+  li:hover {
+    background-color:papayawhip; 
+  }
 }

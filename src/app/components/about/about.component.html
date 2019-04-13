@@ -1,16 +1,22 @@
 <div class="about-me-panel">
   <div class="about-me-imagebox">
-    <img src="./assets/images/me.jpg" class="mx-auto d-block" />
+    <img src="./assets/images/me.jpg" class="mx-auto" />
   </div>
   <div class="about-me-content">
-    <h4>About me</h4>
-    <p>I am a Kuala Lumpur based Web Developer. I primarily code within the .NET stack. If you like ThinkPads you will be my friend.</p>
-  
-    <button class="btn btn-sm btn-link">
-      View Resume
-    </button>
-    <button class="btn btn-sm btn-link">
-      View GitHub
-    </button>
+    <h5>About me</h5>
+    <p>Hi, I'm Shad. I am a Kuala Lumpur based Software Developer. I primarily code within the .NET stack. If you like ThinkPads you will
+      be my friend.</p>
+    <label for="emailLink">Contact: </label><a id="emailLink" href="mailto:arsh90@gmail.com">arsh90@gmail.com</a>
+    <ul class="about-me-actionslist">
+      <li><a class="btn btn-sm btn-link" routerLink="/resume">
+          <i class="fa fa-fw fa-file"></i> View Resume
+        </a>
+      </li>
+      <li>
+        <a class="btn btn-sm btn-link" href="https://www.github.com/ShadAhm/" target="_blank">
+          <i class="fa fa-fw fa-github"></i> View GitHub
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
