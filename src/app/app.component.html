@@ -2,16 +2,15 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">
       <img src="./assets/images/logo.png" class="d-inline-block align-top" />
-      ShadAhm
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" href="#">Blog</a>
-        <a class="nav-item nav-link" routerLink="/resume">Resume</a>
+      <div class="navbar-nav shad-orange-navbar">
+        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a class="nav-item nav-link" routerLinkActive="active" href="#">Blog</a>
+        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/resume">Resume</a>
       </div>
     </div>
   </nav>
