@@ -1,10 +1,11 @@
 div.about-me-panel {
   box-shadow: 23ex; 
   font-size: 0.8rem;
+  border-left: 1px solid lightgray; 
+  padding: 1rem; 
 }
     
 div.about-me-panel div.about-me-content  {
-  padding: 1rem; 
 }
 
 div.about-me-panel div.about-me-imagebox {
