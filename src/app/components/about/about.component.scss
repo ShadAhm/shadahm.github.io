@@ -1,7 +1,5 @@
 div.about-me-panel {
-  box-shadow: 23ex; 
   font-size: 0.8rem;
-  border: 1px solid lightgray; 
   padding: 1rem; 
 }
     
@@ -19,6 +17,7 @@ ul.about-me-actionslist {
   }
 
   li:hover {
-    background-color:papayawhip; 
+    background-color:lightblue; 
+    color:white;
   }
 }
