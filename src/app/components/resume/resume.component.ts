@@ -59,8 +59,17 @@ export class ResumeComponent implements OnInit {
           displayText: 'Intelligent Tourism',
           elementId: 'h3projIntelligent',
           children: null
-        }
-        ]
+        },
+        {
+          displayText: 'Submission Tracking and Rating System (“STAR System”)',
+          elementId: 'h3projIntelligent',
+          children: null
+        },
+        {
+          displayText: 'Capital Gains Tax Worksheets (“CGT Worksheets”)',
+          elementId: 'h3projIntelligent',
+          children: null
+        }]
       },
       {
         displayText: 'Education and Certifications',
