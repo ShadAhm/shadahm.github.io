@@ -1,21 +1,26 @@
-[{
-    "companyName":"Alfacom Technologies Sdn Bhd",
-    "companyUrl":"http://www.alfacom.com.my/",
-    "position":"Software Developer",
-    "fromDate":"2012-04-01T00:00:00.000Z",
-    "toDate":"2015-11-01T00:00:00.000Z"
-}
-,{
-    "companyName":"Galasys Solutions (MSC) Sdn Bhd",
-    "companyUrl":"https://www.galasystec.com/company-profile.aspx",
-    "position":"Software Developer/Team Lead",
-    "fromDate":"2015-11-01T00:00:00.000Z",
-    "toDate":"2016-10-01T00:00:00.000Z"
-}
-,{
-    "companyName":"City Facilities Management Sdn Bhd",
-    "companyUrl":"https://www.cityholdings.asia/",
-    "position":"Senior Software Developer",
-    "fromDate":"2016-11-01T00:00:00.000Z",
-    "toDate":null
-}]
+[
+    {
+        "companyName": "City Facilities Management Sdn Bhd",
+        "companyUrl": "https://www.cityholdings.asia/",
+        "companySubcripts": null,
+        "position": "Senior Software Developer",
+        "fromDate": "2016-11-01T00:00:00.000Z",
+        "toDate": null
+    },
+    {
+        "companyName": "Galasys Solutions (MSC) Sdn Bhd",
+        "companyUrl": "https://www.galasystec.com/company-profile.aspx",
+        "companySubcripts": null,
+        "position": "Software Developer/Team Lead",
+        "fromDate": "2015-11-01T00:00:00.000Z",
+        "toDate": "2016-10-01T00:00:00.000Z"
+    },
+    {
+        "companyName": "Alfacom Technologies Sdn Bhd",
+        "companyUrl": "http://www.alfacom.com.my/",
+        "companySubcripts": null,
+        "position": "Software Developer",
+        "fromDate": "2012-04-01T00:00:00.000Z",
+        "toDate": "2015-11-01T00:00:00.000Z"
+    }
+]

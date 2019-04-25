@@ -102,7 +102,7 @@ export class ResumeComponent implements OnInit {
 
   calculateTotalYearsExp(): string {
     if (this.employmentHistories) {
-      let fromDateStr = this.employmentHistories[0].fromDate;
+      let fromDateStr = this.employmentHistories[this.employmentHistories.length - 1].fromDate;
       let toDateStr = (new Date()).toISOString();
 
       return this.calculateEmploymentDuration(fromDateStr, toDateStr);

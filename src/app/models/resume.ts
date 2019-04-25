@@ -16,6 +16,8 @@ export class TechnicalSkill {
 
 export class EmploymentHistory {
     public companyName: string;
+    public companyUrl: string;
+    public companySubscripts: string[]; 
     public position: string;
     public fromDate: string;
     public toDate: string;
