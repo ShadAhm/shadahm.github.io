@@ -1,21 +1,23 @@
-<h1>Resume</h1>
+<div class="d-flex">
+    <h1 class="mr-auto">Resume</h1>
+    <button class="btn m-2"><i class="fa fa-print"></i> Print this resume</button>
+</div>
 <div class="bg-white p-2">
-
   <div class="row">
     <div class="col">
       <h2>Contents</h2>
-      <ul>
-        <li *ngFor="let content of contents"><button class="btn btn-link"
-            (click)="scrollIntoView(content.elementId)">{{content.displayText}}</button>
-          <ul *ngIf="content.children">
-            <li *ngFor="let content1 of content.children"><button class="btn btn-link"
-                (click)="scrollIntoView(content1.elementId)">{{content1.displayText}}</button>
+      <ol class="contents-list">
+        <li *ngFor="let content of contents"><a href="javascript:void(0)"
+            (click)="scrollIntoView(content.elementId)">{{content.displayText}}</a>
+          <ol class="contents-list" *ngIf="content.children">
+            <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
+                (click)="scrollIntoView(content1.elementId)">{{content1.displayText}}</a>
             </li>
-          </ul>
+          </ol>
         </li>
-      </ul>
+      </ol>
     </div>
-    <div class="col-8">
+    <div class="col-md-8">
       <h2 id="h2Introduction">Introduction</h2>
       <p>The term came into use around 1970, when the Four Asian Tigers[4] of Hong Kong, Singapore, South Korea, and
         Taiwan
@@ -31,20 +33,21 @@
         All four economies are classified as high-income economies by the World Bank and Advanced economies by the
         International Monetary Fund (IMF) and U.S. Central Intelligence Agency (CIA). All of them, like Western European
         countries, have a Human Development Index considered "very high" by the UN.</p>
+
     </div>
   </div>
 
   <h2 id="h2Skills"> Technical Skills</h2>
   <div>
     <table class="table table-striped">
-      <caption><i class="fa fa-fw fa-star"></i> skills acquired through project experience of 5 years or greater
+      <caption>⭐ skills acquired through project experience of 5 years or greater
       </caption>
       <tr *ngFor="let skillCategory of technicalSkillCategories">
         <td class="w-25">{{skillCategory.name}}</td>
         <td>
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let skill of skillCategory.skills">
-              <i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw"></i> {{skill.name}}
+              <span *ngIf="skill.starred">⭐</span><span *ngIf="!skill.starred" style="visibility: hidden">󠀠⬜️</span>  {{skill.name}}
             </li>
           </ul>
         </td>
@@ -66,7 +69,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let employmentHistory of employmentHistories">
-        <td>{{employmentHistory.companyName}}</td>
+        <td><a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a></td>
         <td>{{employmentHistory.position}}</td>
         <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
         <td>
@@ -90,12 +93,10 @@
   </table>
 
 
-  <h2 id="h2Education">Education and Certifications</h2>
+  <h2 id="h2Education">Certifications & Education</h2>
   <hr />
   <h4>Certifications</h4>
-
-
-  <ul>
+  <ul class="education-list">
     <li>
       CityFM Management Extension Program<br />
       2018
@@ -107,14 +108,16 @@
   </ul>
 
   <h4>Education</h4>
-  <ul>
+  <ul class="education-list">
     <li>
+      Diploma in Multimedia (CGPA: 3.08)<br />
       Universiti Kuala Lumpur<br />
-      Diploma in Multimedia (CGPA: 3.08)
+      2010 
     </li>
     <li>
+      GCSE (O-Level)<br />
       Heaton Manor School<br />
-      GCSE
+      2006 
     </li>
   </ul>
 </div>
