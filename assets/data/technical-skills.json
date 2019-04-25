@@ -1,0 +1,32 @@
+[{
+    "name": "Software Development Frameworks",
+    "skills": [
+        {"name":"ASP.NET MVC, ASP.NET Core", "starred": true},
+        {"name":"Entity Framework", "starred": true},
+        {"name":"ASP.NET Web Api", "starred": true},
+        {"name":"ASP.NET Web Forms", "starred": false},
+        {"name":"WPF", "starred": false}
+    ]
+},
+{
+    "name": "Client-Side Frameworks",
+    "skills": [
+        {"name":"Angular 2+, Angular CLI, Node.js", "starred": true},
+        {"name":"AngularJs", "starred": true},
+        {"name":"Bootstrap", "starred": true},
+        {"name":"Material UI", "starred": false}
+    ]
+},
+{
+    "name": "RDBMS",
+    "skills": [
+        {"name":"Microsoft SQL Server", "starred": true}
+    ]
+},
+{
+    "name": "Etc",
+    "skills": [
+        {"name":"Git", "starred": true},
+        {"name":"Azure DevOps", "starred": false}
+    ]
+}]
