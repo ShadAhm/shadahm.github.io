@@ -24,7 +24,10 @@ export class ResumeComponent implements OnInit {
   }
 
   scrollIntoView(elementId: string): void {
-    document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' });
+    let element = document.getElementById(elementId);
+    if (element) {
+      document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   getResumeContents(): void {
@@ -109,7 +112,7 @@ export class ResumeComponent implements OnInit {
     }
   }
 
-  print() : void {
-    window.print(); 
+  print(): void {
+    window.print();
   }
 }
