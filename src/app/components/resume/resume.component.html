@@ -3,11 +3,17 @@
 
   <div class="row">
     <div class="col">
-      <div>Contents</div>
-      <ol>
+      <h2>Contents</h2>
+      <ul>
         <li *ngFor="let content of contents"><button class="btn btn-link"
-            (click)="scrollIntoView(content.elementId)">{{content.displayText}}</button></li>
-      </ol>
+            (click)="scrollIntoView(content.elementId)">{{content.displayText}}</button>
+          <ul *ngIf="content.children">
+            <li *ngFor="let content1 of content.children"><button class="btn btn-link"
+                (click)="scrollIntoView(content1.elementId)">{{content1.displayText}}</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
     <div class="col-8">
       <h2 id="h2Introduction">Introduction</h2>
@@ -30,11 +36,11 @@
 
   <h2 id="h2Skills"> Technical Skills</h2>
   <div>
-    <table class="table">
+    <table class="table table-striped">
       <caption><i class="fa fa-fw fa-star"></i> skills acquired through project experience of 5 years or greater
       </caption>
       <tr *ngFor="let skillCategory of technicalSkillCategories">
-        <td>{{skillCategory.name}}</td>
+        <td class="w-25">{{skillCategory.name}}</td>
         <td>
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let skill of skillCategory.skills">
@@ -85,35 +91,30 @@
 
 
   <h2 id="h2Education">Education and Certifications</h2>
-  <p>The idea of categorizing countries by their economic and developmental status began during the Cold War with the
-    classifications of East and West. The Soviet Union and China represented the East, and the United States and their
-    allies represented the West. The term 'Third World' came into parlance in the second half of the twentieth century.
-    It
-    originated in a 1952 article by Alfred Sauvy entitled "Trois Mondes, Une Planète."[4] Early definitions of the Third
-    World emphasized its exclusion from the East-West conflict of the Cold War as well as the ex-colonial status and
-    poverty of the nations it comprised.[4] Efforts to mobilize the Third World as an autonomous political entity were
-    undertaken. The 1955 Bandung Conference was an early meeting of Third World states in which an alternative to
-    alignment with either the Eastern or Western Blocs was promoted.[4] Following this, the first Non-Aligned Summit was
-    organized in 1961. Contemporaneously, a mode of economic criticism which separated the world economy into "core" and
-    "periphery" was developed and given expression in a project for political reform which "moved the terms 'North' and
-    'South' into the international political lexicon."[5] In 1973, the pursuit of a New International Economic Order
-    which
-    was to be negotiated between the North and South was initiated at the Non-Aligned Summit held in Algiers.[6] Also in
-    1973, the oil embargo initiated by Arab OPEC countries as a result of the Yom Kippur War caused an increase in world
-    oil prices, with prices continuing to rise throughout the decade.[7] This contributed to a worldwide recession which
-    resulted in industrialized nations increasing economically protectionist policies and contributing less aid to the
-    less developed countries of the South.[7] The slack was taken up by Western banks, which provided substantial loans
-    to
-    Third World countries.[8] However, many of these countries were not able to pay back their debt, which led the IMF
-    to
-    extend further loans to them on the condition that they undertake certain liberalizing reforms.[8] This policy,
-    which
-    came to be known as structural adjustment, and was institutionalized by International Financial Institutions (IFIs)
-    and Western governments, represented a break from the Keynesian approach to foreign aid which had been the norm from
-    the end of the Second World War.[8] After 1987, reports on the negative social impacts that structural adjustment
-    policies had had on affected developing nations led IFIs to supplement structural adjustment policies with targeted
-    anti-poverty projects.[9] Following the end of the Cold War and the break-up of the Soviet Union, some Second World
-    countries joined the First World, and others joined the Third World. A new and simpler classification was needed.
-    Use
-    of the terms "North" and "South" became more widespread.</p>
+  <hr />
+  <h4>Certifications</h4>
+
+
+  <ul>
+    <li>
+      CityFM Management Extension Program<br />
+      2018
+    </li>
+    <li>
+      Microsoft Certified Solutions Developer (MCSD) <br />
+      2013
+    </li>
+  </ul>
+
+  <h4>Education</h4>
+  <ul>
+    <li>
+      Universiti Kuala Lumpur<br />
+      Diploma in Multimedia (CGPA: 3.08)
+    </li>
+    <li>
+      Heaton Manor School<br />
+      GCSE
+    </li>
+  </ul>
 </div>

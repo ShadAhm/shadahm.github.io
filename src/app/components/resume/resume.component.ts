@@ -3,6 +3,7 @@ import { ResumeContent, TechnicalSkillCategory, EmploymentHistory } from 'src/ap
 
 import { ResumeService } from 'src/app/services/resume.service';
 import * as moment from 'moment';
+import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-resume',
@@ -30,19 +31,38 @@ export class ResumeComponent implements OnInit {
     this.contents = [
       {
         displayText: 'Introduction',
-        elementId: 'h2Introduction'
+        elementId: 'h2Introduction',
+        children: null
       },
       {
         displayText: 'Technical Skills',
-        elementId: 'h2Skills'
+        elementId: 'h2Skills',
+        children: null
       },
       {
         displayText: 'Employment History',
-        elementId: 'h2Employment'
+        elementId: 'h2Employment',
+        children: null
+      },
+      {
+        displayText: 'Key Project Achievements',
+        elementId: 'h2Employment',
+        children: [{
+          displayText: 'Activities Management / Subcontractor Portal ',
+          elementId: 'h3projActivities',
+          children: null
+        },
+        {
+          displayText: 'Intelligent Tourism',
+          elementId: 'h3projIntelligent',
+          children: null
+        }
+        ]
       },
       {
         displayText: 'Education and Certifications',
-        elementId: 'h2Education'
+        elementId: 'h2Education',
+        children: null
       }];
   }
 
@@ -68,32 +88,24 @@ export class ResumeComponent implements OnInit {
       toDate = moment(toDateStr);
     }
 
-    var years = toDate.diff(fromDate, 'year');
+    let years = toDate.diff(fromDate, 'year');
     fromDate.add(years, 'years');
 
-    var months = toDate.diff(fromDate, 'months');
+    let months = toDate.diff(fromDate, 'months');
     fromDate.add(months, 'months');
 
-    return years + ' years ' + months + ' months';
+    let yearPortion = years > 0 ? years + ' years' : '';
+    let monthPortion = months > 0 ? ' ' + months + ' months' : '';
+
+    return yearPortion + monthPortion;
   }
 
   calculateTotalYearsExp(): string {
-    let fromDateStr = this.employmentHistories[0].fromDate;
-    let toDateStr = (new Date()).toISOString();
+    if (this.employmentHistories) {
+      let fromDateStr = this.employmentHistories[0].fromDate;
+      let toDateStr = (new Date()).toISOString();
 
-    let fromDate = moment(fromDateStr);
-    let toDate = moment(toDateStr);
-
-    if (toDateStr != null && toDateStr != '') {
-      toDate = moment(toDateStr);
+      return this.calculateEmploymentDuration(fromDateStr, toDateStr);
     }
-
-    var years = toDate.diff(fromDate, 'year');
-    fromDate.add(years, 'years');
-
-    var months = toDate.diff(fromDate, 'months');
-    fromDate.add(months, 'months');
-
-    return years + ' years ' + months + ' months';
   }
 }

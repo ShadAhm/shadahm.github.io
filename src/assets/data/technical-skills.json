@@ -1,8 +1,7 @@
 [{
     "name": "Software Development Frameworks",
     "skills": [
-        {"name":"ASP.NET MVC", "starred": true},
-        {"name":"ASP.NET Core", "starred": true},
+        {"name":"ASP.NET MVC, ASP.NET Core", "starred": true},
         {"name":"Entity Framework", "starred": true},
         {"name":"ASP.NET Web Api", "starred": true},
         {"name":"ASP.NET Web Forms", "starred": false},
@@ -12,7 +11,7 @@
 {
     "name": "Client-Side Frameworks",
     "skills": [
-        {"name":"Angular 2+", "starred": true},
+        {"name":"Angular 2+, Angular CLI, Node.js", "starred": true},
         {"name":"AngularJs", "starred": true},
         {"name":"Bootstrap", "starred": true},
         {"name":"Material UI", "starred": false}

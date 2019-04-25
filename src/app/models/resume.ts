@@ -1,6 +1,7 @@
 export class ResumeContent {
     public displayText: string;
     public elementId: string;
+    public children: ResumeContent[];
 }
 
 export class TechnicalSkillCategory {
@@ -16,6 +17,6 @@ export class TechnicalSkill {
 export class EmploymentHistory {
     public companyName: string;
     public position: string;
-    public fromDate: Date;
-    public toDate: Date;
+    public fromDate: string;
+    public toDate: string;
 }
