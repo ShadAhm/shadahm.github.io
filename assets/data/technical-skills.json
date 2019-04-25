@@ -5,7 +5,8 @@
         {"name":"Entity Framework", "starred": true},
         {"name":"ASP.NET Web Api", "starred": true},
         {"name":"ASP.NET Web Forms", "starred": false},
-        {"name":"WPF", "starred": false}
+        {"name":"WPF", "starred": false},
+        {"name":"Android Native / Java", "starred": false}
     ]
 },
 {
@@ -13,6 +14,7 @@
     "skills": [
         {"name":"Angular 2+, Angular CLI, Node.js", "starred": true},
         {"name":"AngularJs", "starred": true},
+        {"name":"TypeScript", "starred": true},
         {"name":"Bootstrap", "starred": true},
         {"name":"Material UI", "starred": false}
     ]
