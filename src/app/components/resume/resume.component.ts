@@ -108,4 +108,8 @@ export class ResumeComponent implements OnInit {
       return this.calculateEmploymentDuration(fromDateStr, toDateStr);
     }
   }
+
+  print() : void {
+    window.print(); 
+  }
 }

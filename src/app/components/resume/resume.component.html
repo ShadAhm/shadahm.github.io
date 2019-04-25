@@ -1,6 +1,6 @@
 <div class="d-flex">
-    <h1 class="mr-auto">Resume</h1>
-    <button class="btn m-2"><i class="fa fa-print"></i> Print this resume</button>
+  <h1 class="mr-auto">Resume</h1>
+  <button class="btn m-2" (click)="print()"><i class="fa fa-print"></i> Print this resume</button>
 </div>
 <div class="bg-white p-2">
   <div class="row">
@@ -47,7 +47,8 @@
         <td>
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let skill of skillCategory.skills">
-              <span *ngIf="skill.starred">⭐</span><span *ngIf="!skill.starred" style="visibility: hidden">󠀠⬜️</span>  {{skill.name}}
+              <span *ngIf="skill.starred">⭐</span><span *ngIf="!skill.starred" style="visibility: hidden">󠀠⬜️</span>
+              {{skill.name}}
             </li>
           </ul>
         </td>
@@ -113,12 +114,12 @@
     <li>
       Diploma in Multimedia (CGPA: 3.08)<br />
       Universiti Kuala Lumpur<br />
-      2010 
+      2010
     </li>
     <li>
       GCSE (O-Level)<br />
       Heaton Manor School<br />
-      2006 
+      2006
     </li>
   </ul>
 </div>
