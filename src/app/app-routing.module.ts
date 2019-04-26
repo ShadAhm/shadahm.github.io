@@ -8,19 +8,18 @@ import { BlogComponent } from './components/blog/blog.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent
+    component: HomeComponent,
+    data:{ title:'Home' }
   },
   {
     path: 'resume',
-    component: ResumeComponent
+    component: ResumeComponent,
+    data:{ title:'Resume' }
   },
   {
     path: 'blog',
-    component: BlogComponent
+    component: BlogComponent,
+    data:{ title:'Blog' }
   }];
 
 @NgModule({

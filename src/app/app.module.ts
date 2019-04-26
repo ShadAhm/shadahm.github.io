@@ -12,6 +12,7 @@ import { BlogComponent } from './components/blog/blog.component';
 
 // services
 import { ResumeService } from './services/resume.service';
+import { ContentHeaderComponent } from './components/content-header/content-header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ResumeService } from './services/resume.service';
     AboutComponent,
     HomeComponent,
     ResumeComponent,
-    BlogComponent
+    BlogComponent,
+    ContentHeaderComponent
   ],
   imports: [
     BrowserModule,
