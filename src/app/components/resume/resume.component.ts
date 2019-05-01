@@ -89,7 +89,7 @@ export class ResumeComponent implements OnInit {
     this.resumeService.getEmploymentHistories().subscribe(
       (response: EmploymentHistory[]) => { this.employmentHistories = response },
       (error) => { console.error("Error happened", error) }
-    );;
+    );
   }
 
   calculateEmploymentDuration(fromDateStr: string, toDateStr: string): string {
