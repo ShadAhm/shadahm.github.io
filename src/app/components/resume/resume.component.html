@@ -4,10 +4,12 @@
     <div class="col">
       <ol class="contents-list">
         <li *ngFor="let content of contents"><a href="javascript:void(0)"
-            (click)="scrollIntoView(content.elementId)">{{content.displayText}}</a>
-          <ol class="contents-list" *ngIf="content.children">
+            (click)="scrollIntoView(content.elementId)">
+            <span>{{content.displayText}}</span>
+          </a>
+          <ol *ngIf="content.children">
             <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
-                (click)="scrollIntoView(content1.elementId)">{{content1.displayText}}</a>
+                (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></a>
             </li>
           </ol>
         </li>

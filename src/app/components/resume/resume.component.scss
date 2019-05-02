@@ -8,13 +8,20 @@ ul.education-list li {
 }
 
 ol.contents-list {
-    padding-left: 1rem;
-}
+    list-style-position: inside;
+    padding-left:0; 
 
-ol.contents-list li {
-    padding-left: 0.8rem;
-    margin-bottom:0.3rem;
-    margin-top:0.3rem;
+    li {
+        line-height: 1.6rem; 
+
+        ol {
+            padding-left:1.5rem; 
+        }
+
+        span {
+            padding-left:0.3rem; 
+        }
+    }
 }
 
 i.star-orange {
