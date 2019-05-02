@@ -2,7 +2,7 @@
 <div class="bg-white p-2">
   <div class="row">
     <div class="col">
-      <ol class="contents-list">
+      <ol class="contents-list" id="olContentsList">
         <li *ngFor="let content of contents"><a href="javascript:void(0)"
             (click)="scrollIntoView(content.elementId)">
             <span>{{content.displayText}}</span>
@@ -19,6 +19,7 @@
       <h2 id="h2Introduction">Introduction</h2>
       <p>Hi, I'm Shad. And welcome to my online resume. This page was created to provide you the ability to navigate my details with ease. A printed and PDF version is also available. This resume and site itself is intended as a POC of my skills in designing and developing a navigatable and intuitive user application. I believe all software (internal or external) should be created with the user first-in-mind, providing sufficient navigation, and should be designed with complexities that requires training as little as possible.</p>
       <p>Feedbacks and comments are very welcome. Get in touch. </p>
+      <!-- <button class="btn btn-sm btn-primary hidden-sm-up" (click)="scrollIntoView('olContentsList')"><i class="fa fa-arrow-up"></i> Back to top</button> -->
     </div>
   </div>
 

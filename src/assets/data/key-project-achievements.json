@@ -1,0 +1,36 @@
+[{
+    "title":"Activities Management / Subcontractor Portal",
+    "fromDate": "2016-11-01T00:00:00.000Z",
+    "toDate": null,
+    "company": "City Facilities Management",
+    "client": "(inhouse software applications)",
+    "projectRole": "Development",
+    "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api, .NET Core, EF Core, Angular 2+, AngularJs, Azure DevOps",
+    "description": "",
+    "jobResponsibilities": [
+        "Software development",
+        "Integration between one Solution with another",
+        "Branch-merging and deployment into UAT",
+        "Attend requirement gathering meetings"
+    ],
+    "htmlElementId": "h3projActivities"
+},
+{
+    "title":"Intelligent Tourism",
+    "fromDate": "2015-11-01T00:00:00.000Z",
+    "toDate": "2016-10-01T00:00:00.000Z",
+    "company": "Galasys Solutions",
+    "client": "Galasys Solutions",
+    "projectRole": "Development/Team Lead",
+    "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api 2, WCF, AngularJs, Bootstrap",
+    "description": "",
+    "jobResponsibilities": [
+        "Acted as Software Developer for the project, and as a Team Lead to one of the project’s teams. Leads and manages a team of up to 4 team members during project, covering Web Designers, QA Engineers and Software Engineers.",
+        "Coding and software design",
+        "Runs SCRUM meeting / daily stand-ups",
+        "Once in every 2 weeks, conducts iteration planning and retrospective",
+        "Appointed as Single Point of Contact (SPOC) for third party B2C integration partner",
+        "Prepares and provides API releases documentation to partners."
+    ],
+    "htmlElementId": "h3projIntelligent"
+}]
