@@ -23,15 +23,14 @@
   <h2 id="h2Skills"> Technical Skills</h2>
   <div>
     <table class="table table-striped table-responsive-sm">
-      <caption id="techSkillsTableCaption">⭐ skills acquired through project experience of 5 years or greater
+      <caption id="techSkillsTableCaption"><i class="fa fa-fw fa-star star-orange"></i> skills acquired through project experience of 5 years or greater
       </caption>
       <tr *ngFor="let skillCategory of technicalSkillCategories">
         <td class="w-25">{{skillCategory.name}}</td>
         <td>
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let skill of skillCategory.skills">
-              <span *ngIf="skill.starred">⭐</span><span *ngIf="!skill.starred" style="visibility: hidden">󠀠⬜️</span>
-              {{skill.name}}
+              <i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i> {{skill.name}}
             </li>
           </ul>
         </td>
