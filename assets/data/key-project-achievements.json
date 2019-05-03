@@ -2,11 +2,11 @@
     "title":"Activities Management / Subcontractor Portal",
     "fromDate": "2016-11-01T00:00:00.000Z",
     "toDate": null,
-    "company": "City Facilities Management",
-    "client": "(inhouse software applications)",
+    "companyName": "City Facilities Management",
+    "clientName": "(inhouse software applications)",
     "projectRole": "Development",
     "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api, .NET Core, EF Core, Angular 2+, AngularJs, Azure DevOps",
-    "description": "",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     "jobResponsibilities": [
         "Software development",
         "Integration between one Solution with another",
@@ -19,11 +19,11 @@
     "title":"Intelligent Tourism",
     "fromDate": "2015-11-01T00:00:00.000Z",
     "toDate": "2016-10-01T00:00:00.000Z",
-    "company": "Galasys Solutions",
-    "client": "Galasys Solutions",
+    "companyName": "Galasys Solutions",
+    "clientName": "Galasys Solutions",
     "projectRole": "Development/Team Lead",
     "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api 2, WCF, AngularJs, Bootstrap",
-    "description": "",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
     "jobResponsibilities": [
         "Acted as Software Developer for the project, and as a Team Lead to one of the project’s teams. Leads and manages a team of up to 4 team members during project, covering Web Designers, QA Engineers and Software Engineers.",
         "Coding and software design",
@@ -33,4 +33,34 @@
         "Prepares and provides API releases documentation to partners."
     ],
     "htmlElementId": "h3projIntelligent"
+},
+{
+    "title":"Submission Tracking and Rating System (“STAR System”)",
+    "fromDate": "2014-10-01T00:00:00.000Z",
+    "toDate": "2015-11-01T00:00:00.000Z",
+    "companyName": "Alfacom Technologies",
+    "clientName": "Perbadanan Insurans Deposit Malaysia (PIDM)",
+    "projectRole": "Development/Requirement Gathering",
+    "technologiesUsed": "ASP.NET MVC, WPF, AngularJs, Bootstrap, SQL Server Reporting Services",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "jobResponsibilities": [
+        "Met the users to study requirements.",
+        "Co-authored the User Requirement Specification (URS) Document with a senior.",
+        "Performed coding and software development. "
+    ],
+    "htmlElementId": "h3projStar"
+},
+{
+    "title":"Capital Gains Tax Worksheets (“CGT Worksheets”)",
+    "fromDate": "2013-05-01T00:00:00.000Z",
+    "toDate": "2014-09-01T00:00:00.000Z",
+    "companyName": "Alfacom Technologies",
+    "clientName": "Wolters Kluwer Asia Pacific",
+    "projectRole": "Development",
+    "technologiesUsed": "ASP.NET Web Forms, MySQL",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+    "jobResponsibilities": [
+        "Performed coding and software development. "
+    ],
+    "htmlElementId": "h3projCgtw"
 }]
