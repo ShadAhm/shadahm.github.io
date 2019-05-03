@@ -107,7 +107,10 @@ export class ResumeComponent implements OnInit {
     fromDate.add(months, 'months');
 
     let yearPortion = years > 0 ? years + ' years' : '';
+    if(years === 1) yearPortion = yearPortion.replace('years', 'year'); 
+
     let monthPortion = months > 0 ? ' ' + months + ' months' : '';
+    if(months === 1) monthPortion = monthPortion.replace('months', 'month'); 
 
     return yearPortion + monthPortion;
   }
