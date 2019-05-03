@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResumeContent, TechnicalSkillCategory, EmploymentHistory } from 'src/app/models/resume';
+import { ResumeContent, TechnicalSkillCategory, EmploymentHistory, KeyProjectAchievement } from 'src/app/models/resume';
 
 import { ResumeService } from 'src/app/services/resume.service';
 import * as moment from 'moment';
@@ -14,13 +14,14 @@ export class ResumeComponent implements OnInit {
   contents: ResumeContent[];
   technicalSkillCategories: TechnicalSkillCategory[];
   employmentHistories: EmploymentHistory[];
-
+  keyProjectAchievements: KeyProjectAchievement[];
   constructor(private resumeService: ResumeService) { }
 
   ngOnInit() {
     this.getResumeContents();
     this.getTechnicalSkills();
     this.getEmploymentHistories();
+    this.getKeyProjectAchievements(); 
   }
 
   scrollIntoView(elementId: string): void {
@@ -49,7 +50,7 @@ export class ResumeComponent implements OnInit {
       },
       {
         displayText: 'Key Project Achievements',
-        elementId: 'h2Employment',
+        elementId: 'h2KeyProject',
         children: [{
           displayText: 'Activities Management / Subcontractor Portal ',
           elementId: 'h3projActivities',
@@ -62,12 +63,12 @@ export class ResumeComponent implements OnInit {
         },
         {
           displayText: 'Submission Tracking and Rating System (“STAR System”)',
-          elementId: 'h3projIntelligent',
+          elementId: 'h3projStar',
           children: null
         },
         {
           displayText: 'Capital Gains Tax Worksheets (“CGT Worksheets”)',
-          elementId: 'h3projIntelligent',
+          elementId: 'h3projCgtw',
           children: null
         }]
       },
@@ -92,6 +93,13 @@ export class ResumeComponent implements OnInit {
     );
   }
 
+  getKeyProjectAchievements(): void {
+    this.resumeService.getKeyProjectAchievements().subscribe(
+      (response: KeyProjectAchievement[]) => { this.keyProjectAchievements = response },
+      (error) => { console.error("Error happened", error) }
+    );
+  }
+
   calculateEmploymentDuration(fromDateStr: string, toDateStr: string): string {
     let fromDate = moment(fromDateStr);
     let toDate = moment((new Date()).toISOString());
@@ -112,7 +120,7 @@ export class ResumeComponent implements OnInit {
     let monthPortion = months > 0 ? ' ' + months + ' months' : '';
     if(months === 1) monthPortion = monthPortion.replace('months', 'month'); 
 
-    return yearPortion + monthPortion;
+    return (yearPortion + monthPortion).trim();
   }
 
   calculateTotalYearsExp(): string {

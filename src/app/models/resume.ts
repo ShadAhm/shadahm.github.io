@@ -22,3 +22,16 @@ export class EmploymentHistory {
     public fromDate: string;
     public toDate: string;
 }
+
+export class KeyProjectAchievement {
+    public title: string;
+    public fromDate: string;
+    public toDate: string;
+    public companyName: string;
+    public clientName: string;
+    public projectRole: string;
+    public technologiesUsed: string;
+    public description: string;
+    public jobResponsibilities: string[];
+    public htmlElementId: string;
+}

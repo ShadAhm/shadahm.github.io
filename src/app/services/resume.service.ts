@@ -19,4 +19,9 @@ export class ResumeService {
     return this.httpClient.get('assets/data/employment-history.json')
       .pipe(map(res => res));
   }
+
+  getKeyProjectAchievements(): Observable<any> {
+    return this.httpClient.get('assets/data/key-project-achievements.json')
+      .pipe(map(res => res));
+  }
 }

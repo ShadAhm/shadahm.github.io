@@ -27,3 +27,11 @@ ol.contents-list {
 i.star-orange {
     color:orange; 
 }
+
+button.btn-back-to-top {
+    position:fixed;
+    bottom:1em;
+    right:1em;
+    z-index: 99; 
+    box-shadow: 1px 1px 1px 1px #ccc;
+}
