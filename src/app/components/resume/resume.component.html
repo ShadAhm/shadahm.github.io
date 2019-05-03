@@ -69,7 +69,7 @@
           <i class="text-muted" *ngIf="employmentHistory.toDate == null">present</i>
         </td>
         <td>
-          {{ calculateEmploymentDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
+          {{ calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
         </td>
       </tr>
     </tbody>
@@ -84,10 +84,16 @@
   </table>
 
   <h2 id="h2KeyProject">Key Project Achievements</h2>
-  <hr/> 
+  <hr />
   <div *ngFor="let keyProj of keyProjectAchievements">
     <h4 [id]="keyProj.htmlElementId">{{keyProj.title}}</h4>
-    <span class="text-muted">{{keyProj.fromDate | date:'MMM y'}} - {{ keyProj.fromDate | date:'MMM y' }} ({{ calculateEmploymentDuration(keyProj.fromDate, keyProj.toDate) }})</span>
+    <p class="text-muted">
+      <span>{{keyProj.fromDate | date:'MMM y'}}</span>
+      -
+      <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
+      <span *ngIf="keyProj.toDate === null"><i>present</i></span>
+      ({{ calculateTimeDuration(keyProj.fromDate, keyProj.toDate) }})
+    </p>
     <p>{{keyProj.description}}</p>
     <ul>
       <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
@@ -123,4 +129,5 @@
   </ul>
 </div>
 
-<button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i class="fa fa-arrow-up"></i> To Top</button>
+<button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i
+    class="fa fa-arrow-up"></i> To Top</button>

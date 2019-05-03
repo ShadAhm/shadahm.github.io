@@ -100,7 +100,7 @@ export class ResumeComponent implements OnInit {
     );
   }
 
-  calculateEmploymentDuration(fromDateStr: string, toDateStr: string): string {
+  calculateTimeDuration(fromDateStr: string, toDateStr: string): string {
     let fromDate = moment(fromDateStr);
     let toDate = moment((new Date()).toISOString());
 
@@ -128,7 +128,7 @@ export class ResumeComponent implements OnInit {
       let fromDateStr = this.employmentHistories[this.employmentHistories.length - 1].fromDate;
       let toDateStr = (new Date()).toISOString();
 
-      return this.calculateEmploymentDuration(fromDateStr, toDateStr);
+      return this.calculateTimeDuration(fromDateStr, toDateStr);
     }
   }
 
