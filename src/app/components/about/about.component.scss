@@ -1,3 +1,5 @@
+@import "./../../../variables.scss";
+
 div.about-me-panel {
   font-size: 0.8rem;
 }
@@ -16,7 +18,11 @@ ul.about-me-actionslist {
   }
 
   li:hover {
-    background-color:lightblue; 
-    color:white;
+    background-color:$shad-orange; 
+
+    a.btn {
+      color:black;
+      text-decoration: none; 
+    }
   }
 }
