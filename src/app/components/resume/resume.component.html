@@ -1,6 +1,5 @@
-<!-- <button class="btn m-2 d-none d-md-block" (click)="print()"><i class="fa fa-print"></i> Print this resume</button> -->
 <div class="bg-white p-2">
-  <div class="row">
+  <div class="row d-print-none">
     <div class="col">
       <ol class="contents-list" id="olContentsList">
         <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
@@ -22,112 +21,135 @@
         (internal or external) should be created with the user first-in-mind, providing sufficient navigation, and
         should be designed with complexities that requires training as little as possible.</p>
       <p>Feedbacks and comments are very welcome. Get in touch. </p>
+      <div class="d-none d-md-inline-block d-print-none my-4">
+        <button class="btn btn-sm btn-primary mr-2" (click)="print()"><i class="fa fa-print"></i> Print this resume</button>
+        <button class="btn btn-sm btn-primary" disabled="disabled" (click)="print()"><i class="fa fa-file-pdf-o"></i> Download PDF copy (coming soon)</button>
+      </div>
     </div>
   </div>
 
-  <h2 id="h2Skills"> Technical Skills</h2>
-  <div>
-    <table class="table table-striped table-responsive-sm">
-      <caption id="techSkillsTableCaption"><i class="fa fa-fw fa-star star-orange"></i> skills acquired through project
-        experience of 5 years or greater
-      </caption>
-      <tr *ngFor="let skillCategory of technicalSkillCategories">
-        <td class="w-25">{{skillCategory.name}}</td>
-        <td>
-          <ul class="list-group">
-            <li class="list-group-item" *ngFor="let skill of skillCategory.skills">
-              <i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i> {{skill.name}}
-            </li>
-          </ul>
-        </td>
-      </tr>
+  <div class="d-none d-print-block">
+    <h2>Arsyad Ahmad <small>(pref: Shad Ahmad)</small></h2>
+    <table class="table table-condensed table-borderless">
+      <tr>
+          <td>Date of Birth: </td>
+          <td>2 August 1990</td>
+        </tr>
+      <tr>
+          <td>E-mail: </td>
+          <td>arsh90@gmail.com</td>
+        </tr>
     </table>
 
+    <p class="panel"><strong>Note:</strong> An online (better) version of this resume can be viewed at <u>https://shadahm.github.io/resume</u></p>
   </div>
 
-  <h2 id="h2Employment">Employment History</h2>
-  <table class="table table-responsive-sm">
-    <thead>
-      <tr>
-        <th>Company Name</th>
-        <th>Position Held</th>
-        <th>From</th>
-        <th>To</th>
-        <th>Year(s) in Company</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let employmentHistory of employmentHistories">
-        <td>
-          <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
-          <sup *ngFor="let asterisk of employmentHistory.companySubcripts"> {{asterisk}}</sup>
-        </td>
-        <td>{{employmentHistory.position}}</td>
-        <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
-        <td>
-          {{employmentHistory.toDate | date:'MMM y'}}
-          <i class="text-muted" *ngIf="employmentHistory.toDate == null">present</i>
-        </td>
-        <td>
-          {{ calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
-        </td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <td colspan="4"><strong class="pull-right">Total Years Exp: </strong></td>
-        <td>
-          <span>{{ calculateTotalYearsExp() }}</span>
-        </td>
-      </tr>
-    </tfoot>
-  </table>
+  <div id="printableArea">
+    <h2 id="h2Skills"> Technical Skills</h2>
+    <div>
+      <table class="table table-striped table-responsive-sm">
+        <caption id="techSkillsTableCaption"><i class="fa fa-fw fa-star star-orange"></i> skills acquired through
+          project
+          experience of 5 years or greater
+        </caption>
+        <tr *ngFor="let skillCategory of technicalSkillCategories">
+          <td class="w-25">{{skillCategory.name}}</td>
+          <td>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let skill of skillCategory.skills">
+                <i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i> {{skill.name}}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </table>
 
-  <h2 id="h2KeyProject">Key Project Achievements</h2>
-  <hr />
-  <div *ngFor="let keyProj of keyProjectAchievements">
-    <h4 [id]="keyProj.htmlElementId">{{keyProj.title}}</h4>
-    <p class="text-muted">
-      <span>{{keyProj.fromDate | date:'MMM y'}}</span>
-      -
-      <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
-      <span *ngIf="keyProj.toDate === null"><i>present</i></span>
-      ({{ calculateTimeDuration(keyProj.fromDate, keyProj.toDate) }})
-    </p>
-    <p>{{keyProj.description}}</p>
-    <ul>
-      <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
+    </div>
+
+    <h2 id="h2Employment">Employment History</h2>
+    <table class="table table-responsive-sm">
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Position Held</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Year(s) in Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employmentHistory of employmentHistories">
+          <td>
+            <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
+            <sup *ngFor="let asterisk of employmentHistory.companySubcripts"> {{asterisk}}</sup>
+          </td>
+          <td>{{employmentHistory.position}}</td>
+          <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
+          <td>
+            {{employmentHistory.toDate | date:'MMM y'}}
+            <i class="text-muted" *ngIf="employmentHistory.toDate == null">present</i>
+          </td>
+          <td>
+            {{ calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4"><strong class="pull-right">Total Years Exp: </strong></td>
+          <td>
+            <span>{{ calculateTotalYearsExp() }}</span>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <h2 id="h2KeyProject">Key Project Achievements</h2>
+    <hr />
+    <div *ngFor="let keyProj of keyProjectAchievements">
+      <h4 [id]="keyProj.htmlElementId">{{keyProj.title}}</h4>
+      <p class="text-muted">
+        <span>{{keyProj.fromDate | date:'MMM y'}}</span>
+        -
+        <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
+        <span *ngIf="keyProj.toDate === null"><i>present</i></span>
+        ({{ calculateTimeDuration(keyProj.fromDate, keyProj.toDate) }})
+      </p>
+      <p>{{keyProj.description}}</p>
+      <ul>
+        <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
+      </ul>
+    </div>
+
+    <h2 id="h2Education">Certifications & Education</h2>
+    <hr />
+    <h4>Certifications</h4>
+    <ul class="education-list">
+      <li>
+        CityFM Management Extension Program<br />
+        2018
+      </li>
+      <li>
+        Microsoft Certified Solutions Developer (MCSD) <br />
+        2013
+      </li>
+    </ul>
+
+    <h4>Education</h4>
+    <ul class="education-list">
+      <li>
+        Diploma in Multimedia (CGPA: 3.08)<br />
+        Universiti Kuala Lumpur<br />
+        2010
+      </li>
+      <li>
+        GCSE (O-Level)<br />
+        Heaton Manor School<br />
+        2006
+      </li>
     </ul>
   </div>
 
-  <h2 id="h2Education">Certifications & Education</h2>
-  <hr />
-  <h4>Certifications</h4>
-  <ul class="education-list">
-    <li>
-      CityFM Management Extension Program<br />
-      2018
-    </li>
-    <li>
-      Microsoft Certified Solutions Developer (MCSD) <br />
-      2013
-    </li>
-  </ul>
-
-  <h4>Education</h4>
-  <ul class="education-list">
-    <li>
-      Diploma in Multimedia (CGPA: 3.08)<br />
-      Universiti Kuala Lumpur<br />
-      2010
-    </li>
-    <li>
-      GCSE (O-Level)<br />
-      Heaton Manor School<br />
-      2006
-    </li>
-  </ul>
+  <button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i
+      class="fa fa-arrow-up"></i> To Top</button>
 </div>
-
-<button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i
-    class="fa fa-arrow-up"></i> To Top</button>
