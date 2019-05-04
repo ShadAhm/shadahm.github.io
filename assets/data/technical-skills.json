@@ -1,34 +1,34 @@
 [{
     "name": "Software Development Frameworks",
     "skills": [
-        {"name":"ASP.NET MVC, ASP.NET Core", "starred": true},
-        {"name":"Entity Framework", "starred": true},
-        {"name":"ASP.NET Web Api", "starred": true},
-        {"name":"ASP.NET Web Forms", "starred": false},
-        {"name":"WPF", "starred": false},
-        {"name":"Android Native / Java", "starred": false}
+        {"name":"ASP.NET MVC, ASP.NET Core", "starred": true, "workSamples" : []},
+        {"name":"Entity Framework", "starred": true, "workSamples" : []},
+        {"name":"ASP.NET Web Api", "starred": true, "workSamples" : []},
+        {"name":"ASP.NET Web Forms", "starred": false, "workSamples" : []},
+        {"name":"WPF", "starred": false, "workSamples" : []},
+        {"name":"Android Native / Java", "starred": false, "workSamples" : []}
     ]
 },
 {
     "name": "Client-Side Frameworks",
     "skills": [
-        {"name":"Angular 2+, Angular CLI, Node.js", "starred": true},
-        {"name":"AngularJs", "starred": true},
-        {"name":"TypeScript", "starred": true},
-        {"name":"Bootstrap", "starred": true},
-        {"name":"Material UI", "starred": false}
+        {"name":"Angular 2+, Angular CLI, Node.js", "starred": true, "workSamples" : []},
+        {"name":"AngularJs", "starred": true, "workSamples" : ["https://github.com/ShadAhm/angularJs.keruC"]},
+        {"name":"TypeScript", "starred": true, "workSamples" : []},
+        {"name":"Bootstrap", "starred": true, "workSamples" : []},
+        {"name":"Material UI", "starred": false, "workSamples" : []}
     ]
 },
 {
     "name": "RDBMS",
     "skills": [
-        {"name":"Microsoft SQL Server", "starred": true}
+        {"name":"Microsoft SQL Server", "starred": true, "workSamples" : []}
     ]
 },
 {
     "name": "Etc",
     "skills": [
-        {"name":"Git", "starred": true},
-        {"name":"Azure DevOps", "starred": false}
+        {"name":"Git", "starred": true, "workSamples" : []},
+        {"name":"Azure DevOps", "starred": false, "workSamples" : []}
     ]
 }]
