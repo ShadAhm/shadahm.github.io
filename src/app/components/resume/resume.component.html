@@ -66,9 +66,9 @@
           <tbody>
             <tr *ngFor="let skill of skillCategory.skills">
               <td><i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i> {{skill.name}}</td>
-              <td >
+              <td class="d-print-none">
                 <span *ngIf="skill.workSamples" class="sample-work-link">
-                  <a *ngFor="let workSample of skill.workSamples" [href]="workSample" class="d-print-none"><i class="fa fa-github"></i>
+                  <a *ngFor="let workSample of skill.workSamples" [href]="workSample"><i class="fa fa-github"></i>
                     sample work</a>
                 </span>
               </td>
