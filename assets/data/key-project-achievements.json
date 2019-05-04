@@ -1,66 +1,68 @@
-[{
-    "title":"Activities Management / Subcontractor Portal",
-    "fromDate": "2016-11-01T00:00:00.000Z",
-    "toDate": null,
-    "companyName": "City Facilities Management",
-    "clientName": "(inhouse software applications)",
-    "projectRole": "Development",
-    "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api, .NET Core, EF Core, Angular 2+, AngularJs, Azure DevOps",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-    "jobResponsibilities": [
-        "Software development",
-        "Integration between one Solution with another",
-        "Branch-merging and deployment into UAT",
-        "Attend requirement gathering meetings"
-    ],
-    "htmlElementId": "h3projActivities"
-},
-{
-    "title":"Intelligent Tourism",
-    "fromDate": "2015-11-01T00:00:00.000Z",
-    "toDate": "2016-10-01T00:00:00.000Z",
-    "companyName": "Galasys Solutions",
-    "clientName": "Galasys Solutions",
-    "projectRole": "Development/Team Lead",
-    "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api 2, WCF, AngularJs, Bootstrap",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-    "jobResponsibilities": [
-        "Acted as Software Developer for the project, and as a Team Lead to one of the project’s teams. Leads and manages a team of up to 4 team members during project, covering Web Designers, QA Engineers and Software Engineers.",
-        "Coding and software design",
-        "Runs SCRUM meeting / daily stand-ups",
-        "Once in every 2 weeks, conducts iteration planning and retrospective",
-        "Appointed as Single Point of Contact (SPOC) for third party B2C integration partner",
-        "Prepares and provides API releases documentation to partners."
-    ],
-    "htmlElementId": "h3projIntelligent"
-},
-{
-    "title":"Submission Tracking and Rating System (“STAR System”)",
-    "fromDate": "2014-10-01T00:00:00.000Z",
-    "toDate": "2015-11-01T00:00:00.000Z",
-    "companyName": "Alfacom Technologies",
-    "clientName": "Perbadanan Insurans Deposit Malaysia (PIDM)",
-    "projectRole": "Development/Requirement Gathering",
-    "technologiesUsed": "ASP.NET MVC, WPF, AngularJs, Bootstrap, SQL Server Reporting Services",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-    "jobResponsibilities": [
-        "Met the users to study requirements.",
-        "Co-authored the User Requirement Specification (URS) Document with a senior.",
-        "Performed coding and software development. "
-    ],
-    "htmlElementId": "h3projStar"
-},
-{
-    "title":"Capital Gains Tax Worksheets (“CGT Worksheets”)",
-    "fromDate": "2013-05-01T00:00:00.000Z",
-    "toDate": "2014-09-01T00:00:00.000Z",
-    "companyName": "Alfacom Technologies",
-    "clientName": "Wolters Kluwer Asia Pacific",
-    "projectRole": "Development",
-    "technologiesUsed": "ASP.NET Web Forms, MySQL",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
-    "jobResponsibilities": [
-        "Performed coding and software development. "
-    ],
-    "htmlElementId": "h3projCgtw"
-}]
+[
+    {
+        "title": "Jobs API / Subcontractor Portal",
+        "fromDate": "2016-11-01T00:00:00.000Z",
+        "toDate": null,
+        "companyName": "City Facilities Management",
+        "clientName": "(inhouse software applications)",
+        "projectRole": "Development",
+        "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api, .NET Core, EF Core, Angular 2+, AngularJs, Azure DevOps",
+        "description": "My job in this company involves continous development in a number of in-house applications that are assigned to my team. The two that I choose to name here are Jobs API, and Subcontractor Portal. This company keeps tracks of millions of facilities maintenance jobs performed by subcontractors, across 3 countries. The subcontractor portal (which integrates with Jobs API) allows the subcontractors to close down jobs, submit invoices, upgrades, and browse documents. The subcontractor portal uses a dual authorization system with ADFS-based SSO (for internal users), and OpenID Connect (for external users). The Jobs API uses OAuth authentication.",
+        "jobResponsibilities": [
+            "Software development",
+            "Integration between one application with another",
+            "Branch-merging and deployment into UAT",
+            "Attend requirement gathering meetings"
+        ],
+        "htmlElementId": "h3projActivities"
+    },
+    {
+        "title": "Intelligent Tourism",
+        "fromDate": "2015-11-01T00:00:00.000Z",
+        "toDate": "2016-10-01T00:00:00.000Z",
+        "companyName": "Galasys Solutions",
+        "clientName": "Galasys Solutions",
+        "projectRole": "Development/Team Lead",
+        "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api 2, WCF, AngularJs, Bootstrap",
+        "description": "I listed Intelligent Tourism here because it was by far the most ambitious project that I have ever been involved in. iTourism was not an application, but an ecosystem. Containing an eCommerce site (the B2C), an admin site (the B2B), a point-of-sale (POS) system, and a Web Api as a central system, that can also be consumed by third-party B2C partner sites. My primary development contribution was in the Web Api side of things, but I was also placed as an informal lead of the B2C team. The project was ultimately a failure as it did not come to fruition, and the company eventually closed down.",
+        "jobResponsibilities": [
+            "Acted as Software Developer for the project, and as a Team Lead to one of the project’s teams. Leads and manages a team of up to 4 team members during project, covering Web Designers, QA Engineers and Software Engineers.",
+            "Coding and software design",
+            "Runs SCRUM meeting / daily stand-ups",
+            "Once in every 2 weeks, conducts iteration planning and retrospective",
+            "Appointed as Single Point of Contact (SPOC) for third party B2C integration partner",
+            "Prepares and provides API releases documentation to partners."
+        ],
+        "htmlElementId": "h3projIntelligent"
+    },
+    {
+        "title": "Submission Tracking and Rating System",
+        "fromDate": "2014-10-01T00:00:00.000Z",
+        "toDate": "2015-11-01T00:00:00.000Z",
+        "companyName": "Alfacom Technologies",
+        "clientName": "Perbadanan Insurans Deposit Malaysia (PIDM)",
+        "projectRole": "Development/Requirement Gathering",
+        "technologiesUsed": "ASP.NET MVC, WPF, AngularJs, Bootstrap, SQL Server Reporting Services",
+        "description": "STARS was a memorable project for me as it was fun to develop for. Through this project I get to see the amount of efficiency that can be gained from a good software solution. Our client was an organization that enforces all banks in Malaysia to submit a set of documents each year, the submitted documents (which are normally in the form of large Excel files) are normally given to the client's staff by a hard disk, and then manually processed to output a \"Rating\" that determines a bank's premium. This process takes them many weeks to complete, which through our software was largely reduced.",
+        "jobResponsibilities": [
+            "Met the users to study requirements.",
+            "Co-authored the User Requirement Specification (URS) Document with a senior.",
+            "Performed coding and software development. "
+        ],
+        "htmlElementId": "h3projStar"
+    },
+    {
+        "title": "Capital Gains Tax Worksheets",
+        "fromDate": "2013-05-01T00:00:00.000Z",
+        "toDate": "2014-09-01T00:00:00.000Z",
+        "companyName": "Alfacom Technologies",
+        "clientName": "Wolters Kluwer Asia Pacific",
+        "projectRole": "Development",
+        "technologiesUsed": "ASP.NET Web Forms, ADO.NET, MySQL, jQuery, Telerik RadControls",
+        "description": "Capital Gains Tax Worksheets (or CGTW) was my earliest experience working with a large team, and my first experience working with SCRUM. Throughout the project, there was an average of 5 developers and 2 testers within the development team. The application's core purpose is processing historical stocks data with the intent of calculating and predicting capital gains tax.  Architecturally, it was a ASP.NET Web Forms project with ADO.NET data access layer. This project had a heavy reliance on Stored Procedures.",
+        "jobResponsibilities": [
+            "Performed coding and software development. "
+        ],
+        "htmlElementId": "h3projCgtw"
+    }
+]
