@@ -52,24 +52,25 @@
 
     <div id="printableArea">
       <h2 id="h2Skills"> Technical Skills</h2>
-      <table class="table table-condensed table-bordered table-hover table-responsive-sm">
+      <table class="table table-responsive-sm">
         <caption><i class="fa fa-fw fa-star star-orange"></i> skills acquired through
           project
           experience of 5 years or greater
         </caption>
-        <ng-container *ngFor="let skillCategory of technicalSkillCategories">
-          <thead>
+        <thead>
             <tr>
-              <th colspan=2>{{skillCategory.name}}</th>
+              <th>Skill</th>
+              <th class="d-print-none">Public work sample(s)</th>
             </tr>
           </thead>
+        <ng-container *ngFor="let skillCategory of technicalSkillCategories">
           <tbody>
             <tr *ngFor="let skill of skillCategory.skills">
               <td><i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i> {{skill.name}}</td>
               <td class="d-print-none">
-                <span *ngIf="skill.workSamples" class="sample-work-link">
-                  <a *ngFor="let workSample of skill.workSamples" [href]="workSample"><i class="fa fa-github"></i>
-                    sample work</a>
+                <span *ngIf="skill.workSamples" class="sample-work-link small">
+                  <a *ngFor="let workSample of skill.workSamples" [href]="workSample.url">
+                    [{{workSample.label}}]</a>
                 </span>
               </td>
             </tr>

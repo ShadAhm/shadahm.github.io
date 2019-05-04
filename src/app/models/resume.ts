@@ -12,7 +12,12 @@ export class TechnicalSkillCategory {
 export class TechnicalSkill {
     public name: string; 
     public starred: boolean; 
-    public workSamples: string[]; 
+    public workSamples: WorkSample[]; 
+}
+
+export class WorkSample {
+    public label: string;
+    public url:string; 
 }
 
 export class EmploymentHistory {
