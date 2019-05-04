@@ -10,7 +10,7 @@
         "description": "My job in this company involves continous development in a number of in-house applications that are assigned to my team. The two that I choose to name here are Jobs API, and Subcontractor Portal. This company keeps tracks of millions of facilities maintenance jobs performed by subcontractors, across 3 countries. The subcontractor portal (which integrates with Jobs API) allows the subcontractors to close down jobs, submit invoices, upgrades, and browse documents. The subcontractor portal uses a dual authorization system with ADFS-based SSO (for internal users), and OpenID Connect (for external users). The Jobs API uses OAuth authentication.",
         "jobResponsibilities": [
             "Software development",
-            "Integration between one Solution with another",
+            "Integration between one application with another",
             "Branch-merging and deployment into UAT",
             "Attend requirement gathering meetings"
         ],
