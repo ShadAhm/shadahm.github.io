@@ -52,7 +52,7 @@ export class ResumeComponent implements OnInit {
         displayText: 'Key Project Achievements',
         elementId: 'h2KeyProject',
         children: [{
-          displayText: 'Activities Management / Subcontractor Portal ',
+          displayText: 'Jobs API / Subcontractor Portal ',
           elementId: 'h3projActivities',
           children: null
         },
@@ -62,12 +62,12 @@ export class ResumeComponent implements OnInit {
           children: null
         },
         {
-          displayText: 'Submission Tracking and Rating System (“STAR System”)',
+          displayText: 'Submission Tracking and Rating System',
           elementId: 'h3projStar',
           children: null
         },
         {
-          displayText: 'Capital Gains Tax Worksheets (“CGT Worksheets”)',
+          displayText: 'Capital Gains Tax Worksheets',
           elementId: 'h3projCgtw',
           children: null
         }]
