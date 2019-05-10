@@ -8,12 +8,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentHeaderComponent } from './components/content-header/content-header.component';
 import { AboutComponent } from './components/about/about.component';
-import { HomeComponent } from './components/home/home.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { BlogComponent } from './components/blog/blog.component';
 
 // services
 import { ResumeService } from './services/resume.service';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,9 @@ import { ResumeService } from './services/resume.service';
     HeaderComponent,
     ContentHeaderComponent,
     AboutComponent,
-    HomeComponent,
     ResumeComponent,
-    BlogComponent
+    BlogComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

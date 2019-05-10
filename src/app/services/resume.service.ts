@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs/operators";
 import { Observable } from 'rxjs';
-import { EmploymentHistory } from '../models/resume';
 
 @Injectable({
   providedIn: 'root'
