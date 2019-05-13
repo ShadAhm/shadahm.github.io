@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Test blog post",
+        "description": "This is a test blog post, lorem ipsum. Now that our blog-view is ready, we could add our blog-post-view. As we did previously we need to add MarkdownModule.forChild() to the module but we also need to define the parameter of the route (‘:id’) which will allow us to retrieve the post to load",
+        "publishedDate": "2012-04-01T00:00:00.000Z",
+        "fileName": "test.md",
+        "tags": [
+            "C#",
+            "Architecture"
+        ]
+    },
+    {
+        "title": "Test blog post 2",
+        "description": "This is a test blog post, lorem ipsum. Now that our blog-view is ready, we could add our blog-post-view. As we did previously we need to add MarkdownModule.forChild() to the module but we also need to define the parameter of the route (‘:id’) which will allow us to retrieve the post to load",
+        "publishedDate": "2010-04-01T00:00:00.000Z",
+        "fileName": "test.md",
+        "tags": [
+            "TypeScript",
+            "Angular CLI"
+        ]
+    }
+]

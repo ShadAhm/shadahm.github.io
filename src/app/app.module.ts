@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { MarkdownModule } from 'ngx-markdown'; 
 
 // components
 import { AppComponent } from './app.component';
@@ -28,7 +29,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MarkdownModule.forRoot()
   ],
   providers: [
     ResumeService
