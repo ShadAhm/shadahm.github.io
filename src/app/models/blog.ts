@@ -3,4 +3,5 @@ export class BlogPost {
     public title: string;
     public description: string;
     public publishedDate: string;
+    public tags: string[]; 
 }
