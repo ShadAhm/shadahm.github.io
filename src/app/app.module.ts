@@ -15,6 +15,7 @@ import { BlogComponent } from './components/blog/blog.component';
 // services
 import { ResumeService } from './services/resume.service';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { BlogPostComponent } from './components/blog-post/blog-post.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
     AboutComponent,
     ResumeComponent,
     BlogComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    BlogPostComponent
   ],
   imports: [
     BrowserModule,

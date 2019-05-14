@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-body">
+    <h5><a href="http://">{{ post.title }}</a></h5>
+    <p>{{post.description}}</p>
+    <div>
+      <small>Published on {{post.publishedDate | date:'d MMM y'}}</small> <span class="bullet-saparator">&bull;</span>
+      <span *ngFor="let tag of post.tags" class="badge badge-pill badge-light">{{tag}}</span>
+    </div>
+  </div>
+</div>
