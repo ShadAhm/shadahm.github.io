@@ -20,6 +20,6 @@ export class BlogComponent implements OnInit {
     this.blogService.getBlogPosts().subscribe(
       (response: BlogPost[]) => { this.posts = response },
       (error) => { console.error("Error happened", error) }
-    );;
+    );
   }
 }

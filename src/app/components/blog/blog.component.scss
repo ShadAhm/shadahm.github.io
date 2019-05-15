@@ -1,5 +1,8 @@
 div.blog-post {
-    border-bottom:2px dashed #f2f2f2; 
+    border-bottom:2px dotted #f8f9fa; 
+}
+div.blog-body div.blog-post:last-child {
+    border-bottom:none; 
 }
 
 div.blog-post span.bullet-saparator {
