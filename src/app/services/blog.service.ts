@@ -16,14 +16,12 @@ export class BlogService {
       .pipe(map(res => res));
   }
 
-  getBlogPost(name : string): Observable<any> {
-    return this.httpClient.get('assets/data/blog-posts.json')
+  getBlogPost(name: string): Observable<BlogPost> {
+    return this.httpClient.get<BlogPost[]>('assets/data/blog-posts.json')
       .pipe(map(res => {
-        let o = res as BlogPost[]; 
-
-        for (let index = 0; index < o.length; index++) {
-          if(o[index].fileName === name + '.md') {
-            return o[index]; 
+        for (let i = 0; i < res.length; i++) {
+          if (res[i].name === name) {
+            return res[i];
           }
         }
       }));

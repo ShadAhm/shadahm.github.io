@@ -11,16 +11,28 @@ import { BlogService } from 'src/app/services/blog.service';
 export class BlogPostComponent implements OnInit {
   post: BlogPost;
   name: string;
+  filePath: string;
+  blog404: boolean;
 
-  constructor(private activatedRoute : ActivatedRoute, private blogService : BlogService) { }
+  constructor(private activatedRoute: ActivatedRoute, private blogService: BlogService) { }
 
   ngOnInit() {
     this.post = new BlogPost();
 
     this.activatedRoute.paramMap.subscribe(params => {
       this.name = params.get("name");
+      this.filePath = `assets/blogs/${this.name}.md`;
+      this.blogService.getBlogPost(this.name).subscribe(res => {
+        this.post = res; 
 
-      this.blogService.getBlogPost(this.name).subscribe(resData => this.post = resData); 
+        if (res == null) {
+          this.blog404 = true;
+        }
+      }, this.onGetBlogPostError);
     })
+  }
+
+  onGetBlogPostError(error: any): void {
+    console.error('Blog not found');
   }
 }
