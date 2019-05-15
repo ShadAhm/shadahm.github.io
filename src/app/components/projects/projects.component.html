@@ -1,8 +1,14 @@
 <div class="card mb-2">
-  <div class="card-body">
-    <h5 class="card-title">angularJs.keruC</h5>
-    <p class="card-text">Seat map picker built with AngularJs 1.x and HTML5 Canvas</p>
-    <a href="https://github.com/ShadAhm/angularJs.keruC" class="card-link">View Repository</a>
-    <a href="https://shadahm.github.io/angularJs.keruC" class="card-link">View Demo</a>
+  <div class="card-body" *ngIf="data">
+    <h5 class="card-title">{{data.name}}</h5>
+    <p class="card-text">{{data.description}}</p>
+    <a class="card-link" [href]="data.url">View Repository</a>
+    <a class="card-link" [href]="data.homepage">View Demo</a>
+    <a class="card-link" [href]="data.stargazers_url">
+      <i class="fa fa-star"></i> {{data.stargazers_count}}
+    </a>
+    <a class="card-link" [href]="data.forks_url">
+      <i class="fa fa-code-fork"></i> {{data.forks_count}}
+    </a>
   </div>
 </div>
