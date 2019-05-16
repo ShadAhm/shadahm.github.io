@@ -20,5 +20,5 @@ The creative contents of this site are subject to copyright.
 
 You are free to use the source code of this site to learn from it or to create your own version of the site, but I request that you modify enough of the look and feel as to not become a carbon-copy of mine. 
 
-This project is licensed under the MIT license, which can be read [here](https://github.com/ShadAhm/shadahm.github.io/blob/master/LICENSE).
+This project is licensed under the MIT license, which can be read [here](https://github.com/ShadAhm/shadahm.github.io/blob/dev/LICENSE).
 
