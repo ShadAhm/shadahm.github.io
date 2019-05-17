@@ -8,3 +8,8 @@ export interface GithubRepository {
     watchers_count: number;
 }
 
+export interface SelectRepository {
+    name: string;
+    descriptionOverride: string; 
+    hasDemo: boolean; 
+}

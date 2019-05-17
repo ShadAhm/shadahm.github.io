@@ -1,0 +1,14 @@
+<div class="card mb-2">
+  <div class="card-body" *ngIf="repo">
+    <h5 class="card-title">{{repo.name}}</h5>
+    <p class="card-text">{{repo.description}}</p>
+    <a class="card-link" [href]="repo.html_url">View Repository</a>
+    <a class="card-link" *ngIf="data.hasDemo" [href]="repo.homepage">View Demo</a>
+    <a class="card-link" *ngIf="repo.stargazers_count > 0" [href]="repo.html_url + '/stargazers'">
+      <i class="fa fa-star"></i> {{repo.stargazers_count}}
+    </a>
+    <a class="card-link" *ngIf="repo.forks_count > 0" [href]="repo.html_url + '/network/members'">
+      <i class="fa fa-code-fork"></i> {{repo.forks_count}}
+    </a>
+  </div>
+</div>

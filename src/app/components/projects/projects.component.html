@@ -1,14 +1,3 @@
-<div class="card mb-2">
-  <div class="card-body" *ngIf="data">
-    <h5 class="card-title">{{data.name}}</h5>
-    <p class="card-text">{{data.description}}</p>
-    <a class="card-link" [href]="data.html_url">View Repository</a>
-    <a class="card-link" [href]="data.homepage">View Demo</a>
-    <a class="card-link" [href]="data.html_url + '/stargazers'">
-      <i class="fa fa-star"></i> {{data.stargazers_count}}
-    </a>
-    <a class="card-link" [href]="data.html_url + '/network/members'">
-      <i class="fa fa-code-fork"></i> {{data.forks_count}}
-    </a>
-  </div>
+<div *ngFor="let repository of repositories">
+  <app-project-card [data]="repository"></app-project-card>
 </div>

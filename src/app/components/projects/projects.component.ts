@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from 'src/app/services/projects.service';
-import { GithubRepository } from 'src/app/models/github';
+import { GithubRepository, SelectRepository } from 'src/app/models/github';
 
 @Component({
   selector: 'app-projects',
@@ -8,17 +8,17 @@ import { GithubRepository } from 'src/app/models/github';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  data: any;
+  repositories: SelectRepository[];
 
   constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
-    this.getRepoInfo();
+    this.getReposInformation();
   }
 
-  getRepoInfo() {
-    this.projectsService.getGitHubRepoInfo('angularJs.keruC').subscribe((res: GithubRepository) => {
-      this.data = res; console.log(this.data);
+  getReposInformation() {
+    this.projectsService.getSelectedRepositories().subscribe((res: SelectRepository[]) => {
+      this.repositories = res;
     });
   }
 }
