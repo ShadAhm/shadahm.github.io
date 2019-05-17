@@ -1,13 +1,20 @@
-<div class="card">
-    <div class="card-body blog-body">
-        <div *ngFor="let post of posts" class="blog-post mb-4 pb-2">
-            <h5><a [routerLink]="[post.name]">{{ post.title }}</a></h5>
-            <p>{{post.description}}</p>
-            <div>
-                <small>Published on {{post.publishedDate | date:'d MMM y'}}</small> <span
-                    class="bullet-saparator">&bull;</span> <span *ngFor="let tag of post.tags"
-                    class="badge badge-pill badge-light">{{tag}}</span>
-            </div>
+<div class="alert alert-warning" role="alert">
+    <h5>
+        Work in progress. Watch this space
+    </h5>
+    <p>
+        Thanks for visiting. However this section of the site is still a work in progress. I choose to keep this
+        up for those who are interested to view and follow the development progress. I commit a few times a week. 
+    </p>
+</div>
+<div class="card mb-2" *ngFor="let post of posts">
+    <div class="card-body">
+        <h5 class="card-title"><a [routerLink]="[post.name]">{{ post.title }}</a></h5>
+        <p class="card-text">{{post.description}}</p>
+        <div>
+            <small>Published on {{post.publishedDate | date:'d MMM y'}}</small> <span
+                class="bullet-saparator">&bull;</span> <span *ngFor="let tag of post.tags"
+                class="badge badge-pill badge-light">{{tag}}</span>
         </div>
     </div>
 </div>

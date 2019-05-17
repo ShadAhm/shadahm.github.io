@@ -1,11 +1,4 @@
-div.blog-post {
-    border-bottom:2px dotted #f8f9fa; 
-}
-div.blog-body div.blog-post:last-child {
-    border-bottom:none; 
-}
-
-div.blog-post span.bullet-saparator {
+span.bullet-saparator {
     margin-left:0.5rem;
     margin-right:0.5rem; 
     opacity: 0.5;
