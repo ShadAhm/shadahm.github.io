@@ -2,27 +2,11 @@
 
 div.about-me-panel {
   font-size: 0.8rem;
+
+  div.about-me-content a {
+    display:inline-block; 
+    line-height: 1.5rem; 
+  }
+
 }
     
-div.about-me-panel div.about-me-imagebox {
-  overflow: hidden; 
-}
-
-ul.about-me-actionslist {
-  list-style-type: none; 
-  padding-left:0; 
-
-  li {
-      padding:0; 
-      margin-left:0; 
-  }
-
-  li:hover {
-    background-color:$shad-orange; 
-
-    a.btn {
-      color:black;
-      text-decoration: none; 
-    }
-  }
-}
