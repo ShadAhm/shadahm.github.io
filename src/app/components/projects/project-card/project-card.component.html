@@ -1,5 +1,5 @@
-<div class="card mb-2">
-  <div class="card-body" *ngIf="repo">
+<div class="card mb-2" *ngIf="repo">
+  <div class="card-body">
     <h5 class="card-title">{{repo.name}}</h5>
     <p class="card-text">{{repo.description}}</p>
     <a class="card-link" [href]="repo.html_url">View Repository</a>
@@ -11,4 +11,21 @@
       <i class="fa fa-code-fork"></i> {{repo.forks_count}}
     </a>
   </div>
+</div>
+
+<div class="loading-bay" *ngIf="!repo">
+  <div class="card mb-2">
+      <div class="card-body">
+        <h5 class="card-title">Cool like fonzies</h5>
+        <p class="card-text">But I'm trying ringo. I'm trying real hard to be the shepherd</p>
+        <a class="card-link" href="#">View Repository</a>
+        <a class="card-link" href="#">View Demo</a>
+        <a class="card-link" href="#">
+          <i class="fa fa-star"></i> 99
+        </a>
+        <a class="card-link" href="#">
+          <i class="fa fa-code-fork"></i> 99
+        </a>
+      </div>
+    </div>
 </div>
