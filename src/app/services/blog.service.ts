@@ -11,8 +11,8 @@ export class BlogService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getBlogPosts(): Observable<any> {
-    return this.httpClient.get('assets/data/blog-posts.json')
+  getBlogPosts(): Observable<BlogPost[]> {
+    return this.httpClient.get<BlogPost[]>('assets/data/blog-posts.json')
       .pipe(map(res => res));
   }
 
