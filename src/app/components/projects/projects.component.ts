@@ -16,7 +16,7 @@ export class ProjectsComponent implements OnInit {
     this.getReposInformation();
   }
 
-  getReposInformation() {
+  getReposInformation(): void {
     this.projectsService.getSelectedRepositories().subscribe((res: SelectRepository[]) => {
       this.repositories = res;
     });
