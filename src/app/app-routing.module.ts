@@ -6,7 +6,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { BlogPostComponent } from './components/blog-post/blog-post.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'blog', pathMatch: 'full' },
+  { path: '', redirectTo: 'resume', pathMatch: 'full' },
   {
     path: 'resume',
     component: ResumeComponent,
