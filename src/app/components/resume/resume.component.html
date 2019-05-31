@@ -67,19 +67,17 @@
             <th class="d-print-none">Public work sample(s)</th>
           </tr>
         </thead>
-        <ng-container *ngFor="let skillCategory of technicalSkillCategories">
-          <tbody>
-            <tr *ngFor="let skill of skillCategory.skills">
-              <td><i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i> {{skill.name}}</td>
-              <td class="d-print-none">
-                <span *ngIf="skill.workSamples" class="sample-work-link small">
-                  <a *ngFor="let workSample of skill.workSamples" [href]="workSample.url">
-                    [{{workSample.label}}]</a>
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </ng-container>
+        <tbody>
+          <tr *ngFor="let skill of technicalSkills">
+            <td><i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i> {{skill.name}}</td>
+            <td class="d-print-none">
+              <span *ngIf="skill.workSamples" class="sample-work-link small">
+                <a *ngFor="let workSample of skill.workSamples" [href]="workSample.url">
+                  [{{workSample.label}}]</a>
+              </span>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from "rxjs/operators";
 import { Observable } from 'rxjs';
-import { EmploymentHistory, KeyProjectAchievement, TechnicalSkill, TechnicalSkillCategory } from '../models/resume';
+import { EmploymentHistory, KeyProjectAchievement, TechnicalSkill } from '../models/resume';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,8 @@ import { EmploymentHistory, KeyProjectAchievement, TechnicalSkill, TechnicalSkil
 export class ResumeService {
   constructor(private httpClient: HttpClient) { }
 
-  getTechnicalSkills(): Observable<TechnicalSkillCategory[]> {
-    return this.httpClient.get<TechnicalSkillCategory[]>('assets/data/technical-skills.json')
+  getTechnicalSkills(): Observable<TechnicalSkill[]> {
+    return this.httpClient.get<TechnicalSkill[]>('assets/data/technical-skills.json')
       .pipe(map(res => res));
   } 
 

@@ -15,9 +15,6 @@ import { BlogPostComponent } from './components/blog-post/blog-post.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectCardComponent } from './components/projects/project-card/project-card.component';
 
-// services
-import { ResumeService } from './services/resume.service';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +34,6 @@ import { ResumeService } from './services/resume.service';
     MarkdownModule.forRoot()
   ],
   providers: [
-    ResumeService
   ],
   bootstrap: [AppComponent]
 })

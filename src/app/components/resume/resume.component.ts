@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ResumeContent, TechnicalSkillCategory, EmploymentHistory, KeyProjectAchievement } from 'src/app/models/resume';
+import { ResumeContent, EmploymentHistory, KeyProjectAchievement, TechnicalSkill } from 'src/app/models/resume';
 
 import { ResumeService } from 'src/app/services/resume.service';
 import * as moment from 'moment';
@@ -12,7 +12,7 @@ import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class ResumeComponent implements OnInit {
   contents: ResumeContent[];
-  technicalSkillCategories: TechnicalSkillCategory[];
+  technicalSkills: TechnicalSkill[];
   employmentHistories: EmploymentHistory[];
   keyProjectAchievements: KeyProjectAchievement[];
   constructor(private resumeService: ResumeService) { }
@@ -81,7 +81,7 @@ export class ResumeComponent implements OnInit {
 
   getTechnicalSkills(): void {
     this.resumeService.getTechnicalSkills().subscribe(
-      (response: TechnicalSkillCategory[]) => { this.technicalSkillCategories = response },
+      (response: TechnicalSkill[]) => { this.technicalSkills = response },
       (error) => { console.error("Error happened", error) }
     );;
   }

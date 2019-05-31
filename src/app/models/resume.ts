@@ -4,11 +4,6 @@ export class ResumeContent {
     public children: ResumeContent[];
 }
 
-export class TechnicalSkillCategory {
-    public name: string; 
-    public skills: TechnicalSkill[];
-}
-
 export class TechnicalSkill {
     public name: string; 
     public starred: boolean; 
