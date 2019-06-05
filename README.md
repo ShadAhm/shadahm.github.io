@@ -1,5 +1,5 @@
 # shadahm.github.io
-Personal site and markdown-based blog built with Angular. 
+Personal site built with Angular. 
 
 Visit: https://shadahm.github.io/
 
