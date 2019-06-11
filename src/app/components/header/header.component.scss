@@ -3,3 +3,9 @@
 .navbar-nav.shad-orange-navbar .nav-item:hover {
     color:$shad-orange; 
 }
+
+.navbar-brand {
+    img {
+        max-width:75px; 
+    }
+}
