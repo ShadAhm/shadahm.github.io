@@ -83,7 +83,7 @@ export class ResumeComponent implements OnInit {
     this.resumeService.getTechnicalSkills().subscribe(
       (response: TechnicalSkill[]) => { this.technicalSkills = response },
       (error) => { console.error("Error happened", error) }
-    );;
+    );
   }
 
   getEmploymentHistories(): void {
