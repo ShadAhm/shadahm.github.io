@@ -1,5 +1,13 @@
 [
     {
+        "companyName": "Ørsted",
+        "companyUrl": "https://orsted.com/",
+        "companySubcripts": null,
+        "position": "Software Engineer",
+        "fromDate": "2019-11-01T00:00:00.000Z",
+        "toDate": null
+    },
+    {
         "companyName": "City Facilities Management Sdn Bhd",
         "companyUrl": "https://www.cityholdings.asia/",
         "companySubcripts": null,
