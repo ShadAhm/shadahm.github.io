@@ -22,13 +22,5 @@
         "position": "Software Developer",
         "fromDate": "2013-04-01T00:00:00.000Z",
         "toDate": "2015-11-01T00:00:00.000Z"
-    },
-    {
-        "companyName": "Ørsted A/S",
-        "companyUrl": "https://orsted.com/",
-        "companySubcripts": null,
-        "position": "Software Engineer",
-        "fromDate": "2019-11-02T00:00:00.000Z",
-        "toDate": null
     }
 ]
