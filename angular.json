@@ -136,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "shadahmio"
+  "defaultProject": "shadahmio",
+  "cli": {
+    "analytics": false
+  }
 }
