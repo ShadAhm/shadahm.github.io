@@ -1,15 +1,107 @@
-[{"name":"ASP.NET MVC, ASP.NET Core", "starred": true, "workSamples" : []},
-{"name":"Entity Framework", "starred": true, "workSamples" : []},
-{"name":"ASP.NET Web Api", "starred": true, "workSamples" : []},
-{"name":"ASP.NET Web Forms", "starred": false, "workSamples" : []},
-{"name":"WPF", "starred": false, "workSamples" : [{ "label" : "HenriScriptsCreator", "url"  : "https://github.com/ShadAhm/HenriScriptsCreator" }]},
-{"name":"Android Native / Java", "starred": false, "workSamples" : [{ "label" : "AMPOS", "url"  : "https://github.com/ShadAhm/AMPOS" }]},
-{"name":"Angular 2+, Angular CLI, Node.js", "starred": true, "workSamples" : [{ "label" : "shadahm.github.io", "url"  : "https://github.com/ShadAhm/shadahm.github.io/tree/dev"} ]},
-{"name":"AngularJs 1.x", "starred": true, "workSamples" : [{ "label" : "angularJs.keruC", "url"  : "https://github.com/ShadAhm/angularJs.keruC" }]},
-{"name":"TypeScript", "starred": true, "workSamples" : [{ "label" : "shadahm.github.io", "url"  : "https://github.com/ShadAhm/shadahm.github.io/tree/dev" }]},
-{"name":"Bootstrap", "starred": true, "workSamples" : [{ "label" : "shadahm.github.io", "url"  : "https://github.com/ShadAhm/shadahm.github.io/tree/dev" }]},
-{"name":"Material UI", "starred": false, "workSamples" : []},
-{"name":"Microsoft SQL Server", "starred": true, "workSamples" : []},
-{"name":"Git", "starred": true, "workSamples" : [{ "label" : "this", "url"  : "https://github.com/ShadAhm" }]},
-{"name":"Azure DevOps", "starred": false, "workSamples" : []}
+[
+    {
+        "name": "ASP.NET MVC, ASP.NET Core",
+        "starred": true,
+        "workSamples": []
+    },
+    {
+        "name": "Entity Framework",
+        "starred": true,
+        "workSamples": []
+    },
+    {
+        "name": "ASP.NET Web Api",
+        "starred": true,
+        "workSamples": []
+    },
+    {
+        "name": "ASP.NET Web Forms",
+        "starred": false,
+        "workSamples": []
+    },
+    {
+        "name": "WPF",
+        "starred": false,
+        "workSamples": [
+            {
+                "label": "HenriScriptsCreator",
+                "url": "https://github.com/ShadAhm/HenriScriptsCreator"
+            }
+        ]
+    },
+    {
+        "name": "Android Native / Java",
+        "starred": false,
+        "workSamples": [
+            {
+                "label": "AMPOS",
+                "url": "https://github.com/ShadAhm/AMPOS"
+            }
+        ]
+    },
+    {
+        "name": "Angular 2+, Angular CLI, Node.js",
+        "starred": true,
+        "workSamples": [
+            {
+                "label": "shadahm.github.io",
+                "url": "https://github.com/ShadAhm/shadahm.github.io/tree/dev"
+            }
+        ]
+    },
+    {
+        "name": "AngularJs 1.x",
+        "starred": true,
+        "workSamples": [
+            {
+                "label": "angularJs.keruC",
+                "url": "https://github.com/ShadAhm/angularJs.keruC"
+            }
+        ]
+    },
+    {
+        "name": "TypeScript",
+        "starred": true,
+        "workSamples": [
+            {
+                "label": "shadahm.github.io",
+                "url": "https://github.com/ShadAhm/shadahm.github.io/tree/dev"
+            }
+        ]
+    },
+    {
+        "name": "Bootstrap",
+        "starred": true,
+        "workSamples": [
+            {
+                "label": "shadahm.github.io",
+                "url": "https://github.com/ShadAhm/shadahm.github.io/tree/dev"
+            }
+        ]
+    },
+    {
+        "name": "Material UI",
+        "starred": false,
+        "workSamples": []
+    },
+    {
+        "name": "Microsoft SQL Server",
+        "starred": true,
+        "workSamples": []
+    },
+    {
+        "name": "Git",
+        "starred": true,
+        "workSamples": [
+            {
+                "label": "this",
+                "url": "https://github.com/ShadAhm"
+            }
+        ]
+    },
+    {
+        "name": "Azure DevOps",
+        "starred": false,
+        "workSamples": []
+    }
 ]
