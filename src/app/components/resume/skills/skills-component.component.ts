@@ -19,7 +19,7 @@ export class SkillsComponentComponent implements OnInit {
   }
 
   toGridDto(technicalSkills: TechnicalSkill[]) {
-    let categories = [...new Set(technicalSkills.map(item => item.category))].map(o => new TechnicalSkillGridDto());
+    // let categories = [...new Set(technicalSkills.map(item => item.category))].map(o => new TechnicalSkillGridDto());
 
 
   }
