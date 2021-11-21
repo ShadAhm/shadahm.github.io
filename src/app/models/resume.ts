@@ -18,6 +18,7 @@ export class TechnicalSkillGant implements IHasDuration {
 }
 
 export class TechnicalSkillsGridDto {
+    constructor(category: string) { this.category = category; this.skills = [] }
     public category: string;
     public skills: TechnicalSkillGridDto[];
 }

@@ -55,7 +55,7 @@
 <div id="printableArea">
   <div class="card mb-2">
     <div class="card-body">
-      <app-skills-component [technicalSkills]="technicalSkills"></app-skills-component>
+      <app-skills-component *ngIf="technicalSkills" [technicalSkills]="technicalSkills"></app-skills-component>
     </div>
   </div>
 

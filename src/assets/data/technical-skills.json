@@ -65,7 +65,7 @@
         "workSamples": []
     },
     {
-        "category": "OS Native",
+        "category": "OS native",
         "name": "WPF",
         "starred": false,
         "useHistory":
@@ -78,7 +78,7 @@
         "workSamples": []
     },
     {
-        "category": "OS Native",
+        "category": "OS native",
         "name": "Android Native / Java",
         "starred": false,
         "useHistory":
@@ -225,6 +225,19 @@
         "workSamples": []
     },
     {
+        "category": "Back-end",
+        "name": "Azure Service Bus",
+        "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2021-05-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
+        "workSamples": []
+    },
+    {
         "category": "Database",
         "name": "Azure Cosmos DB",
         "starred": false,
@@ -232,6 +245,19 @@
         [ 
             {
                 "fromDate": "2021-05-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
+        "workSamples": []
+    },
+    {
+        "category": "Front-end web",
+        "name": "SASS (SCSS syntax)",
+        "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2017-01-01T00:00:00.000Z",
                 "toDate": null
             }
         ],

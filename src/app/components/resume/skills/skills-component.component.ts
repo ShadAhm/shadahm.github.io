@@ -9,8 +9,7 @@ import { DurationService } from 'src/app/services/duration.service';
 })
 export class SkillsComponentComponent implements OnInit {
   @Input() technicalSkills: TechnicalSkill[]; 
-  
-  gridModels: TechnicalSkillsGridDto;
+  gridModels: TechnicalSkillsGridDto[];
 
   constructor(private _durationService: DurationService) { }
 
@@ -18,24 +17,45 @@ export class SkillsComponentComponent implements OnInit {
     this.toGridDto(this.technicalSkills);
   }
 
-  toGridDto(technicalSkills: TechnicalSkill[]) {
-    // let categories = [...new Set(technicalSkills.map(item => item.category))].map(o => new TechnicalSkillGridDto());
+  toGridDto(technicalSkills: TechnicalSkill[]): void {
+    let distinctCategories = technicalSkills
+      .map(item => item.category)
+      .filter((value, index, self) => self.indexOf(value) === index)
+      .map(item => new TechnicalSkillsGridDto(item));
 
+    for (let category of distinctCategories) {
+      let skillsOfCategory = technicalSkills.filter(o => o.category == category.category);
+      
+      for (const skillOfCategory of skillsOfCategory) {
+        let skillDto: TechnicalSkillGridDto = new TechnicalSkillGridDto();
 
+        skillDto.category = skillOfCategory.category;
+        skillDto.name = skillOfCategory.name; 
+        skillDto.starred = skillOfCategory.starred; 
+        skillDto.useHistory = skillOfCategory.useHistory;
+        skillDto.workSamples = skillOfCategory.workSamples;
+        skillDto.totalYearsExp = this._durationService.calculateTotalDuration(skillOfCategory.useHistory); 
+
+        category.skills.push(skillDto);
+      }
+
+      category.skills.sort(a => a.totalYearsExp)
+    }
+
+    this.gridModels = distinctCategories.sort((a, b) => a.category.localeCompare(b.category));
   }
 
-  calculateExperience(technicalSkill: TechnicalSkill): string {
-    let yearsExp = this._durationService.calculateTotalDuration(technicalSkill.useHistory);
+  calculateExperience(yearsExp: number): string {
     let yearsExpFloored = Math.floor(yearsExp);
 
     if(yearsExpFloored < 1) {
-      return '<1 year exp';
+      return '<1 year';
     }
     else if(yearsExpFloored == 1) {
-      return '1 year exp';
+      return '1 year';
     }
     else {
-      return `${yearsExpFloored} years exp`;
+      return `${yearsExpFloored} years`;
     }
   }
 
