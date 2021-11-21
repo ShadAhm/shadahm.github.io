@@ -5,9 +5,25 @@ export class ResumeContent {
 }
 
 export class TechnicalSkill {
+    public category: string;
     public name: string; 
     public starred: boolean; 
+    public useHistory: TechnicalSkillGant[];
     public workSamples: WorkSample[]; 
+}
+
+export class TechnicalSkillGant implements IHasDuration {
+    public fromDate: string;
+    public toDate: string;
+}
+
+export class TechnicalSkillsGridDto {
+    public category: string;
+    public skills: TechnicalSkillGridDto[];
+}
+
+export class TechnicalSkillGridDto extends TechnicalSkill {
+    public totalYearsExp: number;
 }
 
 export class WorkSample {
@@ -35,4 +51,9 @@ export class KeyProjectAchievement {
     public description: string;
     public jobResponsibilities: string[];
     public htmlElementId: string;
+}
+
+export interface IHasDuration {
+    fromDate: string;
+    toDate: string;
 }

@@ -3,7 +3,6 @@ import { ResumeContent, EmploymentHistory, KeyProjectAchievement, TechnicalSkill
 
 import { ResumeService } from 'src/app/services/resume.service';
 import * as moment from 'moment';
-import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-resume',

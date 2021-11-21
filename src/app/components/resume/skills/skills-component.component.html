@@ -1,0 +1,29 @@
+<h2 class="card-title" id="h2Skills"> Technical Skills</h2>
+<table class="table table-responsive-sm table-borderless table-condensed table-hover mb-0">
+  <caption><i class="fa fa-fw fa-star star-orange"></i> essential skills, will usually prefer to accept jobs using these technologies.
+  </caption>
+  <thead>
+    <tr>
+      <th>Skill</th>
+      <th></th>
+      <th class="d-print-none"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let skill of technicalSkills">
+      <td>{{skill.name}}</td>
+      <td class="tags-group">
+          <i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i>  
+          <span class="badge badge-info">{{ calculateExperience(skill) }}</span>
+          <span class="badge badge-primary" *ngIf="isCurrentlyUsing(skill)">Currently using</span>
+      </td>
+      <td class="d-print-none">
+        <span *ngIf="skill.workSamples && skill.workSamples.length > 0" class="sample-work-link small">
+          Example work: 
+          <a *ngFor="let workSample of skill.workSamples" [href]="workSample.url">
+            {{workSample.label}}</a>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

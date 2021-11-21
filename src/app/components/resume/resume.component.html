@@ -55,30 +55,7 @@
 <div id="printableArea">
   <div class="card mb-2">
     <div class="card-body">
-      <h2 class="card-title" id="h2Skills"> Technical Skills</h2>
-      <table class="table table-responsive-sm table-borderless table-condensed table-hover mb-0">
-        <caption><i class="fa fa-fw fa-star star-orange"></i> skills acquired through
-          project
-          experience of 5 years or greater
-        </caption>
-        <thead>
-          <tr>
-            <th>Skill</th>
-            <th class="d-print-none">Public work sample(s)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let skill of technicalSkills">
-            <td><i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i> {{skill.name}}</td>
-            <td class="d-print-none">
-              <span *ngIf="skill.workSamples" class="sample-work-link small">
-                <a *ngFor="let workSample of skill.workSamples" [href]="workSample.url">
-                  [{{workSample.label}}]</a>
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <app-skills-component [technicalSkills]="technicalSkills"></app-skills-component>
     </div>
   </div>
 
