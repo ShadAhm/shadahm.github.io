@@ -4,8 +4,8 @@
     <tr>
       <th>Category</th>
       <th>Skill</th>
-      <th></th>
-      <th class="d-print-none"></th>
+      <th>Tags</th>
+      <th class="d-print-none">Example work</th>
     </tr>
   </thead>
   <ng-container *ngFor="let model of gridModels">
@@ -22,7 +22,6 @@
         </td>
         <td class="d-print-none">
           <span *ngIf="skill.workSamples && skill.workSamples.length > 0" class="sample-work-link small">
-            Example work:
             <a *ngFor="let workSample of skill.workSamples" [href]="workSample.url">
               {{workSample.label}}</a>
           </span>
