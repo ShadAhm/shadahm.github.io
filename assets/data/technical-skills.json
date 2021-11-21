@@ -1,37 +1,93 @@
 [
     {
-        "name": "ASP.NET MVC, ASP.NET Core",
+        "category": "Back-end",
+        "name": ".NET (including Framework, Core, and 5+)",
         "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2013-04-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": []
     },
     {
-        "name": "Entity Framework",
+        "category": "Back-end",
+        "name": "ASP.NET Core",
         "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2013-04-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": []
     },
     {
+        "category": "Back-end",
+        "name": "Entity Framework (including EF Core)",
+        "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2014-04-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
+        "workSamples": []
+    },
+    {
+        "category": "Back-end",
         "name": "ASP.NET Web Api",
         "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2014-04-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": []
     },
     {
+        "category": "Back-end",
         "name": "ASP.NET Web Forms",
         "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2014-04-01T00:00:00.000Z",
+                "toDate": "2015-04-01T00:00:00.000Z"
+            }
+        ],
         "workSamples": []
     },
     {
+        "category": "OS native",
         "name": "WPF",
         "starred": false,
-        "workSamples": [
+        "useHistory":
+        [ 
             {
-                "label": "HenriScriptsCreator",
-                "url": "https://github.com/ShadAhm/HenriScriptsCreator"
+                "fromDate": "2015-01-01T00:00:00.000Z",
+                "toDate": "2015-06-01T00:00:00.000Z"
             }
-        ]
+        ],
+        "workSamples": []
     },
     {
+        "category": "OS native",
         "name": "Android Native / Java",
         "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2016-08-01T00:00:00.000Z",
+                "toDate": "2016-11-01T00:00:00.000Z"
+            }
+        ],
         "workSamples": [
             {
                 "label": "AMPOS",
@@ -40,8 +96,16 @@
         ]
     },
     {
+        "category": "Front-end web",
         "name": "Angular 2+, Angular CLI, Node.js",
         "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2017-01-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": [
             {
                 "label": "shadahm.github.io",
@@ -50,8 +114,16 @@
         ]
     },
     {
+        "category": "Front-end web",
         "name": "AngularJs 1.x",
-        "starred": true,
+        "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2015-01-01T00:00:00.000Z",
+                "toDate": "2016-02-01T00:00:00.000Z"
+            }
+        ],
         "workSamples": [
             {
                 "label": "angularJs.keruC",
@@ -60,8 +132,16 @@
         ]
     },
     {
+        "category": "Front-end web",
         "name": "TypeScript",
         "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2017-01-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": [
             {
                 "label": "shadahm.github.io",
@@ -70,8 +150,16 @@
         ]
     },
     {
+        "category": "Front-end web",
         "name": "Bootstrap",
-        "starred": true,
+        "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2015-01-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": [
             {
                 "label": "shadahm.github.io",
@@ -80,18 +168,42 @@
         ]
     },
     {
+        "category": "Front-end web",
         "name": "Material UI",
         "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2014-04-01T00:00:00.000Z",
+                "toDate": "2015-01-01T00:00:00.000Z"
+            }
+        ],
         "workSamples": []
     },
     {
+        "category": "Database",
         "name": "Microsoft SQL Server",
         "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2014-04-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": []
     },
     {
+        "category": "Source control",
         "name": "Git",
         "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2015-01-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": [
             {
                 "label": "this",
@@ -100,8 +212,55 @@
         ]
     },
     {
-        "name": "Azure DevOps",
+        "category": "Back-end",
+        "name": "Azure Functions",
         "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2021-05-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
+        "workSamples": []
+    },
+    {
+        "category": "Back-end",
+        "name": "Azure Service Bus",
+        "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2021-05-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
+        "workSamples": []
+    },
+    {
+        "category": "Database",
+        "name": "Azure Cosmos DB",
+        "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2021-05-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
+        "workSamples": []
+    },
+    {
+        "category": "Front-end web",
+        "name": "SASS (SCSS syntax)",
+        "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2017-01-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
         "workSamples": []
     }
 ]
