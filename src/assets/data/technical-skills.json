@@ -14,7 +14,7 @@
     },
     {
         "category": "Back-end",
-        "name": "ASP.NET Core",
+        "name": "ASP.NET (incl. Core, Web Api)",
         "starred": true,
         "useHistory":
         [ 
@@ -27,20 +27,7 @@
     },
     {
         "category": "Back-end",
-        "name": "Entity Framework (including EF Core)",
-        "starred": true,
-        "useHistory":
-        [ 
-            {
-                "fromDate": "2014-04-01T00:00:00.000Z",
-                "toDate": null
-            }
-        ],
-        "workSamples": []
-    },
-    {
-        "category": "Back-end",
-        "name": "ASP.NET Web Api",
+        "name": "Entity Framework (incl. EF Core)",
         "starred": true,
         "useHistory":
         [ 
@@ -60,6 +47,32 @@
             {
                 "fromDate": "2014-04-01T00:00:00.000Z",
                 "toDate": "2015-04-01T00:00:00.000Z"
+            }
+        ],
+        "workSamples": []
+    },
+    {
+        "category": "Tests",
+        "name": "Xunit ",
+        "starred": true,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2016-01-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ],
+        "workSamples": []
+    },
+    {
+        "category": "Tests",
+        "name": "Moq ",
+        "starred": false,
+        "useHistory":
+        [ 
+            {
+                "fromDate": "2016-01-01T00:00:00.000Z",
+                "toDate": null
             }
         ],
         "workSamples": []
@@ -97,7 +110,7 @@
     },
     {
         "category": "Front-end web",
-        "name": "Angular 2+, Angular CLI, Node.js",
+        "name": "Angular 2+, Angular CLI",
         "starred": true,
         "useHistory":
         [ 
@@ -168,19 +181,6 @@
         ]
     },
     {
-        "category": "Front-end web",
-        "name": "Material UI",
-        "starred": false,
-        "useHistory":
-        [ 
-            {
-                "fromDate": "2014-04-01T00:00:00.000Z",
-                "toDate": "2015-01-01T00:00:00.000Z"
-            }
-        ],
-        "workSamples": []
-    },
-    {
         "category": "Database",
         "name": "Microsoft SQL Server",
         "starred": true,
@@ -206,7 +206,7 @@
         ],
         "workSamples": [
             {
-                "label": "this",
+                "label": "My github",
                 "url": "https://github.com/ShadAhm"
             }
         ]
