@@ -1,11 +1,19 @@
 [
     {
+        "companyName": "Alten Sverige",
+        "companyUrl": "https://www.alten.com/country/sweden/",
+        "companySubcripts": null,
+        "position": "Consultant",
+        "fromDate": "2022-03-22T00:00:00.000Z",
+        "toDate": null
+    },
+    {
         "companyName": "Ørsted",
         "companyUrl": "https://orsted.com/",
         "companySubcripts": null,
         "position": "Senior Software Engineer",
         "fromDate": "2019-11-01T00:00:00.000Z",
-        "toDate": null
+        "toDate": "2022-03-05T00:00:00.000Z"
     },
     {
         "companyName": "City Facilities Management Sdn Bhd",
@@ -19,7 +27,7 @@
         "companyName": "Galasys Solutions (MSC) Sdn Bhd",
         "companyUrl": "https://www.galasystec.com/company-profile.aspx",
         "companySubcripts": null,
-        "position": "Software Developer/Team Lead",
+        "position": "Software Developer",
         "fromDate": "2015-11-01T00:00:00.000Z",
         "toDate": "2016-10-01T00:00:00.000Z"
     },
