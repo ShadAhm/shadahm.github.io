@@ -5,7 +5,8 @@
         "companySubcripts": null,
         "position": "Consultant",
         "fromDate": "2022-03-22T00:00:00.000Z",
-        "toDate": null
+        "toDate": null,
+        "location": "Stockholm, Sweden"
     },
     {
         "companyName": "Ørsted",
@@ -13,7 +14,8 @@
         "companySubcripts": null,
         "position": "Senior Software Engineer",
         "fromDate": "2019-11-01T00:00:00.000Z",
-        "toDate": "2022-03-05T00:00:00.000Z"
+        "toDate": "2022-03-05T00:00:00.000Z",
+        "location": "Kuala Lumpur, Malaysia"
     },
     {
         "companyName": "City Facilities Management Sdn Bhd",
@@ -21,7 +23,8 @@
         "companySubcripts": null,
         "position": "Senior Software Developer",
         "fromDate": "2016-11-01T00:00:00.000Z",
-        "toDate": "2019-11-01T00:00:00.000Z"
+        "toDate": "2019-11-01T00:00:00.000Z",
+        "location": "Kuala Lumpur, Malaysia"
     },
     {
         "companyName": "Galasys Solutions (MSC) Sdn Bhd",
@@ -29,7 +32,8 @@
         "companySubcripts": null,
         "position": "Software Developer",
         "fromDate": "2015-11-01T00:00:00.000Z",
-        "toDate": "2016-10-01T00:00:00.000Z"
+        "toDate": "2016-10-01T00:00:00.000Z",
+        "location": "Kuala Lumpur, Malaysia"
     },
     {
         "companyName": "Alfacom Technologies Sdn Bhd",
@@ -37,6 +41,7 @@
         "companySubcripts": null,
         "position": "Software Developer",
         "fromDate": "2013-04-01T00:00:00.000Z",
-        "toDate": "2015-11-01T00:00:00.000Z"
+        "toDate": "2015-11-01T00:00:00.000Z",
+        "location": "Kuala Lumpur, Malaysia"
     }
 ]
