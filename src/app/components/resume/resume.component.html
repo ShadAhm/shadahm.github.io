@@ -77,6 +77,8 @@
             <td>
               <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
               <sup *ngFor="let asterisk of employmentHistory.companySubcripts"> {{asterisk}}</sup>
+              <br/>
+              <span class="employment-history-location text-muted"><i class="fa fa-fw fa-map-marker"></i> {{employmentHistory.location}}</span>
             </td>
             <td>{{employmentHistory.position}}</td>
             <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
