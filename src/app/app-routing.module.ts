@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'resume', pathMatch: 'full' },
@@ -14,6 +15,11 @@ const routes: Routes = [
     path: 'projects',
     component: ProjectsComponent,
     data: { title: 'Projects' }
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
+    data: { title: 'Contact Me' }
   }
 ];
 

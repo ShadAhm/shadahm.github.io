@@ -1,7 +1,28 @@
 <div class="card mb-2">
   <div class="card-body">
     <div class="row d-print-none">
+      <div class="col-md-2">
+        <img src="./assets/images/me.jpg" class="img-me" />
+      </div>
       <div class="col">
+        <h2 class="card-title" id="h2Introduction">Introduction</h2>
+        <p>Hi, I'm Shad, a Stockholm-based .NET Developer. And welcome to my online resume. This page was created to provide you the ability to navigate
+          my
+          details with ease. A printed and PDF version is also available. This resume and site itself is intended as a
+          POC
+          of my skills in designing and developing a navigatable and intuitive user application. I believe all software
+          (internal or external) should be created with the user first-in-mind, providing sufficient navigation, and
+          should be designed with complexities that requires training as little as possible.</p>
+        <p>Feedbacks and comments are very welcome. Get in touch. </p>
+        <div class="d-none d-md-inline-block d-print-none mt-2">
+          <button class="btn btn-sm btn-primary mr-2" (click)="print()"><i class="fa fa-print"></i> Print this
+            resume</button>
+        </div>
+      </div>
+    </div>
+    <div class="row d-print-none">
+      <div class="col">
+        <h4>Contents</h4>
         <ol class="contents-list" id="olContentsList">
           <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
               <span>{{content.displayText}}</span>
@@ -14,25 +35,7 @@
           </li>
         </ol>
       </div>
-      <div class="col-md-8">
-        <h2 class="card-title" id="h2Introduction">Introduction</h2>
-        <p>Hi, I'm Shad. And welcome to my online resume. This page was created to provide you the ability to navigate
-          my
-          details with ease. A printed and PDF version is also available. This resume and site itself is intended as a
-          POC
-          of my skills in designing and developing a navigatable and intuitive user application. I believe all software
-          (internal or external) should be created with the user first-in-mind, providing sufficient navigation, and
-          should be designed with complexities that requires training as little as possible.</p>
-        <p>Feedbacks and comments are very welcome. Get in touch. </p>
-        <div class="d-none d-md-inline-block d-print-none mt-4">
-          <button class="btn btn-sm btn-primary mr-2" (click)="print()"><i class="fa fa-print"></i> Print this
-            resume</button>
-          <button class="btn btn-sm btn-primary" disabled="disabled" (click)="print()"><i class="fa fa-file-pdf-o"></i>
-            Download PDF copy (coming soon)</button>
-        </div>
-      </div>
     </div>
-
     <div class="d-none d-print-block">
       <h2>Arsyad Ahmad <small>(pref: Shad Ahmad)</small></h2>
       <table class="table table-condensed table-borderless">
@@ -47,7 +50,8 @@
       </table>
 
       <p class="panel"><strong>Note:</strong> An online (better) version of this resume can be viewed at
-        <u>https://shadahm.github.io/resume</u></p>
+        <u>https://shadahm.github.io/resume</u>
+      </p>
     </div>
   </div>
 </div>
@@ -77,8 +81,9 @@
             <td>
               <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
               <sup *ngFor="let asterisk of employmentHistory.companySubcripts"> {{asterisk}}</sup>
-              <br/>
-              <span class="employment-history-location text-muted"><i class="fa fa-fw fa-map-marker"></i> {{employmentHistory.location}}</span>
+              <br />
+              <span class="employment-history-location text-muted"><i class="fa fa-fw fa-map-marker"></i>
+                {{employmentHistory.location}}</span>
             </td>
             <td>{{employmentHistory.position}}</td>
             <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
@@ -134,7 +139,7 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card mb-2">
     <div class="card-body">
       <h2 class="card-title" id="h2Education">Certifications & Education</h2>
       <h4>Certifications</h4>
@@ -163,7 +168,27 @@
       </ul>
     </div>
   </div>
+
+  <div class="card mb-2">
+    <div class="card-body">
+      <h2 class="card-title" id="h2Other">Other Information</h2>
+      <p>
+        Current residence:<br/>
+        Stockholm, Sverige
+      </p>
+      <p>
+        Languages:<br/>
+        English (native), Malay (native)
+      </p>
+      <p>
+        Driving license:<br/>
+        No (Sweden), yes (Malaysia)
+      </p>
+    </div>
+  </div>
 </div>
+
+
 
 <button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i
     class="fa fa-arrow-up"></i> To Top</button>

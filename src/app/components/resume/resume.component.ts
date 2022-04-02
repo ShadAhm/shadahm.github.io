@@ -75,6 +75,11 @@ export class ResumeComponent implements OnInit {
         displayText: 'Education and Certifications',
         elementId: 'h2Education',
         children: null
+      },
+      {
+        displayText: 'Other Information',
+        elementId: 'h2Other',
+        children: null
       }];
   }
 
