@@ -1,208 +1,199 @@
-<div class="card mb-2">
-  <div class="card-body">
-    <div class="row d-print-none">
-      <div class="col-md-2">
-        <img src="./assets/images/me.jpg" class="img-me" />
-      </div>
-      <div class="col">
-        <h2 class="card-title" id="h2Introduction">Introduction</h2>
-        <p>Hi, I'm Shad, a Stockholm-based .NET Developer. And welcome to my online resume. This page was created to provide you the ability to navigate
-          my
-          details with ease. A printed and PDF version is also available. This resume and site itself is intended as a
-          POC
-          of my skills in designing and developing a navigatable and intuitive user application. I believe all software
-          (internal or external) should be created with the user first-in-mind, providing sufficient navigation, and
-          should be designed with complexities that requires training as little as possible.</p>
-        <p>Feedbacks and comments are very welcome. Get in touch. </p>
-        <div class="d-none d-md-inline-block d-print-none mt-2">
-          <button class="btn btn-sm btn-primary mr-2" (click)="print()"><i class="fa fa-print"></i> Print this
-            resume</button>
+<div class="row">
+  <div class="col-md-3 order-md-last d-print-none">
+    <div>
+      <ol class="contents-list" id="olContentsList">
+        <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
+            <span>{{content.displayText}}</span>
+          </a>
+          <ol *ngIf="content.children">
+            <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
+                (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></a>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-2">
+      <div class="card-body">
+        <div class="row d-print-none">
+          <div class="col-md-3">
+            <img src="./assets/images/me.jpg" class="img-me" />
+          </div>
+          <div class="col">
+            <h2 class="card-title" id="h2Introduction">Introduction</h2>
+            <p>Hi, I'm Shad, a Stockholm-based .NET Developer. And welcome to my online resume. This page was created to
+              provide you the ability to navigate
+              my
+              details with ease. A printed and PDF version is also available. This resume and site itself is intended as
+              a
+              POC
+              of my skills in designing and developing a navigatable and intuitive user application. I believe all
+              software
+              (internal or external) should be created with the user first-in-mind, providing sufficient navigation, and
+              should be designed with complexities that requires training as little as possible.</p>
+            <p>Feedbacks and comments are very welcome. Get in touch. </p>
+            <div class="d-none d-md-inline-block d-print-none mt-2">
+              <button class="btn btn-sm btn-primary mr-2" (click)="print()"><i class="fa fa-print"></i> Print this
+                resume</button>
+            </div>
+          </div>
         </div>
-        
-        <!-- <div class="d-none d-md-block d-print-none mt-3">
-          <h4>Contents</h4>
-          <ol class="contents-list" id="olContentsList">
-            <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
-                <span>{{content.displayText}}</span>
-              </a>
-              <ol *ngIf="content.children">
-                <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
-                    (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></a>
-                </li>
-              </ol>
-            </li>
-          </ol>
-        </div> -->
-      </div>
-      <div class="col-md-3">
-        <div class="d-none d-md-block d-print-none">
-          <ol class="contents-list" id="olContentsList">
-            <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
-                <span>{{content.displayText}}</span>
-              </a>
-              <ol *ngIf="content.children">
-                <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
-                    (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></a>
-                </li>
-              </ol>
-            </li>
-          </ol>
+        <div class="d-none d-print-block">
+          <h2>Arsyad Ahmad <small>(pref: Shad Ahmad)</small></h2>
+          <table class="table table-condensed table-borderless">
+            <tr>
+              <td>Date of Birth: </td>
+              <td>2 August 1990</td>
+            </tr>
+            <tr>
+              <td>E-mail: </td>
+              <td>arsh90@gmail.com</td>
+            </tr>
+          </table>
+
+          <p class="panel"><strong>Note:</strong> An online (better) version of this resume can be viewed at
+            <u>https://shadahm.github.io/resume</u>
+          </p>
         </div>
       </div>
     </div>
-    <div class="d-none d-print-block">
-      <h2>Arsyad Ahmad <small>(pref: Shad Ahmad)</small></h2>
-      <table class="table table-condensed table-borderless">
-        <tr>
-          <td>Date of Birth: </td>
-          <td>2 August 1990</td>
-        </tr>
-        <tr>
-          <td>E-mail: </td>
-          <td>arsh90@gmail.com</td>
-        </tr>
-      </table>
 
-      <p class="panel"><strong>Note:</strong> An online (better) version of this resume can be viewed at
-        <u>https://shadahm.github.io/resume</u>
-      </p>
+    <div id="printableArea">
+      <div class="card mb-2">
+        <div class="card-body">
+          <app-skills-component *ngIf="technicalSkills" [technicalSkills]="technicalSkills"></app-skills-component>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-body">
+          <h2 class="card-title" id="h2Employment">Employment History</h2>
+          <table class="table table-responsive-sm mb-0">
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>Position Held</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Year(s) in Company</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employmentHistory of employmentHistories">
+                <td>
+                  <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
+                  <sup *ngFor="let asterisk of employmentHistory.companySubcripts"> {{asterisk}}</sup>
+                  <br />
+                  <span class="employment-history-location text-muted"><i class="fa fa-fw fa-map-marker"></i>
+                    {{employmentHistory.location}}</span>
+                </td>
+                <td>{{employmentHistory.position}}</td>
+                <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
+                <td>
+                  {{employmentHistory.toDate | date:'MMM y'}}
+                  <i class="text-muted" *ngIf="employmentHistory.toDate == null">present</i>
+                </td>
+                <td>
+                  {{ calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4"><strong class="pull-right">Total Years Exp: </strong></td>
+                <td>
+                  <span>{{ calculateTotalYearsExp() }}</span>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-body">
+          <h2 class="card-title" id="h2KeyProject">Key Project Achievements</h2>
+          <div class="bs-callout bs-callout-info">
+            This section contains brief information on a few proprietary projects that I
+            have been
+            involved in within my employment history. This list is <strong>not</strong>
+            exhaustive, and only contain notable select projects. For the purpose of confidentiality, names such as the
+            clients or employers has been omitted, and the project titles slightly altered. For open-sourced/personal
+            pet
+            projects see <a routerLink="/projects">Projects</a> or my <a href="https://github.com/ShadAhm">GitHub
+              repositories</a>.</div>
+          <div *ngFor="let keyProj of keyProjectAchievements" class="m-6">
+            <h4 [id]="keyProj.htmlElementId">{{keyProj.title}}</h4>
+            <p class="text-muted">
+              <span>{{keyProj.fromDate | date:'MMM y'}}</span>
+              -
+              <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
+              <span *ngIf="keyProj.toDate === null"><i>present</i></span>
+              ({{calculateTimeDuration(keyProj.fromDate, keyProj.toDate)}})
+            </p>
+            <p>{{keyProj.description}}</p>
+            <h6>Technologies Used</h6>
+            <p>{{keyProj.technologiesUsed}}</p>
+            <h6>Responsibilities</h6>
+            <ul>
+              <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-body">
+          <h2 class="card-title" id="h2Education">Certifications & Education</h2>
+          <h4>Certifications</h4>
+          <ul class="education-list">
+            <li>
+              CityFM Management Extension Program<br />
+              2018
+            </li>
+            <li>
+              Microsoft Certified Solutions Developer (MCSD) <br />
+              2013
+            </li>
+          </ul>
+          <h4>Education</h4>
+          <ul class="education-list">
+            <li>
+              Diploma in Multimedia (CGPA: 3.08)<br />
+              Universiti Kuala Lumpur<br />
+              2010
+            </li>
+            <li>
+              GCSE (O-Level)<br />
+              Heaton Manor School<br />
+              2006
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mb-2">
+        <div class="card-body">
+          <h2 class="card-title" id="h2Other">Other Information</h2>
+          <p>
+            Current residence:<br />
+            Stockholm, Sverige
+          </p>
+          <p>
+            Languages:<br />
+            English (native), Malay (native)
+          </p>
+          <p>
+            Driving license:<br />
+            No (Sweden), yes (Malaysia)
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<div id="printableArea">
-  <div class="card mb-2">
-    <div class="card-body">
-      <app-skills-component *ngIf="technicalSkills" [technicalSkills]="technicalSkills"></app-skills-component>
-    </div>
-  </div>
-
-  <div class="card mb-2">
-    <div class="card-body">
-      <h2 class="card-title" id="h2Employment">Employment History</h2>
-      <table class="table table-responsive-sm mb-0">
-        <thead>
-          <tr>
-            <th>Company Name</th>
-            <th>Position Held</th>
-            <th>From</th>
-            <th>To</th>
-            <th>Year(s) in Company</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let employmentHistory of employmentHistories">
-            <td>
-              <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
-              <sup *ngFor="let asterisk of employmentHistory.companySubcripts"> {{asterisk}}</sup>
-              <br />
-              <span class="employment-history-location text-muted"><i class="fa fa-fw fa-map-marker"></i>
-                {{employmentHistory.location}}</span>
-            </td>
-            <td>{{employmentHistory.position}}</td>
-            <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
-            <td>
-              {{employmentHistory.toDate | date:'MMM y'}}
-              <i class="text-muted" *ngIf="employmentHistory.toDate == null">present</i>
-            </td>
-            <td>
-              {{ calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colspan="4"><strong class="pull-right">Total Years Exp: </strong></td>
-            <td>
-              <span>{{ calculateTotalYearsExp() }}</span>
-            </td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-  </div>
-
-  <div class="card mb-2">
-    <div class="card-body">
-      <h2 class="card-title" id="h2KeyProject">Key Project Achievements</h2>
-      <div class="bs-callout bs-callout-info">
-        This section contains brief information on a few proprietary projects that I
-        have been
-        involved in within my employment history. This list is <strong>not</strong>
-        exhaustive, and only contain notable select projects. For the purpose of confidentiality, names such as the
-        clients or employers has been omitted, and the project titles slightly altered. For open-sourced/personal pet
-        projects see <a routerLink="/projects">Projects</a> or my <a href="https://github.com/ShadAhm">GitHub
-          repositories</a>.</div>
-      <div *ngFor="let keyProj of keyProjectAchievements" class="m-6">
-        <h4 [id]="keyProj.htmlElementId">{{keyProj.title}}</h4>
-        <p class="text-muted">
-          <span>{{keyProj.fromDate | date:'MMM y'}}</span>
-          -
-          <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
-          <span *ngIf="keyProj.toDate === null"><i>present</i></span>
-          ({{calculateTimeDuration(keyProj.fromDate, keyProj.toDate)}})
-        </p>
-        <p>{{keyProj.description}}</p>
-        <h6>Technologies Used</h6>
-        <p>{{keyProj.technologiesUsed}}</p>
-        <h6>Responsibilities</h6>
-        <ul>
-          <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="card mb-2">
-    <div class="card-body">
-      <h2 class="card-title" id="h2Education">Certifications & Education</h2>
-      <h4>Certifications</h4>
-      <ul class="education-list">
-        <li>
-          CityFM Management Extension Program<br />
-          2018
-        </li>
-        <li>
-          Microsoft Certified Solutions Developer (MCSD) <br />
-          2013
-        </li>
-      </ul>
-      <h4>Education</h4>
-      <ul class="education-list">
-        <li>
-          Diploma in Multimedia (CGPA: 3.08)<br />
-          Universiti Kuala Lumpur<br />
-          2010
-        </li>
-        <li>
-          GCSE (O-Level)<br />
-          Heaton Manor School<br />
-          2006
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card mb-2">
-    <div class="card-body">
-      <h2 class="card-title" id="h2Other">Other Information</h2>
-      <p>
-        Current residence:<br/>
-        Stockholm, Sverige
-      </p>
-      <p>
-        Languages:<br/>
-        English (native), Malay (native)
-      </p>
-      <p>
-        Driving license:<br/>
-        No (Sweden), yes (Malaysia)
-      </p>
-    </div>
-  </div>
-</div>
-
-
 
 <button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i
     class="fa fa-arrow-up"></i> To Top</button>
