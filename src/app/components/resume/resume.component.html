@@ -18,22 +18,36 @@
           <button class="btn btn-sm btn-primary mr-2" (click)="print()"><i class="fa fa-print"></i> Print this
             resume</button>
         </div>
+        
+        <!-- <div class="d-none d-md-block d-print-none mt-3">
+          <h4>Contents</h4>
+          <ol class="contents-list" id="olContentsList">
+            <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
+                <span>{{content.displayText}}</span>
+              </a>
+              <ol *ngIf="content.children">
+                <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
+                    (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></a>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div> -->
       </div>
-    </div>
-    <div class="row d-print-none">
-      <div class="col">
-        <h4>Contents</h4>
-        <ol class="contents-list" id="olContentsList">
-          <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
-              <span>{{content.displayText}}</span>
-            </a>
-            <ol *ngIf="content.children">
-              <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
-                  (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></a>
-              </li>
-            </ol>
-          </li>
-        </ol>
+      <div class="col-md-3">
+        <div class="d-none d-md-block d-print-none">
+          <ol class="contents-list" id="olContentsList">
+            <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
+                <span>{{content.displayText}}</span>
+              </a>
+              <ol *ngIf="content.children">
+                <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
+                    (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></a>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
     <div class="d-none d-print-block">
