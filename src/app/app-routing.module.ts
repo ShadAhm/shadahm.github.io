@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ProjectsLandingComponent } from './components/projects-landing/projects-landing.component';
+import { ProjectsProComponent } from './components/projects-pro/projects-pro.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'resume', pathMatch: 'full' },
@@ -13,7 +15,17 @@ const routes: Routes = [
   },
   {
     path: 'projects',
+    component: ProjectsLandingComponent,
+    data: { title: 'Projects' }
+  },
+  {
+    path: 'pet-projects',
     component: ProjectsComponent,
+    data: { title: 'Pet Projects' }
+  },
+  {
+    path: 'pro-projects',
+    component: ProjectsProComponent,
     data: { title: 'Projects' }
   },
   {

@@ -1,0 +1,21 @@
+<div class="card mb-2">
+  <div class="card-body">
+    <div *ngFor="let keyProj of projects" class="m-6">
+      <h4 [id]="keyProj.htmlElementId">{{keyProj.title}}</h4>
+      <p class="text-muted">
+        <span>{{keyProj.fromDate | date:'MMM y'}}</span>
+        -
+        <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
+        <span *ngIf="keyProj.toDate === null"><i>present</i></span>
+        ({{calculateTimeDuration(keyProj.fromDate, keyProj.toDate)}})
+      </p>
+      <p>{{keyProj.description}}</p>
+      <h6>Technologies Used</h6>
+      <p>{{keyProj.technologiesUsed}}</p>
+      <h6>Responsibilities</h6>
+      <ul>
+        <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
