@@ -4,7 +4,7 @@
         "fromDate": "2016-11-01T00:00:00.000Z",
         "toDate": "2019-11-01T00:00:00.000Z",
         "companyName": "City Facilities Management",
-        "clientName": "(inhouse software applications)",
+        "clientName": "City Facilities Management",
         "projectRole": "Development",
         "technologiesUsed": "ASP.NET MVC, ASP.NET Web Api, .NET Core, EF Core, Angular 2+, AngularJs, Azure DevOps",
         "description": "My job in this company involves continous development in a number of in-house applications that are assigned to my team. The two that I choose to name here are Jobs API, and Subcontractor Portal. This company keeps tracks of millions of facilities maintenance jobs performed by subcontractors, across 3 countries. The subcontractor portal (which integrates with Jobs API) allows the subcontractors to close down jobs, submit invoices, upgrades, and browse documents. The subcontractor portal uses a dual authorization system with ADFS-based SSO (for internal users), and OpenID Connect (for external users). The Jobs API uses OAuth authentication.",
@@ -14,7 +14,8 @@
             "Branch-merging and deployment into UAT",
             "Attend requirement gathering meetings"
         ],
-        "htmlElementId": "h3projActivities"
+        "htmlElementId": "h3projActivities",
+        "includeAsKeyAchievement": true
     },
     {
         "title": "Intelligent Tourism",
@@ -33,7 +34,8 @@
             "Appointed as Single Point of Contact (SPOC) for third party B2C integration partner",
             "Prepares and provides API releases documentation to partners."
         ],
-        "htmlElementId": "h3projIntelligent"
+        "htmlElementId": "h3projIntelligent",
+        "includeAsKeyAchievement": true
     },
     {
         "title": "Submission Tracking and Rating System",
@@ -49,7 +51,8 @@
             "Co-authored the User Requirement Specification (URS) Document with a senior.",
             "Performed coding and software development. "
         ],
-        "htmlElementId": "h3projStar"
+        "htmlElementId": "h3projStar",
+        "includeAsKeyAchievement": true
     },
     {
         "title": "Capital Gains Tax Worksheets",
@@ -63,6 +66,7 @@
         "jobResponsibilities": [
             "Performed coding and software development. "
         ],
-        "htmlElementId": "h3projCgtw"
+        "htmlElementId": "h3projCgtw",
+        "includeAsKeyAchievement": true
     }
 ]
