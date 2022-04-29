@@ -135,7 +135,9 @@
             </p>
             <p>{{keyProj.description}}</p>
             <h6>Technologies Used</h6>
-            <p>{{keyProj.technologiesUsed}}</p>
+            <ul>
+              <li *ngFor="let technologyUsed of keyProj.technologiesUsed">{{technologyUsed}}</li>
+            </ul>
             <h6>Responsibilities</h6>
             <ul>
               <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>

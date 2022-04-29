@@ -48,7 +48,7 @@ export class KeyProjectAchievement {
     public companyName: string;
     public clientName: string;
     public projectRole: string;
-    public technologiesUsed: string;
+    public technologiesUsed: string[];
     public description: string;
     public jobResponsibilities: string[];
     public htmlElementId: string;
