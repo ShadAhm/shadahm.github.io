@@ -1,0 +1,150 @@
+[
+    {
+        "title": "Asset Integrity Management Tools",
+        "fromDate": "2021-10-01T00:00:00.000Z",
+        "toDate": "2022-03-01T00:00:00.000Z",
+        "companyName": "Ørsted",
+        "clientName": "Ørsted",
+        "projectRole": "Senior Software Developer",
+        "technologiesUsed": [
+            ".NET 5",
+            "Angular",
+            "Azure Cosmos",
+            "Azure Functions",
+            "Azure Service Bus",
+            "Azure Blob Storage"
+        ],
+        "description": "Ørsted is a Danish energy company where I worked as an inhouse developer. Ørsted works with multiple other companies for inspection of their assets. These companies gather inspection data which they keep in their own data store. The need was for Ørsted to be able to own the data, and being able to keep them in one place. Hence the need for Asset Integrity Management tools, a data-aggragator of sort where these data are collected and put together into one data store.",
+        "jobResponsibilities": [
+            "Software development"
+        ],
+        "htmlElementId": "h3projAimTools",    
+        "includeAsKeyAchievement": true
+    },
+    {
+        "title": "Flexible Maintenance Tools",
+        "fromDate": "2019-11-01T00:00:00.000Z",
+        "toDate": "2021-10-01T00:00:00.000Z",
+        "companyName": "Ørsted",
+        "clientName": "Ørsted",
+        "projectRole": "Senior Software Developer",
+        "technologiesUsed": [
+            ".NET Core 3.1",
+            "Angular",
+            "SQL Server",
+            "EF Core"
+        ],
+        "description": "Ørsted is a Danish energy company where I worked as an inhouse developer. This project was a maintenance application for Offshore Wind Farms. It is a web application that allows engineering teams to maintain and schedule maintenance plans for wind turbines. This involves editing of a construct called \"Task Lists\" which consists of operations/tasks that needed to be performed on a turbine's maintenance yearly. The Task Lists then gets finalized and sent to a SAP service where it generates work orders for technicians to perform their duties.",
+        "jobResponsibilities": [
+            "Software development"
+        ],
+        "htmlElementId": "h3projAimTools",    
+        "includeAsKeyAchievement": true
+    },
+    {
+        "title": "Asset Management System/Job Management System/Subcontractor Portal",
+        "fromDate": "2016-11-01T00:00:00.000Z",
+        "toDate": "2019-11-01T00:00:00.000Z",
+        "companyName": "City Facilities Management",
+        "clientName": "City Facilities Management",
+        "projectRole": "Senior Software Developer",
+        "technologiesUsed": [
+            "ASP.NET MVC",
+            "ASP.NET Web Api",
+            ".NET Core",
+            "EntityFramework",
+            "Angular 2+",
+            "AngularJs",
+            "Azure DevOps"
+        ],
+        "description": "City Facilities Management (CityFM) is a company that does facilities management i.e: upkeeping and repairs for facilities, mainly grocery stores and supermarket. I worked there as an in-house developer, where I had to develop and maintain multiple applications.\r\nThis company keeps tracks of millions of jobs performed by technicians and subcontractors, across multiple countries. It also keeps tracks with the inventory of assets owned by facilities (e.g: refrigerators in a convenience stores). The applications that I had to develop and maintain supports the way the business ran. These include Asset Management System, Job Management System, and Subcontractor Portal.",
+        "jobResponsibilities": [
+            "Software development",
+            "Bug fixes and maintenance",
+            "Perform job interviews"
+        ],
+        "htmlElementId": "h3projCity",    
+        "includeAsKeyAchievement": true
+    },
+    {
+        "title": "Intelligent Tourism",
+        "fromDate": "2015-11-01T00:00:00.000Z",
+        "toDate": "2016-11-01T00:00:00.000Z",
+        "companyName": "Galasys Solutions",
+        "clientName": "Galasys Solutions",
+        "projectRole": "Senior Software Developer",
+        "technologiesUsed": [
+            "ASP.NET MVC",
+            "ASP.NET Web Api",
+            "AngularJs",
+            "SQL Server"
+        ],
+        "description": "The Intelligent Tourism project ultimately did not come into fruition, as the company closes down. But it was an ambitious project of creating an application suite that centralises ticket sales. The goal was to have a site (called B2B) where small vendors set their tickets and offers and then they would all be publicly offered on another site (B2C). The vendors could also have their own front-end site instead, and it would be connecting to the database via the web API.",
+        "jobResponsibilities": [
+            "Software development",
+            "Running daily stand up meetings"
+        ],
+        "htmlElementId": "h3projItourism",    
+        "includeAsKeyAchievement": false
+    },
+    {
+        "title": "Submission Tracking and Rating System",
+        "fromDate": "2015-01-01T00:00:00.000Z",
+        "toDate": "2015-11-01T00:00:00.000Z",
+        "companyName": "Alfacom Technologies",
+        "clientName": "Perbadanan Insurans Deposit Malaysia (PIDM) / Malaysia Deposit Insurance Corporation",
+        "projectRole": "Senior Developer",
+        "technologiesUsed": [
+            "WPF",
+            "ASP.NET MVC",
+            "SQL Server"
+        ],
+        "description": "PIDM is a government agency whose purpose is protect bank depositors and owners of insurance policies in the event of a member institution failure.\r\nEvery year all banks in Malaysia are tasked to provide PIDM a set of documents. They would normally receive these documents manually, via hard drive, and the team members at PIDM has to do the same task repetitively to extract the data from these documents and organizing it into the format that they want. This data is finally used for calculating risks and evaluating the banks' readiness for a payout in the event of failure.\r\nThe application we called STARS (Submission Tracking and Rating System) has the purpose of automating a lot of the tasks mentioned above. Reducing weeks of manual work into hours.",
+        "jobResponsibilities": [
+            "Software development",
+            "Requirement gathering and co-authoring the User Requirement Specifications document (URS)"
+        ],
+        "htmlElementId": "h3projStars",    
+        "includeAsKeyAchievement": true
+    },
+    {
+        "title": "Capital Gains Tax Reporter Worksheet",
+        "fromDate": "2013-03-01T00:00:00.000Z",
+        "toDate": "2015-01-01T00:00:00.000Z",
+        "companyName": "Alfacom Technologies",
+        "clientName": "Wolters Kluwer",
+        "projectRole": "Junior Software Developer / Software Developer",
+        "technologiesUsed": [
+            ".NET Web Forms",
+            "jQuery",
+            "ADO.NET",
+            "Telerik UI for ASP.NET AJAX"
+        ],
+        "description": "Wolters Kluwer had at the time had an office in Malaysia for Wolters Kluwer Asia Pacific. We were working on a project called CGT Reporter Worksheet, and the purpose of this application was to keep track of shareholding histories that is used to calculate the Capital Gains Tax (CGT).\r\n\r\nThe application was a monolithic web application that is running on an SQL Server database, to which it connects using ADO.NET. The database contains all of the data about the history of shareholding prices, and the events that affect them. These data is then used for producing the history of capital gain taxes, as well as predicted taxes.",
+        "jobResponsibilities": [
+            "Software development",
+            "Take part in daily meetings and sprint ceremonies at the customers' office"
+        ],
+        "htmlElementId": "h3projCgtw",    
+        "includeAsKeyAchievement": true
+    },    
+    {
+        "title": "ePayslip",
+        "fromDate": "2013-04-01T00:00:00.000Z",
+        "toDate": "2013-06-01T00:00:00.000Z",
+        "companyName": "Alfacom Technologies",
+        "clientName": "Accounting Department of Malaysia",
+        "projectRole": "Junior Software Developer",
+        "technologiesUsed": [
+            ".NET Web Forms",
+            "jQuery"
+        ],
+        "description": "This was my first assignment. The Accounting Department of Malaysia has a web portal where all civil servants can go and download their payslips. My first assignment was to add a page where the users can edit their contact details such as e-mail for the purpose of password reset.",
+        "jobResponsibilities": [
+            "Software development",
+            "Assisting a team lead in adding a functionality to an existing application"
+        ],
+        "htmlElementId": "h3projCgtw",    
+        "includeAsKeyAchievement": false
+    }
+]
