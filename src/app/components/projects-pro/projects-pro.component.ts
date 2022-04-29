@@ -18,7 +18,7 @@ export class ProjectsProComponent implements OnInit {
   }
 
   getKeyProjectAchievements(): void {
-    this.resumeService.getKeyProjectAchievements().subscribe(
+    this.resumeService.getProProjects().subscribe(
       (response: KeyProjectAchievement[]) => { this.projects = response },
       (error) => { console.error("Error happened", error) }
     );

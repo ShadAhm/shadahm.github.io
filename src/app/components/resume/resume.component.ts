@@ -20,7 +20,7 @@ export class ResumeComponent implements OnInit {
     this.getResumeContents();
     this.getTechnicalSkills();
     this.getEmploymentHistories();
-    this.getKeyProjectAchievements(); 
+    this.getKeyProjectAchievements();
   }
 
   scrollIntoView(elementId: string): void {
@@ -50,26 +50,7 @@ export class ResumeComponent implements OnInit {
       {
         displayText: 'Key Project Achievements',
         elementId: 'h2KeyProject',
-        children: [{
-          displayText: 'Jobs API / Subcontractor Portal ',
-          elementId: 'h3projActivities',
-          children: null
-        },
-        {
-          displayText: 'Intelligent Tourism',
-          elementId: 'h3projIntelligent',
-          children: null
-        },
-        {
-          displayText: 'Submission Tracking and Rating System',
-          elementId: 'h3projStar',
-          children: null
-        },
-        {
-          displayText: 'Capital Gains Tax Worksheets',
-          elementId: 'h3projCgtw',
-          children: null
-        }]
+        children: []
       },
       {
         displayText: 'Education and Certifications',
@@ -92,16 +73,32 @@ export class ResumeComponent implements OnInit {
 
   getEmploymentHistories(): void {
     this.resumeService.getEmploymentHistories().subscribe(
-      (response: EmploymentHistory[]) => { this.employmentHistories = response },
+      (response: EmploymentHistory[]) => { 
+        this.employmentHistories = response;
+      },
       (error) => { console.error("Error happened", error) }
     );
   }
 
   getKeyProjectAchievements(): void {
-    this.resumeService.getKeyProjectAchievements().subscribe(
-      (response: KeyProjectAchievement[]) => { this.keyProjectAchievements = response },
+    this.resumeService.getProProjects().subscribe(
+      (response: KeyProjectAchievement[]) => { 
+        this.keyProjectAchievements = response.filter(o => o.includeAsKeyAchievement);
+        this.addProjectsToContentTable();
+      },
       (error) => { console.error("Error happened", error) }
     );
+  }
+
+  private addProjectsToContentTable(): void {
+    let contentTableProjects = this.contents.find(o => o.displayText == 'Key Project Achievements');
+
+    contentTableProjects.children = this.keyProjectAchievements
+      .map<ResumeContent>(o => ({
+        displayText: o.title,
+        elementId: o.htmlElementId,
+        children: null
+      }));
   }
 
   calculateTimeDuration(fromDateStr: string, toDateStr: string): string {
@@ -119,10 +116,10 @@ export class ResumeComponent implements OnInit {
     fromDate.add(months, 'months');
 
     let yearPortion = years > 0 ? years + ' years' : '';
-    if(years === 1) yearPortion = yearPortion.replace('years', 'year'); 
+    if (years === 1) yearPortion = yearPortion.replace('years', 'year');
 
     let monthPortion = months > 0 ? ' ' + months + ' months' : '';
-    if(months === 1) monthPortion = monthPortion.replace('months', 'month'); 
+    if (months === 1) monthPortion = monthPortion.replace('months', 'month');
 
     return (yearPortion + monthPortion).trim();
   }

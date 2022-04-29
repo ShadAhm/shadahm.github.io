@@ -85,7 +85,7 @@
             "Running daily stand up meetings"
         ],
         "htmlElementId": "h3projItourism",    
-        "includeAsKeyAchievement": true
+        "includeAsKeyAchievement": false
     },
     {
         "title": "Submission Tracking and Rating System",
@@ -145,6 +145,6 @@
             "Assisting a team lead in adding a functionality to an existing application"
         ],
         "htmlElementId": "h3projCgtw",    
-        "includeAsKeyAchievement": true
+        "includeAsKeyAchievement": false
     }
 ]

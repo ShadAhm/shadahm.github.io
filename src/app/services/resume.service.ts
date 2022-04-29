@@ -20,8 +20,8 @@ export class ResumeService {
       .pipe(map(res => res));
   }
 
-  getKeyProjectAchievements(): Observable<KeyProjectAchievement[]> {
-    return this.httpClient.get<KeyProjectAchievement[]>('assets/data/key-project-achievements.json')
+  getProProjects(): Observable<KeyProjectAchievement[]> {
+    return this.httpClient.get<KeyProjectAchievement[]>('assets/data/pro-projects.json')
       .pipe(map(res => res));
   }
 }

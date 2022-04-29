@@ -52,6 +52,7 @@ export class KeyProjectAchievement {
     public description: string;
     public jobResponsibilities: string[];
     public htmlElementId: string;
+    public includeAsKeyAchievement: boolean;
 }
 
 export interface IHasDuration {
