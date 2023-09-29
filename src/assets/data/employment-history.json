@@ -1,11 +1,20 @@
 [
     {
+        "companyName": "Hitachi Energy",
+        "companyUrl": "https://www.hitachienergy.com/",
+        "companySubcripts": null,
+        "position": "Lead Software Engineer",
+        "fromDate": "2023-10-01T00:00:00.000Z",
+        "toDate": null,
+        "location": "Västerås, Sweden"
+    },
+    {
         "companyName": "Alten Sverige",
         "companyUrl": "https://www.alten.com/country/sweden/",
         "companySubcripts": null,
         "position": "Consultant",
         "fromDate": "2022-03-22T00:00:00.000Z",
-        "toDate": null,
+        "toDate": "2023-09-29T00:00:00.000Z",
         "location": "Stockholm, Sweden"
     },
     {
