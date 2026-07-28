@@ -1,9 +1,9 @@
 $body-bg: #f8f9fa;
 $body-color: #343a40;
-$font-size-base: 0.85rem; 
+$font-size-base: 0.85rem;
 
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import '~font-awesome/css/font-awesome.css'; 
+@import 'bootstrap/scss/bootstrap';
+@import 'font-awesome/css/font-awesome.css';
 
 .bs-callout {
     margin: 20px 0;

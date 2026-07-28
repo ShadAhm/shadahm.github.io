@@ -21,7 +21,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -30,7 +30,9 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "es5BrowserSupport": true
+            "allowedCommonJsDependencies": [
+              "moment"
+            ]
           },
           "configurations": {
             "production": {
@@ -43,7 +45,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -141,3 +142,5 @@
     "analytics": false
   }
 }
+
+

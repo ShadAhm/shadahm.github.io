@@ -49,7 +49,7 @@
             </tr>
             <tr>
               <td>E-mail: </td>
-              <td>arsh90@gmail.com</td>
+              <td>arsh90&#64;gmail.com</td>
             </tr>
           </table>
 
@@ -84,7 +84,7 @@
               <tr *ngFor="let employmentHistory of employmentHistories">
                 <td>
                   <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
-                  <sup *ngFor="let asterisk of employmentHistory.companySubcripts"> {{asterisk}}</sup>
+                  <sup *ngFor="let asterisk of employmentHistory.companySubscripts"> {{asterisk}}</sup>
                   <br />
                   <span class="employment-history-location text-muted"><i class="fa fa-fw fa-map-marker"></i>
                     {{employmentHistory.location}}</span>

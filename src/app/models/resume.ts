@@ -39,6 +39,7 @@ export class EmploymentHistory {
     public position: string;
     public fromDate: string;
     public toDate: string;
+    public location: string;
 }
 
 export class KeyProjectAchievement {

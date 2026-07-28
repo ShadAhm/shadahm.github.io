@@ -13,8 +13,8 @@ export class ContentHeaderComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
-    ).subscribe((route: ActivatedRoute) => {
-      this.title = this.route.snapshot.firstChild.data.title; 
+    ).subscribe(() => {
+      this.title = this.route.snapshot.firstChild?.data?.['title'];
    });
   }
 

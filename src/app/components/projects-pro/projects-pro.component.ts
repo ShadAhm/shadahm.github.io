@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
+import moment from 'moment';
 import { KeyProjectAchievement } from 'src/app/models/resume';
 import { ResumeService } from 'src/app/services/resume.service';
 

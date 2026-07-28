@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IHasDuration } from '../models/resume';
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
