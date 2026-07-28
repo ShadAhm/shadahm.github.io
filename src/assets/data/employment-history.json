@@ -2,7 +2,7 @@
     {
         "companyName": "Hitachi Energy",
         "companyUrl": "https://www.hitachienergy.com/",
-        "companySubcripts": null,
+        "companySubscripts": null,
         "position": "Lead Software Engineer",
         "fromDate": "2023-10-01T00:00:00.000Z",
         "toDate": null,
@@ -11,7 +11,7 @@
     {
         "companyName": "Alten Sverige",
         "companyUrl": "https://www.alten.com/country/sweden/",
-        "companySubcripts": null,
+        "companySubscripts": null,
         "position": "Consultant",
         "fromDate": "2022-03-22T00:00:00.000Z",
         "toDate": "2023-09-29T00:00:00.000Z",
@@ -20,7 +20,7 @@
     {
         "companyName": "Ørsted",
         "companyUrl": "https://orsted.com/",
-        "companySubcripts": null,
+        "companySubscripts": null,
         "position": "Senior Software Engineer",
         "fromDate": "2019-11-01T00:00:00.000Z",
         "toDate": "2022-03-05T00:00:00.000Z",
@@ -29,7 +29,7 @@
     {
         "companyName": "City Facilities Management Sdn Bhd",
         "companyUrl": "https://www.cityholdings.asia/",
-        "companySubcripts": null,
+        "companySubscripts": null,
         "position": "Senior Software Developer",
         "fromDate": "2016-11-01T00:00:00.000Z",
         "toDate": "2019-11-01T00:00:00.000Z",
@@ -38,7 +38,7 @@
     {
         "companyName": "Galasys Solutions (MSC) Sdn Bhd",
         "companyUrl": "https://www.galasystec.com/company-profile.aspx",
-        "companySubcripts": null,
+        "companySubscripts": null,
         "position": "Software Developer",
         "fromDate": "2015-11-01T00:00:00.000Z",
         "toDate": "2016-10-01T00:00:00.000Z",
@@ -47,7 +47,7 @@
     {
         "companyName": "Alfacom Technologies Sdn Bhd",
         "companyUrl": "http://www.alfacom.com.my/",
-        "companySubcripts": null,
+        "companySubscripts": null,
         "position": "Software Developer",
         "fromDate": "2013-04-01T00:00:00.000Z",
         "toDate": "2015-11-01T00:00:00.000Z",

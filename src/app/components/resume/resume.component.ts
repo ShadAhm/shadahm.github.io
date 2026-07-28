@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ResumeContent, EmploymentHistory, KeyProjectAchievement, TechnicalSkill } from 'src/app/models/resume';
 
 import { ResumeService } from 'src/app/services/resume.service';
-import * as moment from 'moment';
+import moment from 'moment';
 
 @Component({
   selector: 'app-resume',
