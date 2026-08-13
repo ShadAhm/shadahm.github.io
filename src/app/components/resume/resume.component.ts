@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ResumeContent, EmploymentHistory, KeyProjectAchievement, TechnicalSkill } from 'src/app/models/resume';
 
 import { ResumeService } from 'src/app/services/resume.service';
-import moment from 'moment';
+import { DurationService } from 'src/app/services/duration.service';
 
 @Component({
   selector: 'app-resume',
@@ -14,7 +14,7 @@ export class ResumeComponent implements OnInit {
   technicalSkills: TechnicalSkill[];
   employmentHistories: EmploymentHistory[];
   keyProjectAchievements: KeyProjectAchievement[];
-  constructor(private resumeService: ResumeService) { }
+  constructor(private resumeService: ResumeService, public durationService: DurationService) { }
 
   ngOnInit() {
     this.getResumeContents();
@@ -24,7 +24,7 @@ export class ResumeComponent implements OnInit {
   }
 
   scrollIntoView(elementId: string): void {
-    let element = document.getElementById(elementId);
+    const element = document.getElementById(elementId);
     if (element) {
       document.getElementById(elementId).scrollIntoView({ behavior: 'smooth' });
     }
@@ -67,7 +67,7 @@ export class ResumeComponent implements OnInit {
   getTechnicalSkills(): void {
     this.resumeService.getTechnicalSkills().subscribe(
       (response: TechnicalSkill[]) => { this.technicalSkills = response },
-      (error) => { console.error("Error happened", error) }
+      (error) => { console.error('Error happened', error) }
     );
   }
 
@@ -76,7 +76,7 @@ export class ResumeComponent implements OnInit {
       (response: EmploymentHistory[]) => { 
         this.employmentHistories = response;
       },
-      (error) => { console.error("Error happened", error) }
+      (error) => { console.error('Error happened', error) }
     );
   }
 
@@ -86,12 +86,12 @@ export class ResumeComponent implements OnInit {
         this.keyProjectAchievements = response.filter(o => o.includeAsKeyAchievement);
         this.addProjectsToContentTable();
       },
-      (error) => { console.error("Error happened", error) }
+      (error) => { console.error('Error happened', error) }
     );
   }
 
   private addProjectsToContentTable(): void {
-    let contentTableProjects = this.contents.find(o => o.displayText == 'Key Project Achievements');
+    const contentTableProjects = this.contents.find(o => o.displayText == 'Key Project Achievements');
 
     contentTableProjects.children = this.keyProjectAchievements
       .map<ResumeContent>(o => ({
@@ -101,35 +101,12 @@ export class ResumeComponent implements OnInit {
       }));
   }
 
-  calculateTimeDuration(fromDateStr: string, toDateStr: string): string {
-    let fromDate = moment(fromDateStr);
-    let toDate = moment((new Date()).toISOString());
-
-    if (toDateStr != null && toDateStr != '') {
-      toDate = moment(toDateStr);
-    }
-
-    let years = toDate.diff(fromDate, 'year');
-    fromDate.add(years, 'years');
-
-    let months = toDate.diff(fromDate, 'months');
-    fromDate.add(months, 'months');
-
-    let yearPortion = years > 0 ? years + ' years' : '';
-    if (years === 1) yearPortion = yearPortion.replace('years', 'year');
-
-    let monthPortion = months > 0 ? ' ' + months + ' months' : '';
-    if (months === 1) monthPortion = monthPortion.replace('months', 'month');
-
-    return (yearPortion + monthPortion).trim();
-  }
-
   calculateTotalYearsExp(): string {
     if (this.employmentHistories) {
-      let fromDateStr = this.employmentHistories[this.employmentHistories.length - 1].fromDate;
-      let toDateStr = (new Date()).toISOString();
+      const fromDateStr = this.employmentHistories[this.employmentHistories.length - 1].fromDate;
+      const toDateStr = (new Date()).toISOString();
 
-      return this.calculateTimeDuration(fromDateStr, toDateStr);
+      return this.durationService.calculateTimeDuration(fromDateStr, toDateStr);
     }
   }
 

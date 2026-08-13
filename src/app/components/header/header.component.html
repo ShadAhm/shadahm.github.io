@@ -2,16 +2,17 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="./assets/images/logo.png" />
+        <img src="./assets/images/logo.png" alt="Shad Ahmad" />
       </a>
-      <button class="navbar-toggler" type="button" (click)="toggleNav()">
+      <button class="navbar-toggler" type="button" (click)="toggleNav()"
+        [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div [ngClass]="{'collapse': navbarCollapsed}" class="navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav shad-orange-navbar" (click)="toggleNav()">
-          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/resume">Resume</a>
-          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/projects">Projects</a>
-          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/contact">Contact</a>
+        <div class="navbar-nav shad-orange-navbar">
+          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/resume" (click)="toggleNav()">Resume</a>
+          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/projects" (click)="toggleNav()">Projects</a>
+          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/contact" (click)="toggleNav()">Contact</a>
         </div>
       </div>
     </div>

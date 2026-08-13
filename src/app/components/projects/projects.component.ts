@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from 'src/app/services/projects.service';
-import { GithubRepository, SelectRepository } from 'src/app/models/github';
+import { SelectRepository } from 'src/app/models/github';
 
 @Component({
   selector: 'app-projects',

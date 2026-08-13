@@ -18,16 +18,16 @@ export class SkillsComponentComponent implements OnInit {
   }
 
   toGridDto(technicalSkills: TechnicalSkill[]): void {
-    let distinctCategories = technicalSkills
+    const distinctCategories = technicalSkills
       .map(item => item.category)
       .filter((value, index, self) => self.indexOf(value) === index)
       .map(item => new TechnicalSkillsGridDto(item));
 
-    for (let category of distinctCategories) {
-      let skillsOfCategory = technicalSkills.filter(o => o.category == category.category);
+    for (const category of distinctCategories) {
+      const skillsOfCategory = technicalSkills.filter(o => o.category == category.category);
       
       for (const skillOfCategory of skillsOfCategory) {
-        let skillDto: TechnicalSkillGridDto = new TechnicalSkillGridDto();
+        const skillDto: TechnicalSkillGridDto = new TechnicalSkillGridDto();
 
         skillDto.category = skillOfCategory.category;
         skillDto.name = skillOfCategory.name; 
@@ -46,7 +46,7 @@ export class SkillsComponentComponent implements OnInit {
   }
 
   calculateExperience(yearsExp: number): string {
-    let yearsExpFloored = Math.floor(yearsExp);
+    const yearsExpFloored = Math.floor(yearsExp);
 
     if(yearsExpFloored < 1) {
       return '<1 year';

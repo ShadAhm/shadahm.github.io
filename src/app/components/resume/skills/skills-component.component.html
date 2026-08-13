@@ -16,9 +16,9 @@
       <tr>
         <td>{{skill.name}}</td>
         <td class="tags-group">
-          <i [ngClass]="{ 'fa-star': skill.starred }" class="fa fa-fw star-orange"></i>
-          <span class="badge badge-info">{{ calculateExperience(skill.totalYearsExp) }}</span>
-          <span class="badge badge-primary" *ngIf="isCurrentlyUsing(skill)">Current</span>
+          <i [ngClass]="{ 'fa-star': skill.starred }" class="fa-solid fa-fw star-orange"></i>
+          <span class="badge text-bg-info">{{ calculateExperience(skill.totalYearsExp) }}</span>
+          <span class="badge text-bg-primary" *ngIf="isCurrentlyUsing(skill)">Current</span>
         </td>
         <td class="d-print-none">
           <span *ngIf="skill.workSamples && skill.workSamples.length > 0" class="sample-work-link small">
@@ -37,19 +37,19 @@
     <tbody>
       <tr>
         <td>
-          <i class="fa fa-fw fa-star star-orange"></i>
+          <i class="fa-solid fa-fw fa-star star-orange"></i>
         </td>
         <td>Essential skills, will primarily prefer jobs using these technologies.</td>
       </tr>
       <tr>
         <td>
-          <span class="badge badge-info">N years</span>
+          <span class="badge text-bg-info">N years</span>
         </td>
         <td>Years of professional experience.</td>
       </tr>
       <tr>
         <td>
-          <span class="badge badge-primary">Current</span>
+          <span class="badge text-bg-primary">Current</span>
         </td>
         <td>Technologies I am currently working with in my current job.</td>
       </tr>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
@@ -7,7 +7,7 @@ import { filter } from 'rxjs/operators';
   templateUrl: './content-header.component.html',
   styleUrls: ['./content-header.component.scss']
 })
-export class ContentHeaderComponent implements OnInit {
+export class ContentHeaderComponent {
   title: string;
 
   constructor(private router: Router, private route: ActivatedRoute) {
@@ -16,8 +16,5 @@ export class ContentHeaderComponent implements OnInit {
     ).subscribe(() => {
       this.title = this.route.snapshot.firstChild?.data?.['title'];
    });
-  }
-
-  ngOnInit() {
   }
 }
