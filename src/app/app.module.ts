@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler, Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { ɵprovideFakePlatformNavigation } from '@angular/common/testing';
 
 // components
 import { AppComponent } from './app.component';
@@ -66,7 +65,6 @@ export class DevErrorHandler implements ErrorHandler {
     HttpClientModule
   ],
   providers: [
-    ...ɵprovideFakePlatformNavigation(),
     { provide: ErrorHandler, useClass: DevErrorHandler }
   ],
   bootstrap: [AppComponent]
