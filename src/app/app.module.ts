@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ɵprovideFakePlatformNavigation } from '@angular/common/testing';
 
 // components
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ import { ProjectsProComponent } from './components/projects-pro/projects-pro.com
     HttpClientModule
   ],
   providers: [
+    ...ɵprovideFakePlatformNavigation()
   ],
   bootstrap: [AppComponent]
 })
