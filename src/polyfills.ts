@@ -55,6 +55,30 @@
 /***************************************************************************************************
  * Zone JS is required by default for Angular itself.
  */
+// Provide a minimal Navigation API polyfill for environments that lack window.navigation.
+// Angular's PlatformNavigation injectable uses `window.navigation` as its provided value;
+// if it's undefined, JIT can fail to compile/resolve the injectable at runtime. A small
+// stub prevents that by ensuring a usable value exists before Angular bootstraps.
+
+declare global {
+  interface Window {
+    navigation?: any;
+  }
+}
+
+if (typeof window !== 'undefined' && !window.navigation) {
+  window.navigation = {
+    currentEntry: { url: window.location.href },
+    entries: () => [{ url: window.location.href }],
+    navigate: (url?: string) => ({ committed: Promise.resolve(), finished: Promise.resolve() }),
+    pushState: (_data?: any, _title?: string, _url?: string) => { },
+    replaceState: (_data?: any, _title?: string, _url?: string) => { },
+    canGoBack: false,
+    canGoForward: false,
+    traverseTo: (_key?: string) => ({ committed: Promise.resolve(), finished: Promise.resolve() })
+  } as any;
+}
+
 import 'zone.js';  // Included with Angular CLI.
 
 
