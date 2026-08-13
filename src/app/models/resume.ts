@@ -35,11 +35,21 @@ export class WorkSample {
 export class EmploymentHistory {
     public companyName: string;
     public companyUrl: string;
-    public companySubscripts: string[]; 
+    public companySubscripts: string[];
     public position: string;
     public fromDate: string;
     public toDate: string;
     public location: string;
+    public htmlElementId: string;
+    public subtitle: string;
+    public positionHistory: EmploymentHistoryRole[];
+    public projectRoles: EmploymentHistoryRole[];
+}
+
+export class EmploymentHistoryRole implements IHasDuration {
+    public title: string;
+    public fromDate: string;
+    public toDate: string;
 }
 
 export class KeyProjectAchievement {
@@ -59,4 +69,42 @@ export class KeyProjectAchievement {
 export interface IHasDuration {
     fromDate: string;
     toDate: string;
+}
+
+export class PoEmploymentHighlight {
+    public companyName: string;
+    public highlights: string[];
+}
+
+export class PoSkillGroup {
+    public category: string;
+    public items: string[];
+}
+
+export class PoEducation {
+    public institution: string;
+    public credential: string;
+    public fromYear: string;
+    public toYear: string;
+}
+
+export class PoContact {
+    public phone: string;
+    public email: string;
+    public linkedInUrl: string;
+    public gitHubUrl: string;
+    public location: string;
+}
+
+export class PoResume {
+    public name: string;
+    public fullName: string;
+    public title: string;
+    public location: string;
+    public summary: string;
+    public employmentHighlights: PoEmploymentHighlight[];
+    public selectedHighlights: string[];
+    public skillGroups: PoSkillGroup[];
+    public education: PoEducation[];
+    public contact: PoContact;
 }

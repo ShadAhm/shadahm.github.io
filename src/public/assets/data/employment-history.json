@@ -3,10 +3,25 @@
         "companyName": "Hitachi Energy",
         "companyUrl": "https://www.hitachienergy.com/",
         "companySubscripts": null,
-        "position": "Lead Software Engineer",
+        "position": "R&D Senior Professional",
         "fromDate": "2023-10-01T00:00:00.000Z",
         "toDate": null,
-        "location": "Västerås, Sweden"
+        "location": "Västerås, Sweden",
+        "htmlElementId": "empHitachi",
+        "subtitle": null,
+        "positionHistory": null,
+        "projectRoles": [
+            {
+                "title": "Lead Software Engineer",
+                "fromDate": "2023-10-01T00:00:00.000Z",
+                "toDate": "2025-01-31T00:00:00.000Z"
+            },
+            {
+                "title": "Product Owner",
+                "fromDate": "2025-02-01T00:00:00.000Z",
+                "toDate": null
+            }
+        ]
     },
     {
         "companyName": "Alten Sverige",
@@ -15,7 +30,11 @@
         "position": "Consultant",
         "fromDate": "2022-03-22T00:00:00.000Z",
         "toDate": "2023-09-29T00:00:00.000Z",
-        "location": "Stockholm, Sweden"
+        "location": "Stockholm, Sweden",
+        "htmlElementId": "empAlten",
+        "subtitle": "Client assignment: Hitachi Energy",
+        "positionHistory": null,
+        "projectRoles": null
     },
     {
         "companyName": "Ørsted",
@@ -24,7 +43,22 @@
         "position": "Senior Software Engineer",
         "fromDate": "2019-11-01T00:00:00.000Z",
         "toDate": "2022-03-05T00:00:00.000Z",
-        "location": "Kuala Lumpur, Malaysia"
+        "location": "Kuala Lumpur, Malaysia",
+        "htmlElementId": "empOrsted",
+        "subtitle": null,
+        "positionHistory": [
+            {
+                "title": "Software Engineer",
+                "fromDate": "2019-11-01T00:00:00.000Z",
+                "toDate": "2021-01-01T00:00:00.000Z"
+            },
+            {
+                "title": "Senior Software Engineer",
+                "fromDate": "2021-01-01T00:00:00.000Z",
+                "toDate": "2022-03-05T00:00:00.000Z"
+            }
+        ],
+        "projectRoles": null
     },
     {
         "companyName": "City Facilities Management Sdn Bhd",
@@ -33,7 +67,22 @@
         "position": "Senior Software Developer",
         "fromDate": "2016-11-01T00:00:00.000Z",
         "toDate": "2019-11-01T00:00:00.000Z",
-        "location": "Kuala Lumpur, Malaysia"
+        "location": "Kuala Lumpur, Malaysia",
+        "htmlElementId": "empCityFM",
+        "subtitle": null,
+        "positionHistory": [
+            {
+                "title": "Software Developer",
+                "fromDate": "2016-11-01T00:00:00.000Z",
+                "toDate": "2018-05-01T00:00:00.000Z"
+            },
+            {
+                "title": "Senior Software Developer",
+                "fromDate": "2018-05-01T00:00:00.000Z",
+                "toDate": "2019-11-01T00:00:00.000Z"
+            }
+        ],
+        "projectRoles": null
     },
     {
         "companyName": "Galasys Solutions (MSC) Sdn Bhd",
@@ -42,7 +91,11 @@
         "position": "Software Developer",
         "fromDate": "2015-11-01T00:00:00.000Z",
         "toDate": "2016-10-01T00:00:00.000Z",
-        "location": "Kuala Lumpur, Malaysia"
+        "location": "Kuala Lumpur, Malaysia",
+        "htmlElementId": "empGalasys",
+        "subtitle": null,
+        "positionHistory": null,
+        "projectRoles": null
     },
     {
         "companyName": "Alfacom Technologies Sdn Bhd",
@@ -51,6 +104,10 @@
         "position": "Software Developer",
         "fromDate": "2013-04-01T00:00:00.000Z",
         "toDate": "2015-11-01T00:00:00.000Z",
-        "location": "Kuala Lumpur, Malaysia"
+        "location": "Kuala Lumpur, Malaysia",
+        "htmlElementId": "empAlfacom",
+        "subtitle": "Client assignments: Wolters Kluwer, PIDM, and others",
+        "positionHistory": null,
+        "projectRoles": null
     }
 ]
