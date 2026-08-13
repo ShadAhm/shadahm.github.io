@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { EmploymentHistory, KeyProjectAchievement, TechnicalSkill } from '../models/resume';
+import { EmploymentHistory, KeyProjectAchievement, PoResume, TechnicalSkill } from '../models/resume';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,11 @@ export class ResumeService {
 
   getProProjects(): Observable<KeyProjectAchievement[]> {
     return this.httpClient.get<KeyProjectAchievement[]>('assets/data/pro-projects.json')
+      .pipe(map(res => res));
+  }
+
+  getPoResume(): Observable<PoResume> {
+    return this.httpClient.get<PoResume>('assets/data/resume-po.json')
       .pipe(map(res => res));
   }
 }

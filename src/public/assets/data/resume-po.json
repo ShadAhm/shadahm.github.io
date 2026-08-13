@@ -1,0 +1,99 @@
+{
+    "name": "Shad Ahmad",
+    "fullName": "Ahmad Arsyad Bin Ahmad",
+    "title": "Product Owner | Technical Product Leader | Enterprise Software",
+    "location": "Stockholm, Sweden",
+    "summary": "Product-oriented R&D professional with {{yearsOfExperience}} of software engineering experience and hands-on product ownership for complex engineering software. Experienced in shaping backlog at scale, supporting major and minor product releases, clarifying user needs, aligning stakeholders, and translating advanced engineering workflows into usable software capabilities. Combines technical credibility with product judgment, cross-functional leadership, international collaboration experience, and strong delivery focus across engineering, UX, domain experts, end users, managers, and external partners.",
+    "employmentHighlights": [
+        {
+            "companyName": "Hitachi Energy",
+            "highlights": [
+                "Formally appointed Product Owner in February 2025 after progressively taking on product ownership responsibilities from the start of the assignment, combining technical leadership with broader ownership of backlog, feature scope, stakeholder alignment, and delivery planning for a 40+ person engineering organization across six major releases and multiple minor release cycles.",
+                "Act as a bridge between software engineering, UX contributors, end users, engineering managers, system study experts, business stakeholders, and external consultants to convert complex HVDC engineering needs into clear, deliverable product scope.",
+                "Own and refine a high-volume backlog of user stories, acceptance criteria, release notes, and product communication, improving delivery clarity and reducing ambiguity during planning, implementation, and release preparation.",
+                "Support roadmap planning by identifying dependencies, technical risks, usability gaps, and delivery trade-offs across enterprise platform releases.",
+                "Facilitate onboarding and knowledge sharing for new contributors, helping preserve product context, engineering workflow understanding, and continuity in a changing team environment."
+            ]
+        },
+        {
+            "companyName": "Alten Sverige",
+            "highlights": [
+                "Provided senior software engineering expertise, helping bridge technical understanding between Hitachi stakeholders and a newly onboarded external development group of ~40 developers.",
+                "Helped the program transition from design phase into active development by clarifying software engineering expectations, delivery structure, technical direction, and practical ways of working.",
+                "Built domain familiarity, delivery context, and stakeholder trust that later supported transition into a permanent R&D role at Hitachi Energy."
+            ]
+        },
+        {
+            "companyName": "Ørsted",
+            "highlights": [
+                "Built and enhanced enterprise software solutions in the renewable energy domain, contributing to systems used by technical and business users.",
+                "Worked closely with stakeholders and distributed teams to understand requirements, support delivery planning, and improve application quality.",
+                "Provided senior-level engineering input across design, implementation, and maintainability decisions.",
+                "Promoted from Software Engineer to Senior Software Engineer, reflecting increased ownership across solution design, delivery quality, and stakeholder collaboration."
+            ]
+        },
+        {
+            "companyName": "City Facilities Management Sdn Bhd",
+            "highlights": [
+                "Selected as one of the first two Malaysia-based developers in a distributed delivery setup with the main team in Australia, contributing to a successful operating model that later supported expansion of the Malaysia development team.",
+                "Developed and maintained business-critical software solutions supporting facilities management operations and internal workflows.",
+                "Supported solution design and implementation across backend, frontend, and integration layers.",
+                "Promoted from Software Developer to Senior Software Developer, taking on broader responsibility for solution design, implementation quality, and support of business-critical systems."
+            ]
+        },
+        {
+            "companyName": "Galasys Solutions (MSC) Sdn Bhd",
+            "highlights": [
+                "Developed software features and supported application maintenance for business-facing systems.",
+                "Participated in requirement clarification, implementation, testing, and issue resolution across the software delivery lifecycle."
+            ]
+        },
+        {
+            "companyName": "Alfacom Technologies Sdn Bhd",
+            "highlights": [
+                "Started professional software development career by building, maintaining, and supporting web and business applications.",
+                "Assigned to Wolters Kluwer as a software developer, contributing to a Capital Gains Tax calculator application and gaining early experience in international client and delivery contexts.",
+                "Gained hands-on experience across software development, debugging, user support, and production issue resolution."
+            ]
+        }
+    ],
+    "selectedHighlights": [
+        "Product ownership for enterprise HVDC engineering software capabilities supporting engineering workflows across six major releases and recurring minor releases, including backlog shaping, user story creation, prioritization support, and release communication.",
+        "Cross-functional collaboration with software developers, UX designers, engineering end users, engineering managers, system study experts, business stakeholders, and external project partners.",
+        "Leadership in onboarding, walkthroughs, and knowledge sharing to help contributors understand product context, workflows, and delivery expectations.",
+        "Translate complex HVDC engineering workflows into clear product requirements, user stories, and usable software features for technical users."
+    ],
+    "skillGroups": [
+        {
+            "category": "Product",
+            "items": ["product ownership", "backlog management (Azure DevOps)", "roadmap support", "prioritization", "release notes", "stakeholder alignment", "user stories", "acceptance criteria"]
+        },
+        {
+            "category": "Leadership",
+            "items": ["cross-functional collaboration", "team onboarding", "facilitation", "decision framing", "stakeholder communication", "technical mentorship"]
+        },
+        {
+            "category": "Technical",
+            "items": ["web applications", "cloud-hosted services", "APIs", "system integrations", ".NET", "Angular", "Kubernetes", "SQL"]
+        },
+        {
+            "category": "Domains",
+            "items": ["HVDC engineering software", "system studies", "simulation workflows", "renewable energy", "enterprise applications", "facilities management systems"]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Universiti Kuala Lumpur",
+            "credential": "Diploma in Multimedia",
+            "fromYear": "2007",
+            "toYear": "2010"
+        }
+    ],
+    "contact": {
+        "phone": "+46 76 941 7695",
+        "email": "arsh90@gmail.com",
+        "linkedInUrl": "https://linkedin.com/in/shad-ahmad",
+        "gitHubUrl": "https://github.com/ShadAhm",
+        "location": "Stockholm, Sweden"
+    }
+}

@@ -1,0 +1,227 @@
+<div class="row">
+  <div class="col-md-3 order-md-last d-print-none">
+    <div>
+      <ol class="contents-list" id="olContentsList">
+        <li *ngFor="let content of contents"><button type="button" (click)="scrollIntoView(content.elementId)">
+            <span>{{content.displayText}}</span>
+          </button>
+          <ol *ngIf="content.children">
+            <li *ngFor="let content1 of content.children"><button type="button"
+                (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></button>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-2" *ngIf="resume">
+      <div class="card-body">
+        <div class="row d-print-none">
+          <div class="col-md-3">
+            <img src="./assets/images/me.png" class="img-me" alt="Photo of Shad Ahmad" />
+          </div>
+          <div class="col">
+            <h2 class="card-title" id="h2Introduction">Introduction</h2>
+            <p class="fw-semibold text-muted mb-1">{{resume.title}}</p>
+            <p class="text-muted"><i class="fa-solid fa-fw fa-location-dot"></i> {{resume.location}}</p>
+            <p>{{resume.summary}}</p>
+            <div class="d-none d-md-inline-block d-print-none mt-2">
+              <button class="btn btn-sm btn-primary me-2" (click)="print()"><i class="fa-solid fa-print"></i> Print
+                this resume</button>
+              <a class="btn btn-sm btn-outline-primary"
+                href="assets/documents/shad-ahmad-product-owner-resume.docx" download>
+                <i class="fa-solid fa-file-word"></i> Download as Word doc
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="d-none d-print-block">
+          <h2>{{resume.name}} <small>({{resume.fullName}})</small></h2>
+          <table class="table table-condensed table-borderless">
+            <tr>
+              <td>Title: </td>
+              <td>{{resume.title}}</td>
+            </tr>
+            <tr>
+              <td>Phone: </td>
+              <td>{{resume.contact.phone}}</td>
+            </tr>
+            <tr>
+              <td>E-mail: </td>
+              <td>{{resume.contact.email}}</td>
+            </tr>
+          </table>
+
+          <p class="panel"><strong>Note:</strong> An online (better) version of this resume can be viewed at
+            <u>https://shadahm.github.io/resume-po</u>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="printableArea">
+      <div class="card mb-2" *ngIf="resume">
+        <div class="card-body">
+          <h2 class="card-title" id="h2Highlights">Selected Product &amp; Leadership Highlights</h2>
+          <ul>
+            <li *ngFor="let highlight of resume.selectedHighlights">{{highlight}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mb-2" *ngIf="employmentEntries">
+        <div class="card-body">
+          <h2 class="card-title" id="h2EmploymentHistory">Employment History</h2>
+          <table class="table table-responsive-sm mb-0">
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>Position Held</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Year(s) in Company</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let entry of employmentEntries">
+                <td>
+                  <a [href]="entry.companyUrl">{{entry.companyName}}</a>
+                  <br />
+                  <span class="employment-history-location text-muted"><i
+                      class="fa-solid fa-fw fa-location-dot"></i> {{entry.location}}</span>
+                </td>
+                <td>
+                  {{entry.position}}
+                  <ng-container *ngIf="entry.positionHistory">
+                    <br />
+                    <small class="text-muted">Positions held:
+                      <span *ngFor="let role of entry.positionHistory; let last = last">{{role.title}}
+                        ({{role.fromDate | date:'MMM y'}} –
+                        <ng-container *ngIf="role.toDate; else positionAtGlancePresent">{{role.toDate | date:'MMM y'}}</ng-container>
+                        <ng-template #positionAtGlancePresent>Present</ng-template>)<ng-container
+                          *ngIf="!last">; </ng-container>
+                      </span>
+                    </small>
+                  </ng-container>
+                  <ng-container *ngIf="!entry.positionHistory && entry.projectRoles">
+                    <br />
+                    <small class="text-muted"><em>
+                        Project roles:
+                        <span *ngFor="let role of entry.projectRoles; let last = last">{{role.title}}
+                          ({{role.fromDate | date:'MMM y'}} –
+                          <ng-container *ngIf="role.toDate; else roleAtGlancePresent">{{role.toDate | date:'MMM y'}}</ng-container>
+                          <ng-template #roleAtGlancePresent>Present</ng-template>)<ng-container
+                            *ngIf="!last">; </ng-container>
+                        </span>
+                      </em></small>
+                  </ng-container>
+                  <ng-container *ngIf="!entry.positionHistory && !entry.projectRoles && entry.subtitle">
+                    <br />
+                    <small class="text-muted"><em>{{entry.subtitle}}</em></small>
+                  </ng-container>
+                </td>
+                <td>{{entry.fromDate | date:'MMM y'}}</td>
+                <td>
+                  <ng-container *ngIf="entry.toDate; else atGlancePresent">{{entry.toDate | date:'MMM y'}}</ng-container>
+                  <ng-template #atGlancePresent><i class="text-muted">present</i></ng-template>
+                </td>
+                <td>{{ durationService.calculateTimeDuration(entry.fromDate, entry.toDate) }}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4"><strong class="float-end">Total Years Exp: </strong></td>
+                <td>
+                  <span>{{ calculateTotalYearsExp() }}</span>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+
+      <div class="card mb-2" *ngIf="employmentEntries">
+        <div class="card-body">
+          <h2 class="card-title" id="h2Employment">Professional Experience</h2>
+          <div *ngFor="let entry of employmentEntries" class="mb-4">
+            <h4 [id]="entry.htmlElementId">
+              <a [href]="entry.companyUrl">{{entry.companyName}}</a>
+            </h4>
+            <p class="mb-1"><strong>{{entry.position}}</strong></p>
+            <p class="text-muted mb-1" *ngIf="entry.positionHistory">
+              Positions held:
+              <span *ngFor="let role of entry.positionHistory; let last = last">{{role.title}}
+                ({{role.fromDate | date:'MMM y'}} –
+                <ng-container *ngIf="role.toDate; else positionPresent">{{role.toDate | date:'MMM y'}}</ng-container>
+                <ng-template #positionPresent>Present</ng-template>)<ng-container *ngIf="!last">; </ng-container>
+              </span>
+            </p>
+            <p class="text-muted mb-1" *ngIf="!entry.positionHistory && entry.projectRoles">
+              <em>Project roles:
+                <span *ngFor="let role of entry.projectRoles; let last = last">{{role.title}}
+                  ({{role.fromDate | date:'MMM y'}} –
+                  <ng-container *ngIf="role.toDate; else rolePresent">{{role.toDate | date:'MMM y'}}</ng-container>
+                  <ng-template #rolePresent>Present</ng-template>)<ng-container *ngIf="!last">; </ng-container>
+                </span>
+              </em>
+            </p>
+            <p class="text-muted mb-1" *ngIf="!entry.positionHistory && !entry.projectRoles && entry.subtitle">
+              <em>{{entry.subtitle}}</em>
+            </p>
+            <p class="employment-history-location text-muted mb-1"><i
+                class="fa-solid fa-fw fa-location-dot"></i> {{entry.location}}</p>
+            <p class="text-muted">
+              {{entry.fromDate | date:'MMM y'}} -
+              <ng-container *ngIf="entry.toDate; else present">{{entry.toDate | date:'MMM y'}}</ng-container>
+              <ng-template #present><i>present</i></ng-template>
+              ({{durationService.calculateTimeDuration(entry.fromDate, entry.toDate)}})
+            </p>
+            <ul>
+              <li *ngFor="let highlight of entry.highlights">{{highlight}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-2" *ngIf="resume">
+        <div class="card-body">
+          <h2 class="card-title" id="h2Skills">Technical &amp; Product Skills</h2>
+          <div *ngFor="let group of resume.skillGroups" class="mb-2">
+            <h5>{{group.category}}</h5>
+            <p>{{group.items.join(', ')}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-2" *ngIf="resume">
+        <div class="card-body">
+          <h2 class="card-title" id="h2Education">Education</h2>
+          <ul class="education-list">
+            <li *ngFor="let edu of resume.education">
+              {{edu.credential}}<br />
+              {{edu.institution}}<br />
+              {{edu.fromYear}} – {{edu.toYear}}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mb-2" *ngIf="resume">
+        <div class="card-body">
+          <h2 class="card-title" id="h2Contact">Contact</h2>
+          <p>
+            Phone: {{resume.contact.phone}}<br />
+            Email: <a [href]="'mailto:' + resume.contact.email">{{resume.contact.email}}</a><br />
+            LinkedIn: <a [href]="resume.contact.linkedInUrl">{{resume.contact.linkedInUrl}}</a><br />
+            GitHub: <a [href]="resume.contact.gitHubUrl">{{resume.contact.gitHubUrl}}</a><br />
+            Location: {{resume.contact.location}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i
+    class="fa-solid fa-arrow-up"></i> To Top</button>
