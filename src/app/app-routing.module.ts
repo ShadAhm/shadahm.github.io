@@ -11,26 +11,31 @@ const routes: Routes = [
   {
     path: 'resume',
     component: ResumeComponent,
+    title: 'Resume — Shad Ahmad',
     data: { title: 'Resume' }
   },
   {
     path: 'projects',
     component: ProjectsLandingComponent,
+    title: 'Projects — Shad Ahmad',
     data: { title: 'Projects' }
   },
   {
     path: 'pet-projects',
     component: ProjectsComponent,
+    title: 'Pet Projects — Shad Ahmad',
     data: { title: 'Pet Projects' }
   },
   {
     path: 'pro-projects',
     component: ProjectsProComponent,
+    title: 'Professional Projects — Shad Ahmad',
     data: { title: 'Projects' }
   },
   {
     path: 'contact',
     component: ContactComponent,
+    title: 'Contact — Shad Ahmad',
     data: { title: 'Contact Me' }
   }
 ];

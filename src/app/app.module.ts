@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentHeaderComponent } from './components/content-header/content-header.component';
-import { AboutComponent } from './components/about/about.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectCardComponent } from './components/projects/project-card/project-card.component';
@@ -21,7 +20,6 @@ import { ProjectsProComponent } from './components/projects-pro/projects-pro.com
     AppComponent,
     HeaderComponent,
     ContentHeaderComponent,
-    AboutComponent,
     ResumeComponent,
     ProjectsComponent,
     ProjectCardComponent,

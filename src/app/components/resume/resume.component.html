@@ -2,12 +2,12 @@
   <div class="col-md-3 order-md-last d-print-none">
     <div>
       <ol class="contents-list" id="olContentsList">
-        <li *ngFor="let content of contents"><a href="javascript:void(0)" (click)="scrollIntoView(content.elementId)">
+        <li *ngFor="let content of contents"><button type="button" (click)="scrollIntoView(content.elementId)">
             <span>{{content.displayText}}</span>
-          </a>
+          </button>
           <ol *ngIf="content.children">
-            <li *ngFor="let content1 of content.children"><a href="javascript:void(0)"
-                (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></a>
+            <li *ngFor="let content1 of content.children"><button type="button"
+                (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></button>
             </li>
           </ol>
         </li>
@@ -19,7 +19,7 @@
       <div class="card-body">
         <div class="row d-print-none">
           <div class="col-md-3">
-            <img src="./assets/images/me.jpg" class="img-me" />
+            <img src="./assets/images/me.jpg" class="img-me" alt="Photo of Shad Ahmad" />
           </div>
           <div class="col">
             <h2 class="card-title" id="h2Introduction">Introduction</h2>
@@ -35,7 +35,7 @@
               should be designed with complexities that requires training as little as possible.</p>
             <p>Feedbacks and comments are very welcome. Get in touch. </p>
             <div class="d-none d-md-inline-block d-print-none mt-2">
-              <button class="btn btn-sm btn-primary mr-2" (click)="print()"><i class="fa fa-print"></i> Print this
+              <button class="btn btn-sm btn-primary me-2" (click)="print()"><i class="fa-solid fa-print"></i> Print this
                 resume</button>
             </div>
           </div>
@@ -86,23 +86,23 @@
                   <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
                   <sup *ngFor="let asterisk of employmentHistory.companySubscripts"> {{asterisk}}</sup>
                   <br />
-                  <span class="employment-history-location text-muted"><i class="fa fa-fw fa-map-marker"></i>
+                  <span class="employment-history-location text-muted"><i class="fa-solid fa-fw fa-location-dot"></i>
                     {{employmentHistory.location}}</span>
                 </td>
                 <td>{{employmentHistory.position}}</td>
                 <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
                 <td>
                   {{employmentHistory.toDate | date:'MMM y'}}
-                  <i class="text-muted" *ngIf="employmentHistory.toDate == null">present</i>
+                  <i class="text-muted" *ngIf="employmentHistory.toDate === null">present</i>
                 </td>
                 <td>
-                  {{ calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
+                  {{ durationService.calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
                 </td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="4"><strong class="pull-right">Total Years Exp: </strong></td>
+                <td colspan="4"><strong class="float-end">Total Years Exp: </strong></td>
                 <td>
                   <span>{{ calculateTotalYearsExp() }}</span>
                 </td>
@@ -131,7 +131,7 @@
               -
               <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
               <span *ngIf="keyProj.toDate === null"><i>present</i></span>
-              ({{calculateTimeDuration(keyProj.fromDate, keyProj.toDate)}})
+              ({{durationService.calculateTimeDuration(keyProj.fromDate, keyProj.toDate)}})
             </p>
             <p>{{keyProj.description}}</p>
             <h6>Technologies Used</h6>
@@ -198,4 +198,4 @@
 </div>
 
 <button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i
-    class="fa fa-arrow-up"></i> To Top</button>
+    class="fa-solid fa-arrow-up"></i> To Top</button>

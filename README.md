@@ -9,7 +9,8 @@ This site is designed to be static, so to be hostable from within a GitHub repos
 
 1. Clone this repo
 2. Make sure you're on dev branch
-3. Open terminal, run `ng serve`
+3. Open terminal, run `npm install`
+4. Run `npm run dev`
 
 
 

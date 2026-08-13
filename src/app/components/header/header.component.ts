@@ -8,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   public navbarCollapsed: boolean;
 
-  constructor() { }
-
   ngOnInit() {
     this.navbarCollapsed = true;
   }

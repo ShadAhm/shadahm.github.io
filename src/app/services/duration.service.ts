@@ -1,40 +1,33 @@
 import { Injectable } from '@angular/core';
 import { IHasDuration } from '../models/resume';
-import moment from 'moment';
+import { parseISO, differenceInSeconds, differenceInYears, differenceInMonths, addYears } from 'date-fns';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DurationService {
 
-  constructor() { }
-
   public calculateTotalDuration(durationTimes: IHasDuration[]): number {
-    var seconds = 0;
+    let seconds = 0;
 
     for (const duration of durationTimes) {
-      let fromDate = moment(duration.fromDate);
-      let toDate = moment(duration.toDate == null ? (new Date()).toISOString() : duration.toDate);
+      const fromDate = parseISO(duration.fromDate);
+      const toDate = parseISO(duration.toDate == null ? (new Date()).toISOString() : duration.toDate);
 
-      seconds += toDate.diff(fromDate, 'seconds');
+      seconds += differenceInSeconds(toDate, fromDate);
     }
 
     return seconds / 31536000;
   }
 
   calculateTimeDuration(fromDateStr: string, toDateStr: string): string {
-    let fromDate = moment(fromDateStr);
-    let toDate = moment((new Date()).toISOString());
+    const fromDate = parseISO(fromDateStr);
+    const toDate = (toDateStr != null && toDateStr != '') ? parseISO(toDateStr) : new Date();
 
-    if (toDateStr != null && toDateStr != '') {
-      toDate = moment(toDateStr);
-    }
+    const years = differenceInYears(toDate, fromDate);
+    const afterYears = addYears(fromDate, years);
 
-    let years = toDate.diff(fromDate, 'year');
-    fromDate.add(years, 'years');
-
-    let months = toDate.diff(fromDate, 'months');
-    fromDate.add(months, 'months');
+    const months = differenceInMonths(toDate, afterYears);
 
     let yearPortion = years > 0 ? years + ' years' : '';
     if (years === 1) yearPortion = yearPortion.replace('years', 'year');

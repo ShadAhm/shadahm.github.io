@@ -9,17 +9,33 @@ ul.education-list li {
 
 ol.contents-list {
     list-style-position: inside;
-    padding-left:0; 
+    padding-left:0;
 
     li {
-        line-height: 1.6rem; 
+        line-height: 1.6rem;
 
         ol {
-            padding-left:1.5rem; 
+            padding-left:1.5rem;
         }
 
         span {
-            padding-left:0.3rem; 
+            padding-left:0.3rem;
+        }
+    }
+
+    button {
+        background: none;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        font: inherit;
+        color: var(--bs-link-color);
+        text-decoration: none;
+        cursor: pointer;
+        display: inline;
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 }
