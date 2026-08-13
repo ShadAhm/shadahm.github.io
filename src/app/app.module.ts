@@ -35,8 +35,42 @@ import { ProjectsProComponent } from './components/projects-pro/projects-pro.com
     HttpClientModule
   ],
   providers: [
-    ...ɵprovideFakePlatformNavigation()
+    ...ɵprovideFakePlatformNavigation(),
+    { provide: ErrorHandler, useClass: DevErrorHandler }
   ],
   bootstrap: [AppComponent]
 })
+import { ErrorHandler, Injectable } from '@angular/core';
+
+@Injectable()
+export class DevErrorHandler implements ErrorHandler {
+  handleError(error: any): void {
+    // Log to console as normal
+    console.error(error);
+    try {
+      const msg = error && (error.stack || error.message || String(error));
+      let pre = document.getElementById('angular-error') as HTMLPreElement | null;
+      if (!pre) {
+        pre = document.createElement('pre');
+        pre.id = 'angular-error';
+        pre.style.position = 'fixed';
+        pre.style.bottom = '0';
+        pre.style.left = '0';
+        pre.style.right = '0';
+        pre.style.maxHeight = '40vh';
+        pre.style.overflow = 'auto';
+        pre.style.background = 'rgba(0,0,0,0.85)';
+        pre.style.color = 'white';
+        pre.style.zIndex = '99999';
+        pre.style.padding = '12px';
+        pre.style.fontSize = '12px';
+        document.body.appendChild(pre);
+      }
+      pre.textContent = msg;
+    } catch (e) {
+      // ignore DOM errors
+    }
+  }
+}
+
 export class AppModule { }
