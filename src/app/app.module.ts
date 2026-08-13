@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler, Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ɵprovideFakePlatformNavigation } from '@angular/common/testing';
@@ -40,8 +40,6 @@ import { ProjectsProComponent } from './components/projects-pro/projects-pro.com
   ],
   bootstrap: [AppComponent]
 })
-import { ErrorHandler, Injectable } from '@angular/core';
-
 @Injectable()
 export class DevErrorHandler implements ErrorHandler {
   handleError(error: any): void {
