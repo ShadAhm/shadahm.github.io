@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { forkJoin } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { forkJoin, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { EmploymentHistory, PoResume, ResumeContent } from 'src/app/models/resume';
 
 import { ResumeService } from 'src/app/services/resume.service';
@@ -14,7 +15,8 @@ export interface PoEmploymentEntry extends EmploymentHistory {
   templateUrl: './resume-po.component.html',
   styleUrls: ['./resume-po.component.scss']
 })
-export class ResumePoComponent implements OnInit {
+export class ResumePoComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject<void>();
   contents: ResumeContent[];
   resume: PoResume;
   employmentEntries: PoEmploymentEntry[];
@@ -37,7 +39,7 @@ export class ResumePoComponent implements OnInit {
     forkJoin({
       employmentHistories: this.resumeService.getEmploymentHistories(),
       resume: this.resumeService.getPoResume()
-    }).subscribe(
+    }).pipe(takeUntil(this.destroy$)).subscribe(
       ({ employmentHistories, resume }) => {
         this.resume = resume;
         this.employmentEntries = employmentHistories.map(emp => ({
@@ -83,5 +85,10 @@ export class ResumePoComponent implements OnInit {
 
   print(): void {
     window.print();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

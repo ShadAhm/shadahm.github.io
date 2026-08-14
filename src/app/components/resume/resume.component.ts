@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ResumeContent, EmploymentHistory, KeyProjectAchievement, TechnicalSkill } from 'src/app/models/resume';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
 import { ResumeService } from 'src/app/services/resume.service';
 import { DurationService } from 'src/app/services/duration.service';
@@ -9,7 +11,8 @@ import { DurationService } from 'src/app/services/duration.service';
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
-export class ResumeComponent implements OnInit {
+export class ResumeComponent implements OnInit, OnDestroy {
+  private destroy$ = new Subject<void>();
   contents: ResumeContent[];
   technicalSkills: TechnicalSkill[];
   employmentHistories: EmploymentHistory[];
@@ -65,15 +68,15 @@ export class ResumeComponent implements OnInit {
   }
 
   getTechnicalSkills(): void {
-    this.resumeService.getTechnicalSkills().subscribe(
+    this.resumeService.getTechnicalSkills().pipe(takeUntil(this.destroy$)).subscribe(
       (response: TechnicalSkill[]) => { this.technicalSkills = response },
       (error) => { console.error('Error happened', error) }
     );
   }
 
   getEmploymentHistories(): void {
-    this.resumeService.getEmploymentHistories().subscribe(
-      (response: EmploymentHistory[]) => { 
+    this.resumeService.getEmploymentHistories().pipe(takeUntil(this.destroy$)).subscribe(
+      (response: EmploymentHistory[]) => {
         this.employmentHistories = response;
       },
       (error) => { console.error('Error happened', error) }
@@ -81,8 +84,8 @@ export class ResumeComponent implements OnInit {
   }
 
   getKeyProjectAchievements(): void {
-    this.resumeService.getProProjects().subscribe(
-      (response: KeyProjectAchievement[]) => { 
+    this.resumeService.getProProjects().pipe(takeUntil(this.destroy$)).subscribe(
+      (response: KeyProjectAchievement[]) => {
         this.keyProjectAchievements = response.filter(o => o.includeAsKeyAchievement);
         this.addProjectsToContentTable();
       },
@@ -112,5 +115,10 @@ export class ResumeComponent implements OnInit {
 
   print(): void {
     window.print();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
