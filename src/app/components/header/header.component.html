@@ -1,20 +1,23 @@
-<header class="d-print-none">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="./assets/images/logo.png" alt="Shad Ahmad" />
+<header class="relative border-b border-ink-200 bg-white print:hidden">
+  <div class="shell">
+    <div class="flex h-16 items-center justify-between gap-4">
+      <a routerLink="/resume-po" class="flex items-center" aria-label="Shad Ahm — home">
+        <img src="assets/images/logo.svg" alt="Shad Ahm" class="h-7 w-auto" width="300" height="70" />
       </a>
-      <button class="navbar-toggler" type="button" (click)="toggleNav()"
-        [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarNavAltMarkup" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+
+      <nav id="primary-nav" [class.hidden]="navbarCollapsed" aria-label="Main"
+        class="absolute inset-x-0 top-full z-20 flex flex-col gap-1 border-b border-ink-200 bg-white p-4 shadow-sm
+               md:static md:ml-auto md:flex md:flex-row md:items-center md:gap-1 md:border-0 md:p-0 md:shadow-none">
+        <a class="nav-link" routerLinkActive="nav-link-active" routerLink="/resume-po" (click)="closeNav()">Resume</a>
+        <a class="nav-link" routerLinkActive="nav-link-active" routerLink="/projects" (click)="closeNav()">Projects</a>
+        <a class="nav-link" routerLinkActive="nav-link-active" routerLink="/contact" (click)="closeNav()">Contact</a>
+      </nav>
+
+      <button type="button" (click)="toggleNav()" [attr.aria-expanded]="!navbarCollapsed" aria-controls="primary-nav"
+        aria-label="Toggle navigation"
+        class="rounded p-2 text-ink-700 hover:bg-ink-100 hover:text-primary md:hidden">
+        <app-icon [name]="navbarCollapsed ? 'menu' : 'x'" [size]="20"></app-icon>
       </button>
-      <div [ngClass]="{'collapse': navbarCollapsed}" class="navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav shad-orange-navbar">
-          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/resume-po" (click)="toggleNav()">Resume</a>
-          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/projects" (click)="toggleNav()">Projects</a>
-          <a class="nav-item nav-link" routerLinkActive="active" routerLink="/contact" (click)="toggleNav()">Contact</a>
-        </div>
-      </div>
     </div>
-  </nav>
+  </div>
 </header>

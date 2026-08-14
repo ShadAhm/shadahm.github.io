@@ -1,11 +1,2 @@
-div.loading-bay {
-    h5,p {
-    background-color:#f8f9fa; 
-    color:#f8f9fae7; 
-    }
-
-    a {
-        background-color:#f8f9fa;
-        color:#f8f9fae7; 
-    }
-}
+/* Styling lives in the template as Tailwind utilities and in the shared
+   component classes in src/styles.scss. See CLAUDE.md. */

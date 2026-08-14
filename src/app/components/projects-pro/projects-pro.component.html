@@ -1,21 +1,21 @@
-<div class="card mb-2">
-  <div class="card-body">
-    <div *ngFor="let keyProj of projects" class="m-6">
-      <h4 [id]="keyProj.htmlElementId">{{keyProj.title}}</h4>
-      <p class="text-muted">
-        <span>{{keyProj.fromDate | date:'MMM y'}}</span>
-        -
-        <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
-        <span *ngIf="keyProj.toDate === null"><i>present</i></span>
+<div class="card">
+  <div class="space-y-6">
+    <div *ngFor="let keyProj of projects" class="border-l-2 border-ink-200 pl-4">
+      <h2 class="subsection-title" [id]="keyProj.htmlElementId">{{keyProj.title}}</h2>
+      <p class="meta">
+        {{keyProj.fromDate | date:'MMM y'}} –
+        {{keyProj.toDate ? (keyProj.toDate | date:'MMM y') : 'present'}}
         ({{durationService.calculateTimeDuration(keyProj.fromDate, keyProj.toDate)}})
       </p>
-      <p>{{keyProj.description}}</p>
-      <h6>Technologies Used</h6>
-      <ul>
-        <li *ngFor="let technologyUsed of keyProj.technologiesUsed">{{technologyUsed}}</li>
+      <p class="mt-2">{{keyProj.description}}</p>
+
+      <h3 class="mt-3 font-heading text-sm font-semibold text-ink-700">Technologies Used</h3>
+      <ul class="mt-1 flex flex-wrap gap-1.5">
+        <li class="badge badge-neutral" *ngFor="let technologyUsed of keyProj.technologiesUsed">{{technologyUsed}}</li>
       </ul>
-      <h6>Responsibilities</h6>
-      <ul>
+
+      <h3 class="mt-3 font-heading text-sm font-semibold text-ink-700">Responsibilities</h3>
+      <ul class="list-bullets mt-1">
         <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
       </ul>
     </div>
