@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ResumePoComponent } from './components/resume-po/resume-po.component';
-import { ProjectsComponent } from './components/projects/projects.component';
+import { ExperimentsComponent } from './components/experiments/experiments.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { ProjectsLandingComponent } from './components/projects-landing/projects-landing.component';
 import { ProjectsProComponent } from './components/projects-pro/projects-pro.component';
 
 const routes: Routes = [
@@ -22,17 +21,13 @@ const routes: Routes = [
     data: { title: 'Resume' }
   },
   {
-    path: 'projects',
-    component: ProjectsLandingComponent,
-    title: 'Projects — Shad Ahmad',
-    data: { title: 'Projects' }
+    path: 'experiments',
+    component: ExperimentsComponent,
+    title: 'Experiments — Shad Ahmad',
+    data: { title: 'Experiments' }
   },
-  {
-    path: 'pet-projects',
-    component: ProjectsComponent,
-    title: 'Pet Projects — Shad Ahmad',
-    data: { title: 'Pet Projects' }
-  },
+  { path: 'projects', redirectTo: 'experiments', pathMatch: 'full' },
+  { path: 'pet-projects', redirectTo: 'experiments', pathMatch: 'full' },
   {
     path: 'pro-projects',
     component: ProjectsProComponent,

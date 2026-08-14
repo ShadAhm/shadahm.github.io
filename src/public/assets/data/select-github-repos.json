@@ -1,10 +1,19 @@
-[{
+[
+  {
     "name": "angularJs.keruC",
-    "descriptionOverride":null,
-    "hasDemo":true
-},
-{
+    "descriptionOverride": null,
+    "demoUrl": "https://shadahm.github.io/angularJs.keruC/",
+    "tags": ["AngularJS", "JavaScript"]
+  },
+  {
+    "name": "time-since-i",
+    "descriptionOverride": null,
+    "demoUrl": "https://shadahm.github.io/time-since-i/",
+    "tags": ["JavaScript"]
+  },
+  {
     "name": "shadahm.github.io",
-    "descriptionOverride":null,
-    "hasDemo": false
-}]
+    "descriptionOverride": null,
+    "demoUrl": "none"
+  }
+]
