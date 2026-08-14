@@ -9,7 +9,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "lint": "eslint .",
-    "deploy-gh": "vite build --base \"/shadahm.github.io/\" && ngh --branch=master --dir=dist/shadahmio"
+    "deploy-gh": "vite build && ngh --branch=master --dir=dist/shadahmio"
   },
   "private": true,
   "dependencies": {
