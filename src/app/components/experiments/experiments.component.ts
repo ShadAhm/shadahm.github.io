@@ -5,11 +5,11 @@ import { ProjectsService } from 'src/app/services/projects.service';
 import { SelectRepository } from 'src/app/models/github';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  selector: 'app-experiments',
+  templateUrl: './experiments.component.html',
+  styleUrls: ['./experiments.component.scss']
 })
-export class ProjectsComponent implements OnInit, OnDestroy {
+export class ExperimentsComponent implements OnInit, OnDestroy {
   repositories: SelectRepository[];
   private destroy$ = new Subject<void>();
 
