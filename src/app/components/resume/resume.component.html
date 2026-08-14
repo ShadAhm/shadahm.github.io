@@ -1,76 +1,68 @@
-<div class="row">
-  <div class="col-md-3 order-md-last d-print-none">
-    <div>
-      <ol class="contents-list" id="olContentsList">
-        <li *ngFor="let content of contents"><button type="button" (click)="scrollIntoView(content.elementId)">
-            <span>{{content.displayText}}</span>
-          </button>
-          <ol *ngIf="content.children">
-            <li *ngFor="let content1 of content.children"><button type="button"
-                (click)="scrollIntoView(content1.elementId)"><span>{{content1.displayText}}</span></button>
-            </li>
-          </ol>
-        </li>
-      </ol>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card mb-2">
-      <div class="card-body">
-        <div class="row d-print-none">
-          <div class="col-md-3">
-            <img src="./assets/images/me.png" class="img-me" alt="Photo of Shad Ahmad" />
-          </div>
-          <div class="col">
-            <h2 class="card-title" id="h2Introduction">Introduction</h2>
-            <p>Hi, I'm Shad, a Stockholm-based .NET Developer. And welcome to my online resume. This page was created to
-              provide you the ability to navigate
-              my
-              details with ease. A printed and PDF version is also available. This resume and site itself is intended as
-              a
-              POC
-              of my skills in designing and developing a navigatable and intuitive user application. I believe all
-              software
-              (internal or external) should be created with the user first-in-mind, providing sufficient navigation, and
-              should be designed with complexities that requires training as little as possible.</p>
-            <p>Feedbacks and comments are very welcome. Get in touch. </p>
-            <div class="d-none d-md-inline-block d-print-none mt-2">
-              <button class="btn btn-sm btn-primary me-2" (click)="print()"><i class="fa-solid fa-print"></i> Print this
-                resume</button>
-            </div>
-          </div>
-        </div>
-        <div class="d-none d-print-block">
-          <h2>Arsyad Ahmad <small>(pref: Shad Ahmad)</small></h2>
-          <table class="table table-condensed table-borderless">
-            <tr>
-              <td>Date of Birth: </td>
-              <td>2 August 1990</td>
-            </tr>
-            <tr>
-              <td>E-mail: </td>
-              <td>arsh90&#64;gmail.com</td>
-            </tr>
-          </table>
+<div class="flex flex-col gap-6 md:flex-row-reverse md:items-start md:gap-8">
+  <aside class="print:hidden md:sticky md:top-6 md:w-56 md:shrink-0">
+    <h2 class="mb-2 font-heading text-xs font-semibold uppercase tracking-wide text-ink-500">On this page</h2>
+    <ol class="space-y-1 text-sm" id="olContentsList">
+      <li *ngFor="let content of contents">
+        <button type="button" class="text-left text-ink-700 hover:text-primary hover:underline"
+          (click)="scrollIntoView(content.elementId)">{{content.displayText}}</button>
+        <ol *ngIf="content.children" class="mt-1 space-y-1 border-l border-ink-200 pl-3">
+          <li *ngFor="let child of content.children">
+            <button type="button" class="text-left text-ink-500 hover:text-primary hover:underline"
+              (click)="scrollIntoView(child.elementId)">{{child.displayText}}</button>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </aside>
 
-          <p class="panel"><strong>Note:</strong> An online (better) version of this resume can be viewed at
-            <u>https://shadahm.github.io/resume</u>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div id="printableArea">
-      <div class="card mb-2">
-        <div class="card-body">
-          <app-skills-component *ngIf="technicalSkills" [technicalSkills]="technicalSkills"></app-skills-component>
+  <div class="min-w-0 flex-1 space-y-4 print:space-y-0">
+    <div class="card">
+      <div class="flex flex-col gap-5 sm:flex-row print:hidden">
+        <img src="assets/images/me.png" class="w-32 shrink-0 self-start rounded-lg object-cover sm:w-40" alt="Photo of Shad Ahmad" />
+        <div class="min-w-0">
+          <h2 class="section-title mb-1" id="h2Introduction">Introduction</h2>
+          <p>Hi, I'm Shad, a Stockholm-based .NET Developer. And welcome to my online resume. This page was created to
+            provide you the ability to navigate my details with ease. A printed and PDF version is also available. This
+            resume and site itself is intended as a POC of my skills in designing and developing a navigatable and
+            intuitive user application. I believe all software (internal or external) should be created with the user
+            first-in-mind, providing sufficient navigation, and should be designed with complexities that requires
+            training as little as possible.</p>
+          <p class="mt-2">Feedbacks and comments are very welcome. Get in touch.</p>
+          <div class="mt-4 hidden md:flex">
+            <button type="button" class="btn btn-primary" (click)="print()">
+              <app-icon name="printer"></app-icon>Print this resume
+            </button>
+          </div>
         </div>
       </div>
 
-      <div class="card mb-2">
-        <div class="card-body">
-          <h2 class="card-title" id="h2Employment">Employment History</h2>
-          <table class="table table-responsive-sm mb-0">
+      <div class="hidden print:block">
+        <h2 class="text-lg font-bold">Arsyad Ahmad <span class="font-normal">(pref: Shad Ahmad)</span></h2>
+        <table class="mt-2">
+          <tr>
+            <td class="pr-3 align-top font-medium">Date of Birth:</td>
+            <td>2 August 1990</td>
+          </tr>
+          <tr>
+            <td class="pr-3 align-top font-medium">E-mail:</td>
+            <td>arsh90&#64;gmail.com</td>
+          </tr>
+        </table>
+        <p class="mt-2"><strong>Note:</strong> An online (better) version of this resume can be viewed at
+          <u>https://shadahm.github.io/resume</u>
+        </p>
+      </div>
+    </div>
+
+    <div id="printableArea" class="space-y-4 print:space-y-0">
+      <div class="card">
+        <app-skills-component *ngIf="technicalSkills" [technicalSkills]="technicalSkills"></app-skills-component>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title" id="h2Employment">Employment History</h2>
+        <div class="overflow-x-auto">
+          <table class="table-data">
             <thead>
               <tr>
                 <th>Company Name</th>
@@ -85,117 +77,114 @@
                 <td>
                   <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
                   <sup *ngFor="let asterisk of employmentHistory.companySubscripts"> {{asterisk}}</sup>
-                  <br />
-                  <span class="employment-history-location text-muted"><i class="fa-solid fa-fw fa-location-dot"></i>
-                    {{employmentHistory.location}}</span>
+                  <span class="meta mt-0.5 flex items-center gap-1 text-xs">
+                    <app-icon name="map-pin" [size]="12"></app-icon>{{employmentHistory.location}}
+                  </span>
                 </td>
                 <td>{{employmentHistory.position}}</td>
-                <td>{{employmentHistory.fromDate | date:'MMM y'}}</td>
-                <td>
-                  {{employmentHistory.toDate | date:'MMM y'}}
-                  <i class="text-muted" *ngIf="employmentHistory.toDate === null">present</i>
+                <td class="whitespace-nowrap">{{employmentHistory.fromDate | date:'MMM y'}}</td>
+                <td class="whitespace-nowrap">
+                  <ng-container *ngIf="employmentHistory.toDate; else legacyPresent">
+                    {{employmentHistory.toDate | date:'MMM y'}}
+                  </ng-container>
+                  <ng-template #legacyPresent><em class="text-ink-500">present</em></ng-template>
                 </td>
-                <td>
+                <td class="whitespace-nowrap">
                   {{ durationService.calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
                 </td>
               </tr>
             </tbody>
             <tfoot>
               <tr>
-                <td colspan="4"><strong class="float-end">Total Years Exp: </strong></td>
-                <td>
-                  <span>{{ calculateTotalYearsExp() }}</span>
-                </td>
+                <td colspan="4" class="text-right">Total Years Exp:</td>
+                <td class="whitespace-nowrap">{{ calculateTotalYearsExp() }}</td>
               </tr>
             </tfoot>
           </table>
         </div>
       </div>
 
-      <div class="card mb-2">
-        <div class="card-body">
-          <h2 class="card-title" id="h2KeyProject">Key Project Achievements</h2>
-          <div class="bs-callout bs-callout-info">
-            This section contains brief information on a few proprietary projects that I
-            have been
-            involved in within my employment history. This list is <strong>not</strong>
-            exhaustive, and only contain notable select projects. For the purpose of confidentiality, names such as the
-            clients or employers has been omitted, and the project titles slightly altered. For open-sourced/personal
-            pet
-            projects see <a routerLink="/projects">Projects</a> or my <a href="https://github.com/ShadAhm">GitHub
-              repositories</a>.</div>
-          <div *ngFor="let keyProj of keyProjectAchievements" class="m-6">
-            <h4 [id]="keyProj.htmlElementId">{{keyProj.title}}</h4>
-            <p class="text-muted">
-              <span>{{keyProj.fromDate | date:'MMM y'}}</span>
-              -
-              <span *ngIf="keyProj.toDate !== null">{{ keyProj.toDate | date:'MMM y' }}</span>
-              <span *ngIf="keyProj.toDate === null"><i>present</i></span>
+      <div class="card">
+        <h2 class="section-title" id="h2KeyProject">Key Project Achievements</h2>
+        <div class="mb-4 rounded-md border-l-4 border-primary bg-primary-light p-4 text-sm text-ink-700">
+          This section contains brief information on a few proprietary projects that I have been involved in within my
+          employment history. This list is <strong>not</strong> exhaustive, and only contain notable select projects.
+          For the purpose of confidentiality, names such as the clients or employers has been omitted, and the project
+          titles slightly altered. For open-sourced/personal pet projects see <a routerLink="/projects">Projects</a> or
+          my <a href="https://github.com/ShadAhm">GitHub repositories</a>.
+        </div>
+
+        <div class="space-y-6">
+          <div *ngFor="let keyProj of keyProjectAchievements" class="border-l-2 border-ink-200 pl-4">
+            <h3 class="subsection-title" [id]="keyProj.htmlElementId">{{keyProj.title}}</h3>
+            <p class="meta">
+              {{keyProj.fromDate | date:'MMM y'}} –
+              {{keyProj.toDate ? (keyProj.toDate | date:'MMM y') : 'present'}}
               ({{durationService.calculateTimeDuration(keyProj.fromDate, keyProj.toDate)}})
             </p>
-            <p>{{keyProj.description}}</p>
-            <h6>Technologies Used</h6>
-            <ul>
-              <li *ngFor="let technologyUsed of keyProj.technologiesUsed">{{technologyUsed}}</li>
+            <p class="mt-2">{{keyProj.description}}</p>
+
+            <h4 class="mt-3 font-heading text-sm font-semibold text-ink-700">Technologies Used</h4>
+            <ul class="mt-1 flex flex-wrap gap-1.5">
+              <li class="badge badge-neutral" *ngFor="let technologyUsed of keyProj.technologiesUsed">
+                {{technologyUsed}}
+              </li>
             </ul>
-            <h6>Responsibilities</h6>
-            <ul>
+
+            <h4 class="mt-3 font-heading text-sm font-semibold text-ink-700">Responsibilities</h4>
+            <ul class="list-bullets mt-1">
               <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="card mb-2">
-        <div class="card-body">
-          <h2 class="card-title" id="h2Education">Certifications & Education</h2>
-          <h4>Certifications</h4>
-          <ul class="education-list">
-            <li>
-              CityFM Management Extension Program<br />
-              2018
-            </li>
-            <li>
-              Microsoft Certified Solutions Developer (MCSD) <br />
-              2013
-            </li>
-          </ul>
-          <h4>Education</h4>
-          <ul class="education-list">
-            <li>
-              Diploma in Multimedia (CGPA: 3.08)<br />
-              Universiti Kuala Lumpur<br />
-              2010
-            </li>
-            <li>
-              GCSE (O-Level)<br />
-              Heaton Manor School<br />
-              2006
-            </li>
-          </ul>
-        </div>
+      <div class="card">
+        <h2 class="section-title" id="h2Education">Certifications &amp; Education</h2>
+
+        <h3 class="subsection-title">Certifications</h3>
+        <ul class="mt-2 space-y-3">
+          <li>
+            <span class="font-medium text-ink-900">CityFM Management Extension Program</span><br />
+            <span class="meta">2018</span>
+          </li>
+          <li>
+            <span class="font-medium text-ink-900">Microsoft Certified Solutions Developer (MCSD)</span><br />
+            <span class="meta">2013</span>
+          </li>
+        </ul>
+
+        <h3 class="subsection-title mt-5">Education</h3>
+        <ul class="mt-2 space-y-3">
+          <li>
+            <span class="font-medium text-ink-900">Diploma in Multimedia (CGPA: 3.08)</span><br />
+            Universiti Kuala Lumpur<br />
+            <span class="meta">2010</span>
+          </li>
+          <li>
+            <span class="font-medium text-ink-900">GCSE (O-Level)</span><br />
+            Heaton Manor School<br />
+            <span class="meta">2006</span>
+          </li>
+        </ul>
       </div>
 
-      <div class="card mb-2">
-        <div class="card-body">
-          <h2 class="card-title" id="h2Other">Other Information</h2>
-          <p>
-            Current residence:<br />
-            Stockholm, Sverige
-          </p>
-          <p>
-            Languages:<br />
-            English (native), Malay (native)
-          </p>
-          <p>
-            Driving license:<br />
-            No (Sweden), yes (Malaysia)
-          </p>
-        </div>
+      <div class="card">
+        <h2 class="section-title" id="h2Other">Other Information</h2>
+        <dl class="grid gap-x-4 gap-y-2 sm:grid-cols-[9rem_1fr]">
+          <dt class="font-medium text-ink-700">Current residence</dt>
+          <dd>Stockholm, Sverige</dd>
+          <dt class="font-medium text-ink-700">Languages</dt>
+          <dd>English (native), Malay (native)</dd>
+          <dt class="font-medium text-ink-700">Driving license</dt>
+          <dd>No (Sweden), yes (Malaysia)</dd>
+        </dl>
       </div>
     </div>
   </div>
 </div>
 
-<button class="btn btn-sm btn-primary d-block d-sm-none btn-back-to-top" (click)="scrollIntoView('olContentsList')"><i
-    class="fa-solid fa-arrow-up"></i> To Top</button>
+<button type="button" class="btn btn-primary fixed bottom-4 right-4 z-50 shadow-md sm:hidden print:hidden"
+  (click)="scrollIntoView('olContentsList')">
+  <app-icon name="arrow-up"></app-icon>To Top
+</button>

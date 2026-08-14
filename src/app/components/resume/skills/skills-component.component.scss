@@ -1,18 +1,2 @@
-i.star-orange {
-    color:orange; 
-}
-
-.tags-group {
-    .badge {
-        margin:2px;
-    }
-}
-
-.legend-table > tbody > tr > td:first-child {
-    text-align: center;
-    padding-right: 4px;
-}
-
-div.section-footer {
-    margin-top:1rem;
-}
+/* Styling lives in the template as Tailwind utilities and in the shared
+   component classes in src/styles.scss. See CLAUDE.md. */

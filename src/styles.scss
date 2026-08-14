@@ -1,55 +1,129 @@
-$body-bg: #f8f9fa;
-$body-color: #343a40;
-$font-size-base: 0.85rem;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import 'bootstrap/scss/bootstrap';
-@import '@fortawesome/fontawesome-free/css/all.min.css';
+@layer base {
+  body {
+    @apply bg-ink-50 font-sans text-[15px] leading-relaxed text-ink-800 antialiased;
+  }
 
-.bs-callout {
-    margin: 20px 0;
-    padding: 15px 30px 15px 15px;
-    border-left: 5px solid #eee;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-ink-900;
+  }
 
-    h4 {
-      margin-top: 0;
+  a {
+    @apply text-primary underline-offset-2 hover:text-primary-dark hover:underline;
+  }
+
+  /* Tailwind's preflight strips list markers; resume content needs them back. */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer components {
+  /* Page width. Used by the header, main content, and footer so they line up. */
+  .shell {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6;
+  }
+
+  /* Content sections. Flat and bordered rather than shadowed — this is a resume,
+     not a marketing page. Borders drop away in print. */
+  .card {
+    @apply rounded-lg border border-ink-200 bg-white p-5 sm:p-6;
+    @apply print:rounded-none print:border-0 print:bg-transparent print:p-0;
+  }
+
+  .section-title {
+    @apply mb-4 font-heading text-xl font-semibold text-ink-900 print:mb-2 print:text-lg;
+  }
+
+  .subsection-title {
+    @apply font-heading text-base font-semibold text-ink-900;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium
+           no-underline transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark hover:text-white hover:no-underline;
+  }
+
+  .btn-outline {
+    @apply border border-ink-300 bg-white text-ink-700
+           hover:border-primary hover:text-primary hover:no-underline;
+  }
+
+  /* Nav links. `.nav-link-active` must stay declared after `.nav-link` — both sit in
+     the same layer, so source order decides which colour wins. */
+  .nav-link {
+    @apply rounded px-3 py-2 text-sm font-medium text-ink-700 no-underline
+           hover:bg-ink-100 hover:text-primary hover:no-underline;
+  }
+
+  .nav-link-active {
+    @apply bg-primary-light text-primary-dark;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded px-2 py-0.5 text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary-light text-primary-dark;
+  }
+
+  .badge-neutral {
+    @apply bg-ink-100 text-ink-700;
+  }
+
+  /* Bulleted content lists (highlights, responsibilities, technologies). */
+  .list-bullets {
+    @apply list-disc space-y-1.5 pl-5 marker:text-ink-400;
+  }
+
+  /* Data tables (employment history, skills). */
+  .table-data {
+    @apply w-full border-collapse text-left text-sm;
+
+    th {
+      @apply border-b border-ink-200 px-3 py-2 font-heading text-xs font-semibold
+             uppercase tracking-wide text-ink-600;
     }
 
-    p:last-child {
-      margin-bottom: 0;
+    td {
+      @apply border-b border-ink-100 px-3 py-2 align-top;
+    }
+
+    tfoot td {
+      @apply border-b-0 border-t border-ink-200 font-medium;
     }
   }
 
-  .bs-callout-danger {
-    background-color: #fcf2f2;
-    border-color: #dFb5b4;
+  .meta {
+    @apply text-sm text-ink-500;
   }
-
-  .bs-callout-warning {
-    background-color: #fefbed;
-    border-color: #f1e7bc;
-  }
-  .bs-callout-info {
-    background-color: #f0f7fd;
-    border-color: #d0e3f0;
-  }
+}
 
 @media print {
   @page {
     margin: 1.5cm;
   }
 
-  .container {
-    padding-right: 0;
-    padding-left: 0;
+  body {
+    background: #fff;
+    font-size: 11pt;
   }
 
   #printableArea a {
     color: inherit;
     text-decoration: none;
-  }
-
-  .card {
-    border: 0;
-    box-shadow: none;
   }
 }

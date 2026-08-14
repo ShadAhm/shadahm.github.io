@@ -1,20 +1,17 @@
 <app-header></app-header>
 
-<div class="container">
+<main class="shell py-8 print:py-0">
   <app-content-header></app-content-header>
-  <div class="row">
-    <div class="col mb-3 mb-sm-0">
-      <div class="main-content">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-  </div>
-</div>
-<footer class="footer d-print-none">
-  <div class="container">
-    <span>Copyright &copy; 2018&ndash;{{ currentYear }} Arshad Ahmad (ShadAhm)<br/>
-      Built with <a href="https://angular.io/">Angular</a>, hosted on <a href="https://pages.github.com/">GitHub Pages</a>.<br/>
-      <a href="https://github.com/ShadAhm/shadahm.github.io">Source code and documentation.</a>
-    </span>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="mt-12 border-t border-ink-200 py-6 print:hidden">
+  <div class="shell space-y-1 text-sm text-ink-500">
+    <p>Copyright &copy; 2018&ndash;{{ currentYear }} Arshad Ahmad (ShadAhm)</p>
+    <p>
+      Built with <a href="https://angular.io/">Angular</a>,
+      hosted on <a href="https://pages.github.com/">GitHub Pages</a>.
+    </p>
+    <p><a href="https://github.com/ShadAhm/shadahm.github.io">Source code and documentation.</a></p>
   </div>
 </footer>

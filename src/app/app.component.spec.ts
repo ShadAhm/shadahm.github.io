@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ContentHeaderComponent } from './components/content-header/content-header.component';
+import { IconComponent } from './components/icon/icon.component';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
@@ -15,7 +16,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         HeaderComponent,
-        ContentHeaderComponent
+        ContentHeaderComponent,
+        IconComponent
       ],
     }).compileComponents();
   }));

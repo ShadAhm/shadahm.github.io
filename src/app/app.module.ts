@@ -3,6 +3,8 @@ import { NgModule, ErrorHandler, Injectable } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
+import { IconComponent } from './components/icon/icon.component';
+
 // components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -50,6 +52,7 @@ export class DevErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     AppComponent,
+    IconComponent,
     HeaderComponent,
     ContentHeaderComponent,
     ResumeComponent,
