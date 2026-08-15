@@ -4,7 +4,7 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build && node scripts/generate-sitemap.js",
+    "build": "vite build && node scripts/generate-sitemap.js && node scripts/copy-404.js",
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
