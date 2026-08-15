@@ -11,19 +11,19 @@ const routes: Routes = [
   {
     path: 'resume',
     component: ResumeComponent,
-    title: 'Resume — Shad Ahmad',
+    title: 'Resume — Shad Ahm',
     data: { title: 'Resume' }
   },
   {
     path: 'resume-po',
     component: ResumePoComponent,
-    title: 'Product Owner Resume — Shad Ahmad',
+    title: 'Product Owner Resume — Shad Ahm',
     data: { title: 'Resume' }
   },
   {
     path: 'experiments',
     component: ExperimentsComponent,
-    title: 'Experiments — Shad Ahmad',
+    title: 'Experiments — Shad Ahm',
     data: { title: 'Experiments' }
   },
   { path: 'projects', redirectTo: 'experiments', pathMatch: 'full' },
@@ -31,13 +31,13 @@ const routes: Routes = [
   {
     path: 'pro-projects',
     component: ProjectsProComponent,
-    title: 'Professional Projects — Shad Ahmad',
+    title: 'Professional Projects — Shad Ahm',
     data: { title: 'Projects' }
   },
   {
     path: 'contact',
     component: ContactComponent,
-    title: 'Contact — Shad Ahmad',
+    title: 'Contact — Shad Ahm',
     data: { title: 'Contact Me' }
   }
 ];

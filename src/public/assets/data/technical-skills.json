@@ -53,7 +53,7 @@
     },
     {
         "category": "Tests",
-        "name": "Xunit ",
+        "name": "Xunit",
         "starred": true,
         "useHistory":
         [ 
@@ -66,7 +66,7 @@
     },
     {
         "category": "Tests",
-        "name": "Moq ",
+        "name": "Moq",
         "starred": false,
         "useHistory":
         [ 
