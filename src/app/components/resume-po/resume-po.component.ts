@@ -5,6 +5,7 @@ import { EmploymentHistory, PoResume, ResumeContent } from 'src/app/models/resum
 
 import { ResumeService } from 'src/app/services/resume.service';
 import { DurationService } from 'src/app/services/duration.service';
+import { WordExportService } from 'src/app/services/word-export.service';
 
 export interface PoEmploymentEntry extends EmploymentHistory {
   highlights: string[];
@@ -21,7 +22,11 @@ export class ResumePoComponent implements OnInit, OnDestroy {
   resume: PoResume;
   employmentEntries: PoEmploymentEntry[];
 
-  constructor(private resumeService: ResumeService, public durationService: DurationService) { }
+  constructor(
+    private resumeService: ResumeService,
+    public durationService: DurationService,
+    private wordExportService: WordExportService
+  ) { }
 
   ngOnInit() {
     this.getResumeContents();
@@ -95,6 +100,10 @@ export class ResumePoComponent implements OnInit, OnDestroy {
 
   print(): void {
     window.print();
+  }
+
+  exportWord(): void {
+    this.wordExportService.downloadResume(this.resume, this.employmentEntries);
   }
 
   ngOnDestroy(): void {
