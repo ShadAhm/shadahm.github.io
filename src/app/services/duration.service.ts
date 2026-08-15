@@ -20,6 +20,13 @@ export class DurationService {
     return seconds / 31536000;
   }
 
+  calculateWholeYears(fromDateStr: string, toDateStr: string): number {
+    const fromDate = parseISO(fromDateStr);
+    const toDate = (toDateStr != null && toDateStr != '') ? parseISO(toDateStr) : new Date();
+
+    return differenceInYears(toDate, fromDate);
+  }
+
   calculateTimeDuration(fromDateStr: string, toDateStr: string): string {
     const fromDate = parseISO(fromDateStr);
     const toDate = (toDateStr != null && toDateStr != '') ? parseISO(toDateStr) : new Date();

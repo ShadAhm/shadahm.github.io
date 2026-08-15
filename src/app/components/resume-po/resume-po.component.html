@@ -19,9 +19,9 @@
   <div class="min-w-0 flex-1 space-y-4 print:space-y-0">
     <div class="card" *ngIf="resume">
       <div class="flex flex-col gap-5 sm:flex-row print:hidden">
-        <img src="assets/images/me.png" class="w-32 shrink-0 self-start rounded-lg object-cover sm:w-40" alt="Photo of Shad Ahmad" />
+        <img src="assets/images/me.png" class="w-32 shrink-0 self-start rounded-lg object-cover sm:w-40" alt="Photo of Shad Ahm" />
         <div class="min-w-0">
-          <h2 class="section-title mb-1" id="h2Introduction">Introduction</h2>
+          <h1 class="font-heading text-xl font-bold text-ink-900 mb-1" id="h2Introduction">{{resume.name}} <span class="font-normal text-ink-500">({{resume.legalName}})</span></h1>
           <p class="font-medium text-ink-700">{{resume.title}}</p>
           <p class="meta mt-1 flex items-center gap-1.5">
             <app-icon name="map-pin"></app-icon>{{resume.location}}
@@ -40,7 +40,7 @@
 
       <!-- Print-only header block: the screen layout above is hidden on paper. -->
       <div class="hidden print:block">
-        <h2 class="text-lg font-bold">{{resume.name}} <span class="font-normal">({{resume.fullName}})</span></h2>
+        <h2 class="text-lg font-bold">{{resume.name}} <span class="font-normal">({{resume.legalName}})</span></h2>
         <table class="mt-2">
           <tr>
             <td class="pr-3 align-top font-medium">Title:</td>
@@ -63,7 +63,7 @@
 
     <div id="printableArea" class="space-y-4 print:space-y-0">
       <div class="card" *ngIf="resume">
-        <h2 class="section-title" id="h2Highlights">Selected Product &amp; Leadership Highlights</h2>
+        <h2 class="section-title" id="h2Highlights">Career Highlights</h2>
         <ul class="list-bullets">
           <li *ngFor="let highlight of resume.selectedHighlights">{{highlight}}</li>
         </ul>
@@ -92,9 +92,9 @@
                 </td>
                 <td>
                   {{entry.position}}
-                  <ng-container *ngIf="entry.positionHistory">
-                    <span class="meta mt-0.5 block text-xs">Positions held:
-                      <span *ngFor="let role of entry.positionHistory; let last = last">{{role.title}}
+                  <ng-container *ngIf="entry.positionHistory && entry.positionHistory.length > 1">
+                    <span class="meta mt-0.5 block text-xs">Previous positions held:
+                      <span *ngFor="let role of (entry.positionHistory | slice:0:-1); let last = last">{{role.title}}
                         ({{role.fromDate | date:'MMM y'}} –
                         {{role.toDate ? (role.toDate | date:'MMM y') : 'Present'}})<ng-container
                           *ngIf="!last">; </ng-container>
@@ -139,9 +139,9 @@
               <a [href]="entry.companyUrl">{{entry.companyName}}</a>
             </h3>
             <p class="font-medium text-ink-700">{{entry.position}}</p>
-            <p class="meta" *ngIf="entry.positionHistory">
-              Positions held:
-              <span *ngFor="let role of entry.positionHistory; let last = last">{{role.title}}
+            <p class="meta" *ngIf="entry.positionHistory && entry.positionHistory.length > 1">
+              Previous positions held:
+              <span *ngFor="let role of (entry.positionHistory | slice:0:-1); let last = last">{{role.title}}
                 ({{role.fromDate | date:'MMM y'}} –
                 {{role.toDate ? (role.toDate | date:'MMM y') : 'Present'}})<ng-container *ngIf="!last">; </ng-container>
               </span>
@@ -156,19 +156,26 @@
             <p class="meta italic" *ngIf="!entry.positionHistory && !entry.projectRoles && entry.subtitle">
               {{entry.subtitle}}
             </p>
-            <p class="meta flex items-center gap-1.5">
-              <app-icon name="map-pin" [size]="14"></app-icon>{{entry.location}}
-            </p>
             <p class="meta">
               {{entry.fromDate | date:'MMM y'}} –
               {{entry.toDate ? (entry.toDate | date:'MMM y') : 'present'}}
               ({{durationService.calculateTimeDuration(entry.fromDate, entry.toDate)}})
+            </p>
+            <p class="meta flex items-center gap-1.5">
+              <app-icon name="map-pin" [size]="14"></app-icon>{{entry.location}}
             </p>
             <ul class="list-bullets mt-2">
               <li *ngFor="let highlight of entry.highlights">{{highlight}}</li>
             </ul>
           </div>
         </div>
+      </div>
+
+      <div class="card" *ngIf="resume">
+        <h2 class="section-title" id="h2Communication">Technical Communication &amp; Mentorship</h2>
+        <ul class="list-bullets">
+          <li *ngFor="let item of resume.communicationHighlights">{{item}}</li>
+        </ul>
       </div>
 
       <div class="card" *ngIf="resume">
@@ -188,6 +195,16 @@
             <span class="font-medium text-ink-900">{{edu.credential}}</span><br />
             {{edu.institution}}<br />
             <span class="meta">{{edu.fromYear}} – {{edu.toYear}}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card" *ngIf="resume">
+        <h2 class="section-title" id="h2Languages">Languages</h2>
+        <ul class="space-y-2">
+          <li *ngFor="let lang of resume.languages">
+            <span class="font-medium text-ink-900">{{lang.language}}</span>
+            <span class="text-ink-700"> — {{lang.proficiency}}</span>
           </li>
         </ul>
       </div>
