@@ -88,6 +88,11 @@ export class PoEducation {
     public toYear: string;
 }
 
+export class PoLanguage {
+    public language: string;
+    public proficiency: string;
+}
+
 export class PoContact {
     public phone: string;
     public email: string;
@@ -98,13 +103,15 @@ export class PoContact {
 
 export class PoResume {
     public name: string;
-    public fullName: string;
+    public legalName: string;
     public title: string;
     public location: string;
     public summary: string;
     public employmentHighlights: PoEmploymentHighlight[];
     public selectedHighlights: string[];
+    public communicationHighlights: string[];
     public skillGroups: PoSkillGroup[];
     public education: PoEducation[];
+    public languages: PoLanguage[];
     public contact: PoContact;
 }

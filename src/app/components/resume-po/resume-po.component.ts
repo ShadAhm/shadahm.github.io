@@ -47,7 +47,7 @@ export class ResumePoComponent implements OnInit, OnDestroy {
           highlights: resume.employmentHighlights.find(h => h.companyName === emp.companyName)?.highlights ?? []
         }));
         if (this.resume.summary) {
-          this.resume.summary = this.resume.summary.replace('{{yearsOfExperience}}', this.calculateTotalYearsExp());
+          this.resume.summary = this.resume.summary.replace('{{yearsOfExperience}}', this.calculateTotalYearsExpWhole());
         }
         this.addEmploymentToContentTable();
       },
@@ -58,11 +58,13 @@ export class ResumePoComponent implements OnInit, OnDestroy {
   getResumeContents(): void {
     this.contents = [
       { displayText: 'Introduction', elementId: 'h2Introduction', children: null },
-      { displayText: 'Selected Highlights', elementId: 'h2Highlights', children: null },
+      { displayText: 'Career Highlights', elementId: 'h2Highlights', children: null },
       { displayText: 'Employment History', elementId: 'h2EmploymentHistory', children: null },
       { displayText: 'Professional Experience', elementId: 'h2Employment', children: [] },
+      { displayText: 'Communication & Mentorship', elementId: 'h2Communication', children: null },
       { displayText: 'Technical & Product Skills', elementId: 'h2Skills', children: null },
       { displayText: 'Education', elementId: 'h2Education', children: null },
+      { displayText: 'Languages', elementId: 'h2Languages', children: null },
       { displayText: 'Contact', elementId: 'h2Contact', children: null }
     ];
   }
@@ -80,6 +82,14 @@ export class ResumePoComponent implements OnInit, OnDestroy {
     if (this.employmentEntries && this.employmentEntries.length) {
       const fromDateStr = this.employmentEntries[this.employmentEntries.length - 1].fromDate;
       return this.durationService.calculateTimeDuration(fromDateStr, (new Date()).toISOString());
+    }
+  }
+
+  calculateTotalYearsExpWhole(): string {
+    if (this.employmentEntries && this.employmentEntries.length) {
+      const fromDateStr = this.employmentEntries[this.employmentEntries.length - 1].fromDate;
+      const years = this.durationService.calculateWholeYears(fromDateStr, (new Date()).toISOString());
+      return `over ${years} years`;
     }
   }
 
