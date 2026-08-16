@@ -42,6 +42,15 @@ export class WordExportService {
 
   private buildDocument(resume: PoResume, employmentEntries: PoEmploymentEntry[]): Document {
     return new Document({
+      styles: {
+        default: {
+          document: {
+            run: {
+              font: 'Aptos'
+            }
+          }
+        }
+      },
       sections: [{
         children: [
           ...this.buildHeader(resume),
@@ -69,7 +78,9 @@ export class WordExportService {
       }),
       new Paragraph({ children: [new TextRun({ text: resume.title, bold: true })] }),
       new Paragraph({ text: resume.location }),
-      new Paragraph({ text: resume.summary, spacing: { after: 200 } })
+      new Paragraph({ text: resume.summary, spacing: { after: 200 } }),
+      new Paragraph({ children: [new TextRun({ text: 'An online (better) version of this resume is available at https://shadahm.github.io/', italics: true, color: 'A9A9A9' })], spacing: { after: 200 } }),
+      new Paragraph({ border: { bottom: { color: '000000', space: 1, style: 'single', size: 6 } }, spacing: { after: 200 } }),
     ];
   }
 
