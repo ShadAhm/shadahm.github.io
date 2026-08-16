@@ -52,18 +52,20 @@
         }
     ],
     "selectedHighlights": [
-        "Currently own product strategy and backlog for Hitachi Energy's HVDC engineering platform — a 40+ person engineering organization shipping six major releases and counting.",
+        "Currently own product backlog and strategy for a Hitachi Energy HVDC engineering platform — a 40+ person engineering organization shipping six major releases and counting.",
         "Built the stakeholder trust and domain depth as an external consultant that led to a full-time offer and eventual promotion into Hitachi Energy's Product Owner role.",
-        "Promoted from Software Engineer to Senior Software Engineer at Ørsted, delivering enterprise software for the renewable energy sector.",
-        "Selected as one of the first two Malaysia-based developers on a distributed team with Australia at City Facilities Management, helping stand up a delivery model that later scaled the whole team."
+        "Promoted to Senior Software Engineer at Ørsted, stepping into the role of primary technical responsible for a core enterprise application. Served as the main point of contact for stakeholders, taking full responsibility for ongoing application maintenance, system health, and lifecycle data management.",
+        "Developed a realistic, highly effective approach to product leadership by working across the full spectrum of software delivery. Because I have been the vendor, the customer, in-house, and on both sides of offshore setups, I use this firsthand perspective to quickly understand team dynamics and remove operational friction in my current role.",
+        "Selected as one of the first two developers for a distributed pilot between Malaysia and Australia at City Facilities Management. After proving the model's success, I drove the expansion of the local hub, leading the technical interviews and hiring process to build out the rest of the Malaysian team."
     ],
     "communicationHighlights": [
-        "Script, record, and produce internal instructional videos that break down complex system architectures and engineering workflows — helping distributed technical and non-technical teams ramp up faster and stay aligned."
+        "Script, record, and produce internal instructional videos that break down complex system architectures and engineering workflows — helping distributed technical and non-technical teams ramp up faster and stay aligned.",
+        "Rapid Prototyping & Concept Validation: Utilize AI coding tools to rapidly prototype, build, and test software concepts, enabling faster idea validation and stakeholder alignment prior to formal backlog integration. (Live examples available in the \"Experiments\" section of my online resume)."
     ],
     "skillGroups": [
         {
             "category": "Product",
-            "items": ["product ownership", "backlog management (Azure DevOps)", "roadmap support", "prioritization", "release notes", "stakeholder alignment", "user stories", "acceptance criteria"]
+            "items": ["product ownership", "backlog management (Azure DevOps)", "AI-driven rapid prototyping (concept validation)","roadmap support", "prioritization", "release notes", "stakeholder alignment", "user stories", "acceptance criteria"]
         },
         {
             "category": "Leadership",
@@ -71,7 +73,7 @@
         },
         {
             "category": "Technical",
-            "items": ["web applications", "cloud-hosted services", "APIs", "system integrations", ".NET", "Angular", "Kubernetes", "SQL"]
+            "items": ["web applications", "cloud-hosted services", "APIs", "system integrations", ".NET", "Angular", "Kubernetes", "SQL", "GitHub Copilot", "Claude Code"]
         },
         {
             "category": "Domains",
