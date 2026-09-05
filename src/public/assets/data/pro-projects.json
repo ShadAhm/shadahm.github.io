@@ -1,5 +1,31 @@
 [
     {
+        "title": "HVDC Engineering Platform & Simulation Tools",
+        "fromDate": "2023-10-01T00:00:00.000Z",
+        "toDate": null,
+        "companyName": "Hitachi Energy",
+        "clientName": "Hitachi Energy",
+        "projectRole": "Product Owner / Lead Software Developer",
+        "technologiesUsed": [
+            "Azure DevOps",
+            ".NET",
+            "Angular",
+            "Kubernetes",
+            "PSCAD",
+            "Data Science Optimization",
+            "GitHub Copilot"
+        ],
+        "description": "Hitachi Energy is a global leader in power technologies. This platform supports critical High-Voltage Direct Current (HVDC) system studies, simulation workflows, and grid planning. Transitioned from Lead Software Developer to Product Owner, owning backlog definition, release scope, and cross-functional alignment for a 40+ person engineering organization across six major releases.",
+        "jobResponsibilities": [
+            "Product backlog ownership and user story definition (Azure DevOps)",
+            "Translating complex power grid engineering workflows and PSCAD simulation needs into deliverable software features",
+            "Aligning 40+ person distributed engineering teams, UX contributors, and domain specialists",
+            "Release planning, dependency mapping, and risk mitigation across six major releases"
+        ],
+        "htmlElementId": "h3projHitachiHvdc",    
+        "includeAsKeyAchievement": true
+    },
+    {
         "title": "Asset Integrity Management Tools",
         "fromDate": "2021-10-01T00:00:00.000Z",
         "toDate": "2022-03-01T00:00:00.000Z",
@@ -16,7 +42,9 @@
         ],
         "description": "Ørsted is a Danish energy company where I worked as an inhouse developer. Ørsted works with multiple other companies for inspection of their assets. These companies gather inspection data which they keep in their own data store. The need was for Ørsted to be able to own the data, and being able to keep them in one place. Hence the need for Asset Integrity Management tools, a data-aggregator of sort where these data are collected and put together into one data store.",
         "jobResponsibilities": [
-            "Software development"
+            "Served as primary technical contact for offshore wind asset data management tools",
+            "Collaborated directly with business stakeholders to define requirements and improve system health",
+            "Engineered full-stack cloud and data integration services using .NET 5 and Azure"
         ],
         "htmlElementId": "h3projAimTools",    
         "includeAsKeyAchievement": true
@@ -36,9 +64,11 @@
         ],
         "description": "Ørsted is a Danish energy company where I worked as an inhouse developer. This project was a maintenance application for Offshore Wind Farms. It is a web application that allows engineering teams to maintain and schedule maintenance plans for wind turbines. This involves editing of a construct called \"Task Lists\" which consists of operations/tasks that needed to be performed on a turbine's maintenance yearly. The Task Lists then gets finalized and sent to a SAP service where it generates work orders for technicians to perform their duties.",
         "jobResponsibilities": [
-            "Software development"
+            "Collaborated with engineering domain specialists to map wind turbine maintenance workflows into intuitive software features",
+            "Developed full-stack application modules (.NET Core, Angular) and integrated SAP services for automated work order generation",
+            "Participated in sprint planning, technical requirement refinement, and code reviews"
         ],
-        "htmlElementId": "h3projAimTools",    
+        "htmlElementId": "h3projFmt",
         "includeAsKeyAchievement": true
     },
     {
