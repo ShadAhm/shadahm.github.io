@@ -1,25 +1,25 @@
 [
   {
     "name": "angularJs.keruC",
-    "descriptionOverride": null,
+    "descriptionOverride": "Interactive HTML5 canvas prototype exploring spatial seat map selection and ticket reservation UX.",
     "demoUrl": "https://shadahm.github.io/angularJs.keruC/",
     "tags": ["AngularJS", "JavaScript", "HTML canvas"]
   },
   {
     "name": "time-since-i",
-    "descriptionOverride": null,
+    "descriptionOverride": "Lightweight PWA prototype exploring offline caching, local storage state persistence, and responsive UI.",
     "demoUrl": "https://shadahm.github.io/time-since-i/",
     "tags": ["TypeScript", "React"]
   },
   {
     "name": "nordic-flag-generator",
-    "descriptionOverride": null,
+    "descriptionOverride": "Interactive vector design prototype testing mathematical aspect ratios, SVG rendering, and reactive controls.",
     "demoUrl": "https://shadahm.github.io/nordic-flag-generator/",
     "tags": ["TypeScript", "SVG"]
   },
   {
     "name": "shadahm.github.io",
-    "descriptionOverride": null,
+    "descriptionOverride": "Production source code for this personal site: built with Angular 18, Tailwind CSS, and data-driven JSON architecture.",
     "demoUrl": "none"
   }
 ]
