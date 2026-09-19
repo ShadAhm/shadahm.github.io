@@ -12,6 +12,8 @@ export interface GithubRepository {
 export interface SelectRepository {
     name: string;
     descriptionOverride: string;
+    /** Id of the `RepositoryGroup` this entry is listed under. Unknown/omitted lands in the last group. */
+    group?: string;
     /**
      * Explicit demo link. Falls back to the GitHub repo's `homepage` field when omitted;
      * set to 'none' to suppress the "View Demo" button even if `homepage` is set.
@@ -24,4 +26,22 @@ export interface SelectRepository {
      * set to 'none' to show no thumbnail; any other string is used as a static image path/URL.
      */
     screenshot?: string;
+}
+
+/** A labelled section of the Projects page. Titles and blurbs are edited in the JSON, not the template. */
+export interface RepositoryGroup {
+    id: string;
+    title: string;
+    blurb?: string;
+}
+
+/** Shape of `assets/data/select-github-repos.json`. */
+export interface SelectRepositoryFile {
+    groups: RepositoryGroup[];
+    repositories: SelectRepository[];
+}
+
+/** A group with its repositories resolved — what the Projects page renders. */
+export interface RepositoryGroupView extends RepositoryGroup {
+    repositories: SelectRepository[];
 }

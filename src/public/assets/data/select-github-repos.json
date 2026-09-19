@@ -1,25 +1,50 @@
-[
-  {
-    "name": "angularJs.keruC",
-    "descriptionOverride": "Interactive HTML5 canvas prototype exploring spatial seat map selection and ticket reservation UX.",
-    "demoUrl": "https://shadahm.github.io/angularJs.keruC/",
-    "tags": ["AngularJS", "JavaScript", "HTML canvas"]
-  },
-  {
-    "name": "time-since-i",
-    "descriptionOverride": "Lightweight PWA prototype exploring offline caching, local storage state persistence, and responsive UI.",
-    "demoUrl": "https://shadahm.github.io/time-since-i/",
-    "tags": ["TypeScript", "React"]
-  },
-  {
-    "name": "nordic-flag-generator",
-    "descriptionOverride": "Interactive vector design prototype testing mathematical aspect ratios, SVG rendering, and reactive controls.",
-    "demoUrl": "https://shadahm.github.io/nordic-flag-generator/",
-    "tags": ["TypeScript", "SVG"]
-  },
-  {
-    "name": "shadahm.github.io",
-    "descriptionOverride": "Production source code for this personal site: built with Angular 18, Tailwind CSS, and data-driven JSON architecture.",
-    "demoUrl": "none"
-  }
-]
+{
+  "groups": [
+    {
+      "id": "side-projects",
+      "title": "Side projects",
+      "blurb": "Things I've built and kept maintaining well past the first prototype."
+    },
+    {
+      "id": "experiments",
+      "title": "Experiments & prototypes",
+      "blurb": "Smaller builds I use to learn a new tool or test an idea quickly."
+    }
+  ],
+  "repositories": [
+    {
+      "name": "kerusiweb",
+      "group": "side-projects",
+      "descriptionOverride": "Seat-map component for Angular and React that renders venue layouts and live availability as accessible SVG, with keyboard navigation and companion-seat booking built in.",
+      "demoUrl": "https://shadahm.github.io/kerusiweb/",
+      "tags": ["TypeScript", "Angular", "React", "SVG", "Accessibility"]
+    },
+    {
+      "name": "shadahm.github.io",
+      "group": "side-projects",
+      "descriptionOverride": "Production source code for this personal site: built with Angular 18, Tailwind CSS, and data-driven JSON architecture.",
+      "demoUrl": "none"
+    },
+    {
+      "name": "angularJs.keruC",
+      "group": "experiments",
+      "descriptionOverride": "Early HTML5 canvas prototype exploring spatial seat map selection and ticket reservation UX — the starting point for kerusiweb above.",
+      "demoUrl": "https://shadahm.github.io/angularJs.keruC/",
+      "tags": ["AngularJS", "JavaScript", "HTML canvas"]
+    },
+    {
+      "name": "time-since-i",
+      "group": "experiments",
+      "descriptionOverride": "Lightweight PWA prototype exploring offline caching, local storage state persistence, and responsive UI.",
+      "demoUrl": "https://shadahm.github.io/time-since-i/",
+      "tags": ["TypeScript", "React"]
+    },
+    {
+      "name": "nordic-flag-generator",
+      "group": "experiments",
+      "descriptionOverride": "Interactive vector design prototype testing mathematical aspect ratios, SVG rendering, and reactive controls.",
+      "demoUrl": "https://shadahm.github.io/nordic-flag-generator/",
+      "tags": ["TypeScript", "SVG"]
+    }
+  ]
+}
