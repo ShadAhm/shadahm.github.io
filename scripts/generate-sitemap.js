@@ -8,7 +8,6 @@ const routes = [
   { path: '/', changefreq: 'monthly', priority: 1.0 },
   { path: '/resume', changefreq: 'monthly', priority: 0.9 },
   { path: '/projects', changefreq: 'monthly', priority: 0.8 },
-  { path: '/pet-projects', changefreq: 'monthly', priority: 0.8 },
   { path: '/pro-projects', changefreq: 'monthly', priority: 0.8 },
   { path: '/contact', changefreq: 'yearly', priority: 0.7 }
 ];

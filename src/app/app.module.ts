@@ -11,8 +11,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContentHeaderComponent } from './components/content-header/content-header.component';
 import { ResumeComponent } from './components/resume/resume.component';
 import { ResumePoComponent } from './components/resume-po/resume-po.component';
-import { ExperimentsComponent } from './components/experiments/experiments.component';
-import { ProjectCardComponent } from './components/experiments/project-card/project-card.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { ProjectCardComponent } from './components/projects/project-card/project-card.component';
 import { SkillsComponentComponent } from './components/resume/skills/skills-component.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsProComponent } from './components/projects-pro/projects-pro.component';
@@ -56,7 +56,7 @@ export class DevErrorHandler implements ErrorHandler {
     ContentHeaderComponent,
     ResumeComponent,
     ResumePoComponent,
-    ExperimentsComponent,
+    ProjectsComponent,
     ProjectCardComponent,
     SkillsComponentComponent,
     ContactComponent,
