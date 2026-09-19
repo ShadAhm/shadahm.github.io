@@ -1,0 +1,19 @@
+<p class="mb-8 max-w-2xl text-ink-700">
+  These are things I build outside work — side projects I keep maintaining, and smaller experiments I use
+  to learn new tools and test ideas.
+  I use a similar rapid-prototyping approach on the job to validate concepts, test technical feasibility, and align stakeholders before complex features hit the backlog.
+</p>
+
+<section class="mb-10 last:mb-0" *ngFor="let group of groups">
+  <h2 class="section-title" [class.mb-1]="!!group.blurb" *ngIf="group.title">{{group.title}}</h2>
+  <p class="meta mb-4" *ngIf="group.blurb">{{group.blurb}}</p>
+
+  <div class="grid gap-4 sm:grid-cols-2">
+    <app-project-card *ngFor="let repository of group.repositories" [data]="repository"></app-project-card>
+  </div>
+</section>
+
+<p class="meta mt-6">
+  Curious about the projects and product work I've done professionally?
+  <a routerLink="/pro-projects">View Professional Projects</a>
+</p>

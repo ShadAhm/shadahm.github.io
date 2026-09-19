@@ -7,7 +7,7 @@ import { ProjectsService } from 'src/app/services/projects.service';
 @Component({
   selector: 'app-project-card',
   templateUrl: './project-card.component.html',
-  styleUrls: ['./../experiments.component.scss']
+  styleUrls: ['./../projects.component.scss']
 })
 export class ProjectCardComponent implements OnInit, OnDestroy {
   @Input() data: SelectRepository;
