@@ -51,9 +51,6 @@ export class ResumePoComponent implements OnInit, OnDestroy {
           ...emp,
           highlights: resume.employmentHighlights.find(h => h.companyName === emp.companyName)?.highlights ?? []
         }));
-        if (this.resume.summary) {
-          this.resume.summary = this.resume.summary.replace('{{yearsOfExperience}}', this.calculateTotalYearsExpWhole());
-        }
         this.addEmploymentToContentTable();
       },
       (error) => { console.error('Error happened', error) }
@@ -87,14 +84,6 @@ export class ResumePoComponent implements OnInit, OnDestroy {
     if (this.employmentEntries && this.employmentEntries.length) {
       const fromDateStr = this.employmentEntries[this.employmentEntries.length - 1].fromDate;
       return this.durationService.calculateTimeDuration(fromDateStr, (new Date()).toISOString());
-    }
-  }
-
-  calculateTotalYearsExpWhole(): string {
-    if (this.employmentEntries && this.employmentEntries.length) {
-      const fromDateStr = this.employmentEntries[this.employmentEntries.length - 1].fromDate;
-      const years = this.durationService.calculateWholeYears(fromDateStr, (new Date()).toISOString());
-      return `over ${years} years`;
     }
   }
 
