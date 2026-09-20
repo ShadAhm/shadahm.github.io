@@ -49,9 +49,7 @@ updated by editing JSON without touching code. **This must not regress.**
 - Treat "can the user still just edit a JSON file and have the site update" as a hard
   acceptance criterion for any structural change.
 
-Known gap: the legacy `/resume` route still has its certifications, education, and "other
-information" hardcoded in `resume.component.html`. That predates the rebrand. The live home
-page (`/resume-po`) is fully data-driven.
+The live resume page (`/resume`, with `/resume-po` redirecting to it) is fully data-driven.
 
 ## Brand
 

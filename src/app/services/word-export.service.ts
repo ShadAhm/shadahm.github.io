@@ -11,7 +11,7 @@ import {
   WidthType
 } from 'docx';
 import { PoResume } from '../models/resume';
-import { PoEmploymentEntry } from '../components/resume-po/resume-po.component';
+import { PoEmploymentEntry } from '../components/resume/resume.component';
 import { DurationService } from './duration.service';
 
 @Injectable({
@@ -79,7 +79,14 @@ export class WordExportService {
       new Paragraph({ children: [new TextRun({ text: resume.title, bold: true })] }),
       new Paragraph({ text: resume.location }),
       new Paragraph({ text: resume.summary, spacing: { after: 200 } }),
-      new Paragraph({ children: [new TextRun({ text: 'An online (better) version of this resume is available at https://shadahm.github.io/', italics: true, color: 'A9A9A9' })], spacing: { after: 200 } }),
+      new Paragraph({
+        children: [new TextRun({
+          text: 'An online (better) version of this resume is available at https://shadahm.github.io/',
+          italics: true,
+          color: 'A9A9A9'
+        })],
+        spacing: { after: 200 }
+      }),
       new Paragraph({ border: { bottom: { color: '000000', space: 1, style: 'single', size: 6 } }, spacing: { after: 200 } }),
     ];
   }
