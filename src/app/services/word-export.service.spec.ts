@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { WordExportService } from './word-export.service';
 import { PoResume } from '../models/resume';
-import { PoEmploymentEntry } from '../components/resume-po/resume-po.component';
+import { PoEmploymentEntry } from '../components/resume/resume.component';
 
 const sampleResume: PoResume = {
   name: 'Jane Doe',

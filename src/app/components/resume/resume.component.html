@@ -1,4 +1,5 @@
 <div class="flex flex-col gap-6 md:flex-row-reverse md:items-start md:gap-8">
+  <!-- Contents. Above the resume on mobile, a sticky rail alongside it from md up. -->
   <aside class="print:hidden md:sticky md:top-6 md:w-56 md:shrink-0">
     <h2 class="mb-2 font-heading text-xs font-semibold uppercase tracking-wide text-ink-500">On this page</h2>
     <ol class="space-y-1 text-sm" id="olContentsList">
@@ -16,35 +17,42 @@
   </aside>
 
   <div class="min-w-0 flex-1 space-y-4 print:space-y-0">
-    <div class="card">
+    <div class="card" *ngIf="resume">
       <div class="flex flex-col gap-5 sm:flex-row print:hidden">
         <img src="assets/images/me.png" class="w-32 shrink-0 self-start rounded-lg object-cover sm:w-40" alt="Photo of Shad Ahm" />
         <div class="min-w-0">
-          <h2 class="section-title mb-1" id="h2Introduction">Introduction</h2>
-          <p>I'm Shad — a Strategic Product Owner and Technical Leader with over 10 years of hands-on software
-            engineering experience. This page is a detailed, printable version of my resume; the <a
-              routerLink="/resume-po">Product Owner Resume</a> is the primary online version. I leverage a deep
-            understanding of enterprise architecture and complex engineering workflows to drive product vision, align
-            cross-functional stakeholders, and bridge the gap between business objectives and technical execution.</p>
-          <p class="mt-2">Feedback and comments are always welcome — get in touch.</p>
-          <div class="mt-4 hidden md:flex">
+          <h1 class="font-heading text-xl font-bold text-ink-900 mb-1" id="h2Introduction">{{resume.name}} <span class="font-normal text-ink-500">({{resume.legalName}})</span></h1>
+          <p class="font-medium text-ink-700">{{resume.title}}</p>
+          <p class="meta mt-1 flex items-center gap-1.5">
+            <app-icon name="map-pin"></app-icon>{{resume.location}}
+          </p>
+          <p class="mt-3">{{resume.summary}}</p>
+          <div class="mt-4 hidden gap-2 md:flex">
             <button type="button" class="btn btn-primary" (click)="print()">
               <app-icon name="printer"></app-icon>Print this resume
+            </button>
+            <button type="button" class="btn btn-outline" (click)="exportWord()">
+              <app-icon name="file-text"></app-icon>Download as Word doc
             </button>
           </div>
         </div>
       </div>
 
+      <!-- Print-only header block: the screen layout above is hidden on paper. -->
       <div class="hidden print:block">
-        <h2 class="text-lg font-bold">Shad Ahm <span class="font-normal">(Arsyad Ahmad)</span></h2>
+        <h2 class="text-lg font-bold">{{resume.name}} <span class="font-normal">({{resume.legalName}})</span></h2>
         <table class="mt-2">
           <tr>
-            <td class="pr-3 align-top font-medium">Date of Birth:</td>
-            <td>2 August 1990</td>
+            <td class="pr-3 align-top font-medium">Title:</td>
+            <td>{{resume.title}}</td>
+          </tr>
+          <tr>
+            <td class="pr-3 align-top font-medium">Phone:</td>
+            <td>{{resume.contact.phone}}</td>
           </tr>
           <tr>
             <td class="pr-3 align-top font-medium">E-mail:</td>
-            <td>arsh90&#64;gmail.com</td>
+            <td>{{resume.contact.email}}</td>
           </tr>
         </table>
         <p class="mt-2"><strong>Note:</strong> An online (better) version of this resume can be viewed at
@@ -54,12 +62,15 @@
     </div>
 
     <div id="printableArea" class="space-y-4 print:space-y-0">
-      <div class="card">
-        <app-skills-component *ngIf="technicalSkills" [technicalSkills]="technicalSkills"></app-skills-component>
+      <div class="card" *ngIf="resume">
+        <h2 class="section-title" id="h2Highlights">Career Highlights</h2>
+        <ul class="list-bullets">
+          <li *ngFor="let highlight of resume.selectedHighlights">{{highlight}}</li>
+        </ul>
       </div>
 
-      <div class="card">
-        <h2 class="section-title" id="h2Employment">Employment History</h2>
+      <div class="card" *ngIf="employmentEntries">
+        <h2 class="section-title" id="h2EmploymentHistory">Employment History</h2>
         <div class="overflow-x-auto">
           <table class="table-data">
             <thead>
@@ -72,25 +83,42 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let employmentHistory of employmentHistories">
+              <tr *ngFor="let entry of employmentEntries">
                 <td>
-                  <a [href]="employmentHistory.companyUrl">{{employmentHistory.companyName}}</a>
-                  <sup *ngFor="let asterisk of employmentHistory.companySubscripts"> {{asterisk}}</sup>
+                  <a [href]="entry.companyUrl">{{entry.companyName}}</a>
                   <span class="meta mt-0.5 flex items-center gap-1 text-xs">
-                    <app-icon name="map-pin" [size]="12"></app-icon>{{employmentHistory.location}}
+                    <app-icon name="map-pin" [size]="12"></app-icon>{{entry.location}}
                   </span>
                 </td>
-                <td>{{employmentHistory.position}}</td>
-                <td class="whitespace-nowrap">{{employmentHistory.fromDate | date:'MMM y'}}</td>
-                <td class="whitespace-nowrap">
-                  <ng-container *ngIf="employmentHistory.toDate; else legacyPresent">
-                    {{employmentHistory.toDate | date:'MMM y'}}
+                <td>
+                  {{entry.position}}
+                  <ng-container *ngIf="entry.positionHistory && entry.positionHistory.length > 1">
+                    <span class="meta mt-0.5 block text-xs">Previous positions held:
+                      <span *ngFor="let role of (entry.positionHistory | slice:0:-1); let last = last">{{role.title}}
+                        ({{role.fromDate | date:'MMM y'}} –
+                        {{role.toDate ? (role.toDate | date:'MMM y') : 'Present'}})<ng-container
+                          *ngIf="!last">; </ng-container>
+                      </span>
+                    </span>
                   </ng-container>
-                  <ng-template #legacyPresent><em class="text-ink-500">present</em></ng-template>
+                  <ng-container *ngIf="!entry.positionHistory && entry.projectRoles">
+                    <span class="meta mt-0.5 block text-xs italic">Project roles:
+                      <span *ngFor="let role of entry.projectRoles; let last = last">{{role.title}}
+                        ({{role.fromDate | date:'MMM y'}} –
+                        {{role.toDate ? (role.toDate | date:'MMM y') : 'Present'}})<ng-container
+                          *ngIf="!last">; </ng-container>
+                      </span>
+                    </span>
+                  </ng-container>
+                  <span class="meta mt-0.5 block text-xs italic"
+                    *ngIf="!entry.positionHistory && !entry.projectRoles && entry.subtitle">{{entry.subtitle}}</span>
                 </td>
+                <td class="whitespace-nowrap">{{entry.fromDate | date:'MMM y'}}</td>
                 <td class="whitespace-nowrap">
-                  {{ durationService.calculateTimeDuration(employmentHistory.fromDate, employmentHistory.toDate) }}
+                  <ng-container *ngIf="entry.toDate; else presentNow">{{entry.toDate | date:'MMM y'}}</ng-container>
+                  <ng-template #presentNow><em class="text-ink-500">present</em></ng-template>
                 </td>
+                <td class="whitespace-nowrap">{{ durationService.calculateTimeDuration(entry.fromDate, entry.toDate) }}</td>
               </tr>
             </tbody>
             <tfoot>
@@ -103,80 +131,97 @@
         </div>
       </div>
 
-      <div class="card">
-        <h2 class="section-title" id="h2KeyProject">Key Project Achievements</h2>
-        <div class="mb-4 rounded-md border-l-4 border-primary bg-primary-light p-4 text-sm text-ink-700">
-          This section contains brief information on a few proprietary projects that I have been involved in within my
-          employment history. This list is <strong>not</strong> exhaustive, and only contain notable select projects.
-          For the purpose of confidentiality, names such as the clients or employers has been omitted, and the project
-          titles slightly altered. For open-sourced/personal pet projects see <a routerLink="/projects">Projects</a> or
-          my <a href="https://github.com/ShadAhm">GitHub repositories</a>.
-        </div>
-
+      <div class="card" *ngIf="employmentEntries">
+        <h2 class="section-title" id="h2Employment">Professional Experience</h2>
         <div class="space-y-6">
-          <div *ngFor="let keyProj of keyProjectAchievements" class="border-l-2 border-ink-200 pl-4">
-            <h3 class="subsection-title" [id]="keyProj.htmlElementId">{{keyProj.title}}</h3>
-            <p class="meta">
-              {{keyProj.fromDate | date:'MMM y'}} –
-              {{keyProj.toDate ? (keyProj.toDate | date:'MMM y') : 'present'}}
-              ({{durationService.calculateTimeDuration(keyProj.fromDate, keyProj.toDate)}})
+          <div *ngFor="let entry of employmentEntries" class="border-l-2 border-ink-200 pl-4">
+            <h3 class="subsection-title" [id]="entry.htmlElementId">
+              <a [href]="entry.companyUrl">{{entry.companyName}}</a>
+            </h3>
+            <p class="font-medium text-ink-700">{{entry.position}}</p>
+            <p class="meta" *ngIf="entry.positionHistory && entry.positionHistory.length > 1">
+              Previous positions held:
+              <span *ngFor="let role of (entry.positionHistory | slice:0:-1); let last = last">{{role.title}}
+                ({{role.fromDate | date:'MMM y'}} –
+                {{role.toDate ? (role.toDate | date:'MMM y') : 'Present'}})<ng-container *ngIf="!last">; </ng-container>
+              </span>
             </p>
-            <p class="mt-2">{{keyProj.description}}</p>
-
-            <h4 class="mt-3 font-heading text-sm font-semibold text-ink-700">Technologies Used</h4>
-            <ul class="mt-1 flex flex-wrap gap-1.5">
-              <li class="badge badge-neutral" *ngFor="let technologyUsed of keyProj.technologiesUsed">
-                {{technologyUsed}}
-              </li>
-            </ul>
-
-            <h4 class="mt-3 font-heading text-sm font-semibold text-ink-700">Responsibilities</h4>
-            <ul class="list-bullets mt-1">
-              <li *ngFor="let responsb of keyProj.jobResponsibilities">{{responsb}}</li>
+            <p class="meta italic" *ngIf="!entry.positionHistory && entry.projectRoles">
+              Project roles:
+              <span *ngFor="let role of entry.projectRoles; let last = last">{{role.title}}
+                ({{role.fromDate | date:'MMM y'}} –
+                {{role.toDate ? (role.toDate | date:'MMM y') : 'Present'}})<ng-container *ngIf="!last">; </ng-container>
+              </span>
+            </p>
+            <p class="meta italic" *ngIf="!entry.positionHistory && !entry.projectRoles && entry.subtitle">
+              {{entry.subtitle}}
+            </p>
+            <p class="meta">
+              {{entry.fromDate | date:'MMM y'}} –
+              {{entry.toDate ? (entry.toDate | date:'MMM y') : 'present'}}
+              ({{durationService.calculateTimeDuration(entry.fromDate, entry.toDate)}})
+            </p>
+            <p class="meta flex items-center gap-1.5">
+              <app-icon name="map-pin" [size]="14"></app-icon>{{entry.location}}
+            </p>
+            <ul class="list-bullets mt-2">
+              <li *ngFor="let highlight of entry.highlights">{{highlight}}</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="card">
-        <h2 class="section-title" id="h2Education">Certifications &amp; Education</h2>
-
-        <h3 class="subsection-title">Certifications</h3>
-        <ul class="mt-2 space-y-3">
-          <li>
-            <span class="font-medium text-ink-900">CityFM Management Extension Program</span><br />
-            <span class="meta">2018</span>
-          </li>
-          <li>
-            <span class="font-medium text-ink-900">Microsoft Certified Solutions Developer (MCSD)</span><br />
-            <span class="meta">2013</span>
-          </li>
+      <div class="card" *ngIf="resume">
+        <h2 class="section-title" id="h2Communication">Technical Communication &amp; Mentorship</h2>
+        <ul class="list-bullets">
+          <li *ngFor="let item of resume.communicationHighlights">{{item}}</li>
         </ul>
+      </div>
 
-        <h3 class="subsection-title mt-5">Education</h3>
-        <ul class="mt-2 space-y-3">
-          <li>
-            <span class="font-medium text-ink-900">Diploma in Multimedia (CGPA: 3.08)</span><br />
-            Universiti Kuala Lumpur<br />
-            <span class="meta">2010</span>
-          </li>
-          <li>
-            <span class="font-medium text-ink-900">GCSE (O-Level)</span><br />
-            Heaton Manor School<br />
-            <span class="meta">2006</span>
+      <div class="card" *ngIf="resume">
+        <h2 class="section-title" id="h2Skills">Technical &amp; Product Skills</h2>
+        <div class="space-y-3">
+          <div *ngFor="let group of resume.skillGroups">
+            <h3 class="subsection-title text-sm">{{group.category}}</h3>
+            <p class="text-ink-700">{{group.items.join(', ')}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" *ngIf="resume">
+        <h2 class="section-title" id="h2Education">Education</h2>
+        <ul class="space-y-3">
+          <li *ngFor="let edu of resume.education">
+            <span class="font-medium text-ink-900">{{edu.credential}}</span><br />
+            {{edu.institution}}<br />
+            <span class="meta">{{edu.fromYear}} – {{edu.toYear}}</span>
           </li>
         </ul>
       </div>
 
-      <div class="card">
-        <h2 class="section-title" id="h2Other">Other Information</h2>
-        <dl class="grid gap-x-4 gap-y-2 sm:grid-cols-[9rem_1fr]">
-          <dt class="font-medium text-ink-700">Current residence</dt>
-          <dd>Stockholm, Sweden</dd>
-          <dt class="font-medium text-ink-700">Languages</dt>
-          <dd>Malay (Native), English (Fluent), Swedish (B1)</dd>
-          <dt class="font-medium text-ink-700">Driving license</dt>
-          <dd>No (Sweden), yes (Malaysia)</dd>
+      <div class="card" *ngIf="resume">
+        <h2 class="section-title" id="h2Languages">Languages</h2>
+        <ul class="space-y-2">
+          <li *ngFor="let lang of resume.languages">
+            <span class="font-medium text-ink-900">{{lang.language}}</span>
+            <span class="text-ink-700"> — {{lang.proficiency}}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card" *ngIf="resume">
+        <h2 class="section-title" id="h2Contact">Contact</h2>
+        <dl class="grid gap-x-4 gap-y-2 sm:grid-cols-[7rem_1fr]">
+          <dt class="font-medium text-ink-700">Phone</dt>
+          <dd>{{resume.contact.phone}}</dd>
+          <dt class="font-medium text-ink-700">Email</dt>
+          <dd><a [href]="'mailto:' + resume.contact.email">{{resume.contact.email}}</a></dd>
+          <dt class="font-medium text-ink-700">LinkedIn</dt>
+          <dd class="break-words"><a [href]="resume.contact.linkedInUrl">{{resume.contact.linkedInUrl}}</a></dd>
+          <dt class="font-medium text-ink-700">GitHub</dt>
+          <dd class="break-words"><a [href]="resume.contact.gitHubUrl">{{resume.contact.gitHubUrl}}</a></dd>
+          <dt class="font-medium text-ink-700">Location</dt>
+          <dd>{{resume.contact.location}}</dd>
         </dl>
       </div>
     </div>

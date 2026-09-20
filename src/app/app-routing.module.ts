@@ -1,25 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ResumeComponent } from './components/resume/resume.component';
-import { ResumePoComponent } from './components/resume-po/resume-po.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ProjectsProComponent } from './components/projects-pro/projects-pro.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'resume-po', pathMatch: 'full' },
+  { path: '', redirectTo: 'resume', pathMatch: 'full' },
   {
     path: 'resume',
     component: ResumeComponent,
     title: 'Resume — Shad Ahm',
     data: { title: 'Resume' }
   },
-  {
-    path: 'resume-po',
-    component: ResumePoComponent,
-    title: 'Product Owner Resume — Shad Ahm',
-    data: { title: 'Resume' }
-  },
+  { path: 'resume-po', redirectTo: 'resume', pathMatch: 'full' },
   {
     path: 'projects',
     component: ProjectsComponent,
