@@ -48,7 +48,10 @@ export class ResumeComponent implements OnInit, OnDestroy {
       resume: this.resumeService.getPoResume()
     }).pipe(takeUntil(this.destroy$)).subscribe(
       ({ employmentHistories, resume }) => {
-        this.resume = resume;
+        this.resume = {
+          ...resume,
+          summary: this.interpolateSummary(resume.summary, employmentHistories)
+        };
         this.employmentEntries = employmentHistories.map(emp => ({
           ...emp,
           highlights: resume.employmentHighlights.find(h => h.companyName === emp.companyName)?.highlights ?? []
@@ -57,6 +60,31 @@ export class ResumeComponent implements OnInit, OnDestroy {
       },
       (error) => { console.error('Error happened', error) }
     );
+  }
+
+  interpolateSummary(summary: string, employmentHistories: EmploymentHistory[]): string {
+    if (!summary || !employmentHistories || !employmentHistories.length) {
+      return summary;
+    }
+    const earliestFromDate = this.getEarliestEmploymentDate(employmentHistories);
+    if (!earliestFromDate) {
+      return summary;
+    }
+    const totalYears = this.durationService.calculateWholeYears(earliestFromDate, null);
+    return summary.replace(/\{totalYears\}/g, totalYears.toString());
+  }
+
+  private getEarliestEmploymentDate(employmentHistories: EmploymentHistory[]): string | null {
+    const validDates = employmentHistories
+      .map(e => e.fromDate)
+      .filter((date): date is string => !!date)
+      .map(date => new Date(date).getTime())
+      .filter(time => !isNaN(time));
+
+    if (!validDates.length) {
+      return null;
+    }
+    return new Date(Math.min(...validDates)).toISOString();
   }
 
   getResumeContents(): void {
@@ -84,9 +112,12 @@ export class ResumeComponent implements OnInit, OnDestroy {
 
   calculateTotalYearsExp(): string {
     if (this.employmentEntries && this.employmentEntries.length) {
-      const fromDateStr = this.employmentEntries[this.employmentEntries.length - 1].fromDate;
-      return this.durationService.calculateTimeDuration(fromDateStr, (new Date()).toISOString());
+      const fromDateStr = this.getEarliestEmploymentDate(this.employmentEntries);
+      if (fromDateStr) {
+        return this.durationService.calculateTimeDuration(fromDateStr, (new Date()).toISOString());
+      }
     }
+    return '';
   }
 
   print(): void {
