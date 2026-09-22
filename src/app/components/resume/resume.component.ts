@@ -86,7 +86,6 @@ export class ResumeComponent implements OnInit, OnDestroy {
     }
     return new Date(Math.min(...validDates)).toISOString();
   }
-
   getResumeContents(): void {
     this.contents = [
       { displayText: 'Introduction', elementId: 'h2Introduction', children: null },
