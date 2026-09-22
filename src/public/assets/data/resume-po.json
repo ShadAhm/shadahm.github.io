@@ -3,86 +3,121 @@
     "legalName": "Arsyad Ahmad",
     "title": "Product Owner | Technical Product Leader | Enterprise Software",
     "location": "Stockholm, Sweden",
-    "summary": "Technical Product Owner with 2+ years leading enterprise platform delivery, built on a foundation of over 10 years of software engineering and systems architecture experience. Specializes in translating complex engineering workflows (HVDC, power systems, simulation) into high-clarity product backlogs, de-risking technical dependencies, and aligning 40+ person cross-functional engineering organizations across business, UX, and development.",
+    "summary": "Technical Product Owner with over {totalYears}+ years of experience in software development and systems architecture, including two years leading product ownership for enterprise platforms. Focuses on turning complex engineering workflows into clear product backlogs, managing technical dependencies, and guiding 40+ persons cross-functional teams across business, UX, and development.",
     "employmentHighlights": [
         {
             "companyName": "Hitachi Energy",
             "highlights": [
-                "Promoted from Lead Software Developer to Product Owner to drive product backlog, release planning, and feature scope for a 40+ person engineering organization across six major enterprise releases and multiple minor release cycles.",
-                "Serve as the central domain-to-engineering bridge, translating complex HVDC power engineering workflows, PSCAD simulation tools, and data science algorithms into well-scoped, feasible user stories with robust acceptance criteria.",
-                "Align multi-disciplinary contributors — including software engineers, UX contributors, system study experts, engineering managers, and external consultants — eliminating requirement ambiguity and accelerating release readiness.",
-                "Leverage an 11-year software engineering foundation to identify architectural dependencies, technical debt, and delivery risks early during roadmap planning, preventing downstream delivery delays.",
-                "Own and refine a high-volume backlog in Azure DevOps, establishing delivery clarity, defining acceptance criteria, and authoring comprehensive release notes for platform stakeholders.",
-                "Spearhead onboarding frameworks and technical knowledge-sharing for new contributors, preserving domain context, engineering workflow understanding, and continuity in a rapidly scaling team."
+                "Promoted from Lead Software Developer to Product Owner to manage the product backlog, release planning, and feature scope for a 40-person engineering team across six major and multiple minor releases.",
+                "Act as the main link between domain experts and engineering, turning complex HVDC workflows, PSCAD simulations, and data science algorithms into clear, workable user stories with solid acceptance criteria.",
+                "Coordinate a diverse team of software engineers, UX designers, system study experts, engineering managers, and external consultants to clarify requirements and speed up release readiness.",
+                "Draw on over 11 years of software engineering experience to spot architectural dependencies, technical debt, and delivery risks early in roadmap planning, avoiding downstream delays.",
+                "Manage and refine a large backlog in Azure DevOps, defining clear acceptance criteria and writing comprehensive release notes for platform stakeholders.",
+                "Lead onboarding and technical knowledge-sharing for new contributors, keeping domain context and engineering workflows clear as the team scales quickly."
             ]
         },
         {
             "companyName": "Alten Sverige",
             "highlights": [
-                "Provided senior engineering oversight on client assignment at Hitachi Energy, bridging core business stakeholders with an external organization of 40+ developers to ensure architectural alignment and prevent delivery delays.",
-                "Guided the program transition from initial design into active development by structuring delivery milestones, establishing technical standards, and clarifying agile ways of working.",
-                "Established deep domain depth and stakeholder trust that led directly to a permanent Lead Developer and subsequent Product Owner appointment at Hitachi Energy."
+                "Provided senior engineering oversight on a client assignment at Hitachi Energy, connecting core business stakeholders with a team of 40 external developers to maintain architectural standards and prevent delays.",
+                "Guided the program from initial design into active development by setting delivery milestones, establishing technical standards, and clarifying agile workflows.",
+                "Built stakeholder trust and deep domain knowledge, leading directly to a permanent Lead Developer and later Product Owner role at Hitachi Energy."
             ]
         },
         {
             "companyName": "Ørsted",
             "highlights": [
-                "Promoted from Software Engineer to Senior Software Engineer, serving as the primary technical point of contact for core offshore wind asset management and maintenance applications.",
-                "Partnered closely with engineering teams and operations stakeholders to understand requirements, define delivery milestones, and ensure continuous system reliability and data health.",
-                "Architected and implemented enterprise cloud solutions using .NET Core, Angular, and Azure, consolidating distributed asset inspection data into a unified, reliable platform.",
-                "Provided senior-level engineering input across solution design, system maintainability, and delivery quality."
+                "Promoted to Senior Software Engineer, acting as the main technical contact for core offshore wind asset management and maintenance applications.",
+                "Partnered with engineering teams and operations stakeholders to map out requirements, set delivery milestones, and maintain system reliability and data health.",
+                "Designed and built cloud solutions using .NET Core, Angular, and Azure to consolidate scattered asset inspection data into a single, reliable platform.",
+                "Provided senior-level engineering input for solution design, system maintainability, and delivery quality."
             ]
         },
         {
             "companyName": "City Facilities Management Sdn Bhd",
             "highlights": [
-                "Promoted from Software Developer to Senior Software Developer, stewarding business-critical job management and asset tracking applications supporting international retail operations.",
-                "Co-pioneered the Malaysia-Australia distributed delivery model as one of the initial two engineers; led technical interviews and onboarding to scale the local engineering hub.",
-                "Collaborated with business operations to translate complex maintenance workflows and vendor coordination processes into reliable software features.",
-                "Supported solution design and implementation across backend, frontend, and integration layers."
+                "Promoted to Senior Software Developer, managing critical job management and asset tracking applications for international retail operations.",
+                "Helped launch the Malaysia-Australia distributed delivery model as one of the first two engineers. Led technical interviews and onboarding to scale the local hub.",
+                "Worked with business operations to turn complex maintenance workflows and vendor coordination processes into reliable software features.",
+                "Supported solution design and implementation across the backend, frontend, and integration layers."
             ]
         },
         {
             "companyName": "Galasys Solutions (MSC) Sdn Bhd",
             "highlights": [
-                "Developed features for centralized ticketing and B2B/B2C vendor platforms, coordinating daily stand-ups and sprint alignment across distributed delivery teams."
+                "Developed features for centralized ticketing and B2B/B2C vendor platforms, coordinating daily stand-ups and sprints across distributed teams."
             ]
         },
         {
             "companyName": "Alfacom Technologies Sdn Bhd",
             "highlights": [
-                "Co-authored User Requirement Specifications (URS) and developed the STARS automation system for PIDM (Malaysia Deposit Insurance Corp), reducing weeks of manual risk calculation into hours.",
-                "Delivered financial and tax calculation software solutions for enterprise clients including Wolters Kluwer."
+                "Co-authored User Requirement Specifications and developed the STARS automation system for Malaysia Deposit Insurance Corp (PIDM), reducing weeks of manual risk calculation to hours.",
+                "Built financial and tax calculation software solutions for enterprise clients including Wolters Kluwer."
             ]
         }
     ],
     "selectedHighlights": [
-        "Currently own product backlog, feature scope, and release execution for a flagship Hitachi Energy HVDC engineering platform — guiding a 40+ person engineering organization across six major releases.",
-        "Promoted from Lead Software Developer to Product Owner at Hitachi Energy by establishing stakeholder trust, mastering complex power grid domain workflows, and bridging engineering with business objectives.",
-        "Stepped into primary technical ownership at Ørsted for core enterprise applications, serving as the main stakeholder contact for application health, requirements planning, and data lifecycle management.",
-        "Multi-perspective delivery experience: Having worked across the full software lifecycle — as an external consultant, in-house developer, lead engineer, and now Product Owner — I anticipate technical roadblocks early and streamline cross-functional alignment.",
-        "Proven leadership in scaling distributed teams: Selected as one of the first two developers for a Malaysia-Australia pilot at City Facilities Management, then drove the technical hiring and interview process to expand the Malaysian hub."
+        "Manage the product backlog and feature scope for Hitachi Energy's flagship HVDC engineering platform, guiding a 40-person cross-functional team through six major releases while balancing business goals, UX, and architecture.",
+        "Use over 10 years of software engineering and systems architecture experience to manage technical dependencies and turn complex HVDC, power systems, and simulation workflows into clear product roadmaps.",
+        "Promoted from Lead Software Developer to Product Owner at Hitachi Energy by building stakeholder trust, mastering the technical domain, and ensuring engineering work actively supported business targets.",
+        "Acted as the primary technical owner for a core enterprise application at Ørsted, working directly with stakeholders to manage application health, requirements planning, and data lifecycles.",
+        "Apply a diverse background in in-house, vendor, and consulting roles to navigate complex team dynamics. Operating as both the builder and the client creates genuine stakeholder empathy and makes it easier to spot and solve problems early.",
+        "Scaled distributed engineering teams across regions as one of the first two developers for a Malaysia-Australia pilot at City Facilities Management, later driving technical hiring to expand the Malaysian hub."
     ],
     "communicationHighlights": [
-        "Script, record, and produce internal instructional videos that break down complex system architectures and engineering workflows — helping distributed technical and non-technical teams ramp up faster and stay aligned.",
-        "Rapid Prototyping & Concept Validation: Utilize AI coding tools to rapidly prototype, build, and test software concepts, enabling faster idea validation and stakeholder alignment prior to formal backlog integration. (Live examples available in the \"Projects\" section of my online resume)."
+        "Script, record, and produce internal instructional videos that break down complex work items, helping both technical and non-technical distributed teams get up to speed faster",
+        "Rapid Prototyping & Concept Validation: Use AI coding tools to quickly build and test software concepts, allowing stakeholders to validate ideas and provide feedback before work ever hits the formal backlog. (Live examples available in the \"Projects\" section of my online resume)."
     ],
     "skillGroups": [
         {
             "category": "Product & Delivery",
-            "items": ["product ownership", "backlog management (Azure DevOps)", "user stories & acceptance criteria", "release planning & coordination", "AI-driven rapid prototyping", "requirements discovery & scope definition", "prioritization (value vs. feasibility)", "release notes & stakeholder communication"]
+            "items": [
+                "product ownership",
+                "backlog management (Azure DevOps)",
+                "user stories & acceptance criteria",
+                "release planning & coordination",
+                "AI-driven rapid prototyping",
+                "requirements discovery & scope definition",
+                "prioritization (value vs. feasibility)",
+                "release notes & stakeholder communication"
+            ]
         },
         {
             "category": "Technical & Architecture",
-            "items": ["technical feasibility assessment", "architecture trade-offs", "API & data contracts", "cloud & enterprise integration", ".NET / C#", "Angular", "Kubernetes", "SQL", "GitHub Copilot", "Claude Code"]
+            "items": [
+                "technical feasibility assessment",
+                "architecture trade-offs",
+                "API & data contracts",
+                "cloud & enterprise integration",
+                ".NET / C#",
+                "Angular",
+                "Kubernetes",
+                "SQL",
+                "GitHub Copilot",
+                "Claude Code"
+            ]
         },
         {
             "category": "Leadership & Collaboration",
-            "items": ["cross-functional alignment (Eng, UX, Domain Experts)", "distributed team leadership", "technical mentorship", "onboarding & knowledge sharing", "decision framing", "facilitation"]
+            "items": [
+                "cross-functional alignment (Eng, UX, Domain Experts)",
+                "distributed team leadership",
+                "technical mentorship",
+                "onboarding & knowledge sharing",
+                "decision framing",
+                "facilitation"
+            ]
         },
         {
             "category": "Domains",
-            "items": ["HVDC engineering software", "power grid simulation (PSCAD)", "system studies & optimization", "renewable energy (offshore wind)", "enterprise asset management", "facilities management systems"]
+            "items": [
+                "HVDC engineering software",
+                "power grid simulation (PSCAD)",
+                "system studies & optimization",
+                "renewable energy (offshore wind)",
+                "enterprise asset management",
+                "facilities management systems"
+            ]
         }
     ],
     "education": [
@@ -94,9 +129,18 @@
         }
     ],
     "languages": [
-        { "language": "Malay", "proficiency": "Native" },
-        { "language": "English", "proficiency": "Fluent" },
-        { "language": "Swedish", "proficiency": "Actively learning" }
+        {
+            "language": "Malay",
+            "proficiency": "Native"
+        },
+        {
+            "language": "English",
+            "proficiency": "Fluent"
+        },
+        {
+            "language": "Swedish",
+            "proficiency": "Actively learning at B1 level"
+        }
     ],
     "contact": {
         "phone": "+46 76 941 7695",
